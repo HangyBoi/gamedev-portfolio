@@ -143,7 +143,7 @@ const App = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                 <a href="/resume.pdf" className="px-8 py-3 rounded-full bg-[#ff0055] text-white font-bold uppercase tracking-widest hover:bg-[#d40047] hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,85,0.4)] transition-all duration-300 flex items-center justify-center gap-2">
+                 <a href="/gamedev-portfolio/resume.pdf" className="px-8 py-3 rounded-full bg-[#ff0055] text-white font-bold uppercase tracking-widest hover:bg-[#d40047] hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,85,0.4)] transition-all duration-300 flex items-center justify-center gap-2">
                    <Download size={18} /> Download Resume
                  </a>
               </div>
