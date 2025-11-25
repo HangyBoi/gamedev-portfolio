@@ -5,15 +5,19 @@ const Navigation = ({ isScrolled }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/10 py-4' : 'bg-transparent py-8'}`}>
+    <header 
+      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/10 py-4' : 'bg-transparent py-8'}`}
+    >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        {/* Logo Placeholer */}
+        {/* Logo */}
         <div className="relative z-50 hover:-translate-y-1 transition-transform">
-           <a href="#hero" className="text-2xl font-bold text-white tracking-tighter">NC<span className="text-[#00f3ff]">.</span></a>
+           <a href="#hero" aria-label="Home" className="text-2xl font-bold text-white tracking-tighter">
+             NC<span className="text-[#00f3ff]">.</span>
+           </a>
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8 font-medium text-sm text-gray-400">
+        <nav aria-label="Main Navigation" className="hidden md:flex items-center gap-8 font-medium text-sm text-gray-400">
           <a href="#hero" className="hover:text-[#00f3ff] transition-all hover:-translate-y-0.5 uppercase tracking-widest text-xs font-bold">Home</a>
           <a href="#stack" className="hover:text-[#00f3ff] transition-all hover:-translate-y-0.5 uppercase tracking-widest text-xs font-bold">Stack</a>
           <a href="#works" className="hover:text-[#00f3ff] transition-all hover:-translate-y-0.5 uppercase tracking-widest text-xs font-bold">Work</a>
@@ -24,15 +28,23 @@ const Navigation = ({ isScrolled }) => {
           </a>
         </nav>
 
-        {/* Mobile Toggle */}
-        <button className="md:hidden text-white z-50" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+        {/* Mobile Toggle Button */}
+        <button 
+          className="md:hidden text-white z-50" 
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-expanded={mobileMenuOpen}
+          aria-label="Toggle mobile menu"
+        >
           {mobileMenuOpen ? <X /> : <Menu />}
         </button>
       </div>
       
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <nav className="md:hidden absolute top-0 left-0 w-full h-screen bg-[#0a0a0a] px-6 flex flex-col justify-center items-center gap-8 font-medium text-xl z-40">
+        <nav 
+          aria-label="Mobile Navigation"
+          className="md:hidden absolute top-0 left-0 w-full h-screen bg-[#0a0a0a] px-6 flex flex-col justify-center items-center gap-8 font-medium text-xl z-40"
+        >
           <a href="#hero" onClick={() => setMobileMenuOpen(false)} className="text-white">Home</a>
           <a href="#stack" onClick={() => setMobileMenuOpen(false)} className="text-white">Stack</a>
           <a href="#works" onClick={() => setMobileMenuOpen(false)} className="text-white">Work</a>

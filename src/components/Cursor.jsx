@@ -6,7 +6,6 @@ const CustomCursor = () => {
   useEffect(() => {
     const updateCursor = (e) => {
       if (cursorRef.current) {
-        // Direct transform is the fastest way to render
         cursorRef.current.style.transform = `translate(${e.clientX - 12}px, ${e.clientY - 12}px)`;
       }
     };
@@ -18,7 +17,7 @@ const CustomCursor = () => {
   return (
     <div 
       ref={cursorRef}
-      // REMOVED: "transition-transform duration-75" to fix lag
+      aria-hidden="true"
       className="fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-exclusion hidden md:block will-change-transform"
     >
       <div className="w-6 h-6 rounded-full border-2 border-[#00f3ff] shadow-[0_0_10px_#00f3ff]"></div>
