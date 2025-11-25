@@ -9,10 +9,16 @@ const Navigation = ({ isScrolled }) => {
       className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/10 py-4' : 'bg-transparent py-8'}`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        {/* Logo */}
+        {/* Logo Image */}
         <div className="relative z-50 hover:-translate-y-1 transition-transform">
-           <a href="#hero" aria-label="Home" className="text-2xl font-bold text-white tracking-tighter">
-             NC<span className="text-[#00f3ff]">.</span>
+           <a href="#hero" aria-label="Home">
+             <img 
+               src="/gamedev-portfolio/images/logo.png" 
+               alt="4ibik Logo" 
+               className="h-8 w-auto object-contain invert brightness-0 filter" 
+               // NOTE: Your logo is black. 'invert' makes it white to match the dark theme.
+               // If your logo is already white, remove 'invert brightness-0 filter'
+             />
            </a>
         </div>
 
