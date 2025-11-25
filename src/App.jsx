@@ -130,11 +130,11 @@ const App = () => {
           <div className="flex flex-col md:flex-row items-center gap-12">
             <figure className="w-64 h-64 flex-shrink-0 relative group">
                <div className="absolute inset-0 border-2 border-[#00f3ff] rounded-2xl translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300"></div>
-               <img src="https://placehold.co/400x400/222/fff?text=Photo" alt="Nikita Cebotari Portrait" className="w-full h-full object-cover rounded-2xl relative z-10 grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl" />
+               <img src="https://placehold.co/400x400/222/fff?text=Photo" alt="Nichita Cebotari Portrait" className="w-full h-full object-cover rounded-2xl relative z-10 grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl" />
             </figure>
 
             <article className="flex-1 text-center md:text-left">
-              <h3 className="text-2xl font-bold text-white mb-4">Nikita Cebotari</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Nichita Cebotari</h3>
               <p className="text-lg text-gray-400 mb-8 leading-relaxed">
                 3rd Year Creative Media & Game Technology student. My focus is building robust tools for artists and optimizing rendering pipelines. 
                 I solve the technical challenges that allow art to run at 60fps.
@@ -166,7 +166,7 @@ const App = () => {
             </a>
           ))}
         </div>
-        <p className="text-gray-600 text-sm font-mono">&copy; 2025 Nikita Cebotari. Built with React.</p>
+        <p className="text-gray-600 text-sm font-mono">&copy; 2025 Nichita Cebotari. Built with React.</p>
       </footer>
     </main>
   );
