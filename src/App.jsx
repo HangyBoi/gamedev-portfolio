@@ -20,7 +20,7 @@ const Hero = () => (
       <h1 className="text-5xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-6 text-white leading-none">
         GAMEPLAY <br />
         {/* Gradient on 'ENGINEER' to emphasize the technical root */}
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f3ff] to-[#0066ff]">ENGINEER</span>
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f3ff] to-[#0066ff]">PROGRAMMER</span>
       </h1>
 
       {/* Subtitle: The "Bridge" statement */}
@@ -143,7 +143,7 @@ const App = () => {
             </figure>
 
             <article className="flex-1 text-center md:text-left">
-              <h3 className="text-2xl font-bold text-white mb-4">Nikita Cebotari</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Nichita Cebotari</h3>
 
               {/* --- LOCATION ADDED HERE --- */}
               <div className="flex items-center justify-center md:justify-start gap-2 text-gray-400 mb-6 font-mono text-sm">
