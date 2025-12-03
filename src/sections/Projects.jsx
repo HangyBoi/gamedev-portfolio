@@ -1,8 +1,10 @@
 import React, { useState, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Github, ExternalLink, FileText } from 'lucide-react';
+import ProjectModal from '../components/ProjectModal';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All');
+  const [selectedProject, setSelectedProject] = useState(null);
   const scrollContainerRef = useRef(null);
 
   const scroll = (direction) => {
@@ -35,6 +37,18 @@ const Projects = () => {
       tags: ["Unity", "C#", "Wave Function Collapse"],
       image: "https://placehold.co/600x400/1e293b/00f3ff?text=City+Generator",
       description: "Editor Utility Widget for quickly laying out city blocks. Uses Wave Function Collapse algorithm for logic.",
+      longDescription: "A sophisticated tool utilizing the Wave Function Collapse algorithm to generate infinite, logical city layouts. It features a custom editor window, constraint solving for roads and buildings, and optimized mesh combination for runtime performance.",
+      details: {
+        role: "Tool Programmer",
+        time: "4 Weeks",
+        tools: "Unity 2022, C#, Odin Inspector"
+      },
+      gallery: [
+        { type: 'image', url: "/gamedev-portfolio/images/city-generator.jpg" }, 
+        // Example of adding more slides (use real paths):
+        // { type: 'image', url: "/gamedev-portfolio/images/city-wireframe.jpg" },
+        // { type: 'video', url: "/gamedev-portfolio/videos/city-demo.mp4" }
+      ],
       links: { source: "https://github.com", artstation: "https://artstation.com", wiki: "https://github.com/wiki" },
       status: "Released"
     },
@@ -45,6 +59,18 @@ const Projects = () => {
       tags: ["HLSL", "Raymarching", "Optimization"],
       image: "https://placehold.co/600x400/1e293b/ff0055?text=Cloud+Renderer",
       description: "Raymarching based volumetric cloud solution optimized for mobile. Implements light scattering.",
+            longDescription: "A sophisticated tool utilizing the Wave Function Collapse algorithm to generate infinite, logical city layouts. It features a custom editor window, constraint solving for roads and buildings, and optimized mesh combination for runtime performance.",
+      details: {
+        role: "Tool Programmer",
+        time: "4 Weeks",
+        tools: "Unity 2022, C#, Odin Inspector"
+      },
+      gallery: [
+        { type: 'image', url: "/gamedev-portfolio/images/city-generator.jpg" }, 
+        // Example of adding more slides (use real paths):
+        // { type: 'image', url: "/gamedev-portfolio/images/city-wireframe.jpg" },
+        // { type: 'video', url: "/gamedev-portfolio/videos/city-demo.mp4" }
+      ],
       links: { source: "https://github.com", artstation: "https://artstation.com", wiki: "https://github.com/wiki" },
       status: "Prototype"
     },
@@ -55,6 +81,18 @@ const Projects = () => {
       tags: ["UE5", "Niagara", "Materials"],
       image: "https://placehold.co/600x400/1e293b/00f3ff?text=Shield+Effect",
       description: "Reactive shield material with hex-grid displacement and Niagara particle collision interaction events.",
+            longDescription: "A sophisticated tool utilizing the Wave Function Collapse algorithm to generate infinite, logical city layouts. It features a custom editor window, constraint solving for roads and buildings, and optimized mesh combination for runtime performance.",
+      details: {
+        role: "Tool Programmer",
+        time: "4 Weeks",
+        tools: "Unity 2022, C#, Odin Inspector"
+      },
+      gallery: [
+        { type: 'image', url: "/gamedev-portfolio/images/city-generator.jpg" }, 
+        // Example of adding more slides (use real paths):
+        // { type: 'image', url: "/gamedev-portfolio/images/city-wireframe.jpg" },
+        // { type: 'video', url: "/gamedev-portfolio/videos/city-demo.mp4" }
+      ],
       links: { source: "https://github.com", artstation: "https://artstation.com", wiki: "https://github.com/wiki" },
       status: "Released"
     },
@@ -65,6 +103,18 @@ const Projects = () => {
       tags: ["Unity", "Editor Tooling", "Pipeline"],
       image: "https://placehold.co/600x400/1e293b/ff0055?text=LOD+Automator",
       description: "Editor extension that automatically sets up LOD groups based on mesh naming conventions and vertex count.",
+            longDescription: "A sophisticated tool utilizing the Wave Function Collapse algorithm to generate infinite, logical city layouts. It features a custom editor window, constraint solving for roads and buildings, and optimized mesh combination for runtime performance.",
+      details: {
+        role: "Tool Programmer",
+        time: "4 Weeks",
+        tools: "Unity 2022, C#, Odin Inspector"
+      },
+      gallery: [
+        { type: 'image', url: "/gamedev-portfolio/images/city-generator.jpg" }, 
+        // Example of adding more slides (use real paths):
+        // { type: 'image', url: "/gamedev-portfolio/images/city-wireframe.jpg" },
+        // { type: 'video', url: "/gamedev-portfolio/videos/city-demo.mp4" }
+      ],
       links: { source: "https://github.com", artstation: "#", wiki: "https://github.com/wiki" },
       status: "In Development"
     },
@@ -75,6 +125,18 @@ const Projects = () => {
       tags: ["Unity", "AI", "Stealth"],
       image: "https://placehold.co/600x400/1e293b/00f3ff?text=Foreshadow",
       description: "Minimalistic stealth game built with level-design focus. Guards movement and Path System.",
+            longDescription: "A sophisticated tool utilizing the Wave Function Collapse algorithm to generate infinite, logical city layouts. It features a custom editor window, constraint solving for roads and buildings, and optimized mesh combination for runtime performance.",
+      details: {
+        role: "Tool Programmer",
+        time: "4 Weeks",
+        tools: "Unity 2022, C#, Odin Inspector"
+      },
+      gallery: [
+        { type: 'image', url: "/gamedev-portfolio/images/city-generator.jpg" }, 
+        // Example of adding more slides (use real paths):
+        // { type: 'image', url: "/gamedev-portfolio/images/city-wireframe.jpg" },
+        // { type: 'video', url: "/gamedev-portfolio/videos/city-demo.mp4" }
+      ],
       links: { source: "https://github.com", artstation: "#", wiki: "#" },
       status: "Released"
     }
@@ -86,15 +148,39 @@ const Projects = () => {
 
   const filters = ['All', 'Unity', 'Unreal', 'Shaders', 'Tools'];
 
-  return (
+  // --- MODAL NAVIGATION LOGIC ---
+  const handleNextProject = () => {
+    if (!selectedProject) return;
+    const currentIndex = filteredProjects.findIndex(p => p.id === selectedProject.id);
+    const nextIndex = (currentIndex + 1) % filteredProjects.length;
+    setSelectedProject(filteredProjects[nextIndex]);
+  };
+
+  const handlePrevProject = () => {
+    if (!selectedProject) return;
+    const currentIndex = filteredProjects.findIndex(p => p.id === selectedProject.id);
+    const prevIndex = (currentIndex - 1 + filteredProjects.length) % filteredProjects.length;
+    setSelectedProject(filteredProjects[prevIndex]);
+  };
+
+return (
     <section id="works" className="py-32 bg-transparent border-t border-white/5">
+      {/* 1. RENDER MODAL IF PROJECT SELECTED */}
+      <ProjectModal 
+        project={selectedProject} 
+        onClose={() => setSelectedProject(null)} 
+        onNext={handleNextProject}
+        onPrev={handlePrevProject}
+      />
+
       <div className="max-w-[90%] mx-auto">
+        {/* Header & Filters (Same as before) */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 px-4">
            <div className="text-left">
               <span className="text-[#00f3ff] font-mono text-xl mb-2 block">02.</span>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Selected Works</h2>
               <p className="text-gray-400 text-sm flex items-center gap-2">
-                 Swipe or use arrows to navigate
+                 Click card for details &bull; Swipe to navigate
               </p>
            </div>
            
@@ -125,14 +211,18 @@ const Projects = () => {
            </div>
         </div>
 
-        {/* Note: 'snap-x' removed to fix the sticky mouse issue */}
+        {/* Project Grid */}
         <div 
           ref={scrollContainerRef}
           className="grid grid-rows-2 grid-flow-col gap-8 overflow-x-auto pb-12 px-4 scrollbar-hide auto-cols-[350px] md:auto-cols-[450px]"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {filteredProjects.map((project) => (
-            <article key={project.id} className="group relative bg-[#111] rounded-2xl overflow-hidden border border-white/10 flex flex-col transition-all duration-300 hover:border-[#00f3ff] hover:shadow-[0_0_40px_rgba(0,243,255,0.1)] w-full h-full">
+            <article 
+                key={project.id} 
+                onClick={() => setSelectedProject(project)} // <--- CLICK HANDLER
+                className="group relative bg-[#111] rounded-2xl overflow-hidden border border-white/10 flex flex-col transition-all duration-300 hover:border-[#00f3ff] hover:shadow-[0_0_40px_rgba(0,243,255,0.1)] w-full h-full cursor-pointer"
+            >
               <figure className="relative h-56 overflow-hidden bg-gray-900 shrink-0 m-0">
                 <img src={project.image} alt={project.title} className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
                 
@@ -156,26 +246,8 @@ const Projects = () => {
               <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#00f3ff] transition-colors">{project.title}</h3>
                 <p className="text-gray-400 text-xs leading-relaxed mb-6 flex-grow">{project.description}</p>
-
-                <div className="pt-4 border-t border-white/5 flex flex-wrap gap-2 mt-auto">
-                  {project.links.source && (
-                    <a href={project.links.source} className="flex-1 flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl bg-[#222] text-white text-[10px] font-bold uppercase tracking-wide hover:bg-white hover:text-black hover:-translate-y-1 transition-all duration-300 group/btn">
-                      <Github size={14} className="group-hover/btn:scale-110 transition-transform"/> 
-                      <span className="hidden sm:inline">GitHub</span>
-                    </a>
-                  )}
-                  {project.links.artstation && project.links.artstation !== "#" && (
-                    <a href={project.links.artstation} className="flex-1 flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl bg-[#222] text-white text-[10px] font-bold uppercase tracking-wide hover:bg-[#13aff0] hover:text-white hover:-translate-y-1 transition-all duration-300 group/btn">
-                      <ExternalLink size={14} className="group-hover/btn:scale-110 transition-transform"/> 
-                      <span className="hidden sm:inline">ArtStation</span>
-                    </a>
-                  )}
-                  {project.links.wiki && project.links.wiki !== "#" && (
-                    <a href={project.links.wiki} className="flex-1 flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl border border-white/20 text-gray-300 text-[10px] font-bold uppercase tracking-wide hover:border-[#00f3ff] hover:text-[#00f3ff] hover:-translate-y-1 transition-all duration-300 group/btn">
-                      <FileText size={14} className="group-hover/btn:scale-110 transition-transform"/> 
-                      <span className="hidden sm:inline">Wiki</span>
-                    </a>
-                  )}
+                <div className="mt-auto pt-4 border-t border-white/5">
+                   <span className="text-xs text-[#00f3ff] font-bold uppercase tracking-widest group-hover:underline">View Details +</span>
                 </div>
               </div>
             </article>
