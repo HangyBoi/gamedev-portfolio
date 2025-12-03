@@ -3,27 +3,35 @@ import CustomCursor from './components/Cursor';
 import ConstellationBackground from './components/Constellation';
 import Navigation from './components/Navbar';
 import Projects from './sections/Projects';
-import { Layers, Gamepad2, Cpu, ArrowRight, Download, Mail, Linkedin, Github, Disc, Link as LinkIcon } from 'lucide-react';
+import { Layers, Gamepad2, Cpu, ArrowRight, Download, Mail, Linkedin, Github, Disc, Link as LinkIcon, MapPin } from 'lucide-react';
 
 // Hero Component (Internal for simplicity)
+// Updated Hero Component
 const Hero = () => (
   <section id="hero" className="h-screen w-full flex flex-col justify-center items-center relative px-6 z-10 overflow-hidden">
     <div className="max-w-7xl mx-auto text-center relative">
+
+      {/* Internship Badge */}
       <div className="inline-block px-5 py-2 border border-[#ff0055]/30 bg-[#ff0055]/10 rounded-full text-xs font-bold tracking-[0.2em] uppercase mb-8 text-[#ff0055] animate-pulse">
         Open for Internships 2026
       </div>
-      
-      <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-6 text-white leading-none">
-        TECHNICAL <br/>
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f3ff] to-[#0066ff]">ARTIST</span>
+
+      {/* Main Title: "GAMEPLAY ENGINEER" */}
+      <h1 className="text-5xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-6 text-white leading-none">
+        GAMEPLAY <br />
+        {/* Gradient on 'ENGINEER' to emphasize the technical root */}
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f3ff] to-[#0066ff]">ENGINEER</span>
       </h1>
-      
+
+      {/* Subtitle: The "Bridge" statement */}
       <p className="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 leading-relaxed mb-12 font-light">
-        Bridging the gap between <span className="text-white font-medium">Code</span> and <span className="text-white font-medium">Art</span>.
-        <br className="hidden md:block"/>
-        Specializing in procedural tools, shaders, VFX, and materials.
+        Building the systems that make art look good and run fast.
+        <br className="hidden md:block" />
+        <span className="text-white font-medium">C# & C++ Developer</span> specializing in
+        <span className="text-[#00f3ff]"> Technical Art</span>, <span className="text-[#ff0055]">Shaders</span>, and <span className="text-purple-500">Tools</span>.
       </p>
-      
+
+      {/* CTA Button */}
       <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
         <a href="#works" className="px-8 py-4 rounded-full bg-white text-black font-bold uppercase tracking-widest hover:bg-[#00f3ff] hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(0,243,255,0.5)] transition-all duration-300 flex items-center gap-2">
           Selected Works <ArrowRight size={18} />
@@ -31,6 +39,7 @@ const Hero = () => (
       </div>
     </div>
 
+    {/* Bouncing Arrow */}
     <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-gray-500 animate-bounce">
       <ArrowRight className="rotate-90" />
     </div>
@@ -51,19 +60,19 @@ const App = () => {
       <CustomCursor />
       <ConstellationBackground />
       <Navigation isScrolled={isScrolled} />
-      
+
       <Hero />
-      
+
       <section id="stack" className="py-32 px-6 border-t border-white/5 bg-transparent relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
-             <div>
-               <span className="text-[#00f3ff] font-mono text-xl mb-2 block">01.</span>
-               <h2 className="text-4xl md:text-5xl font-bold text-white">Technical Arsenal</h2>
-             </div>
-             <p className="text-gray-400 max-w-md text-right md:text-left">
-               Solving complex pipeline and rendering challenges.
-             </p>
+            <div>
+              <span className="text-[#00f3ff] font-mono text-xl mb-2 block">01.</span>
+              <h2 className="text-4xl md:text-5xl font-bold text-white">Technical Arsenal</h2>
+            </div>
+            <p className="text-gray-400 max-w-md text-right md:text-left">
+              Solving complex pipeline and rendering challenges.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -119,33 +128,40 @@ const App = () => {
       </section>
 
       <Projects />
-      
+
       <section id="about" className="py-32 bg-transparent border-t border-white/5 px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-left mb-16">
-             <span className="text-[#00f3ff] font-mono text-xl mb-2 block">03.</span>
-             <h2 className="text-4xl md:text-5xl font-bold text-white">About Me</h2>
+            <span className="text-[#00f3ff] font-mono text-xl mb-2 block">03.</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-white">About Me</h2>
           </div>
-          
+
           <div className="flex flex-col md:flex-row items-center gap-12">
             <figure className="w-64 h-64 flex-shrink-0 relative group">
-               <div className="absolute inset-0 border-2 border-[#00f3ff] rounded-2xl translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300"></div>
-               <img src="https://placehold.co/400x400/222/fff?text=Photo" alt="Nichita Cebotari Portrait" className="w-full h-full object-cover rounded-2xl relative z-10 grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl" />
+              <div className="absolute inset-0 border-2 border-[#00f3ff] rounded-2xl translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300"></div>
+              <img src="https://placehold.co/400x400/222/fff?text=Photo" alt="Nichita Cebotari Portrait" className="w-full h-full object-cover rounded-2xl relative z-10 grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl" />
             </figure>
 
             <article className="flex-1 text-center md:text-left">
-              <h3 className="text-2xl font-bold text-white mb-4">Nichita Cebotari</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Nikita Cebotari</h3>
+
+              {/* --- LOCATION ADDED HERE --- */}
+              <div className="flex items-center justify-center md:justify-start gap-2 text-gray-400 mb-6 font-mono text-sm">
+                <MapPin size={16} className="text-[#00f3ff]" />
+                <span>Enschede, Netherlands</span>
+              </div>
+
               <p className="text-lg text-gray-400 mb-8 leading-relaxed">
-                3rd Year Creative Media & Game Technology student. My focus is building robust tools for artists and optimizing rendering pipelines. 
+                3rd Year Creative Media & Game Technology student. My focus is building robust tools for artists and optimizing rendering pipelines.
                 I solve the technical challenges that allow art to run at 60fps.
-                <br/><br/>
+                <br /><br />
                 Currently seeking a <span className="text-[#00f3ff] font-semibold">Summer 2026 Internship</span> in Game Development.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                 <a href="/gamedev-portfolio/resume.pdf" className="px-8 py-3 rounded-full bg-[#ff0055] text-white font-bold uppercase tracking-widest hover:bg-[#d40047] hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,85,0.4)] transition-all duration-300 flex items-center justify-center gap-2">
-                   <Download size={18} /> Download Resume
-                 </a>
+                <a href="/gamedev-portfolio/resume.pdf" className="px-8 py-3 rounded-full bg-[#ff0055] text-white font-bold uppercase tracking-widest hover:bg-[#d40047] hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,85,0.4)] transition-all duration-300 flex items-center justify-center gap-2">
+                  <Download size={18} /> Download Resume
+                </a>
               </div>
             </article>
           </div>
