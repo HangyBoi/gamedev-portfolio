@@ -15,7 +15,7 @@ const Navigation = ({ isScrolled }) => {
              <img 
                src="/gamedev-portfolio/images/logo.png" 
                alt="4ibik Logo" 
-               className="h-8 w-auto object-contain invert brightness-0 filter" 
+               className="h-8 w-auto object-contain" 
                // NOTE: Your logo is black. 'invert' makes it white to match the dark theme.
                // If your logo is already white, remove 'invert brightness-0 filter'
              />
