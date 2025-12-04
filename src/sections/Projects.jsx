@@ -31,11 +31,11 @@ const Projects = () => {
   // Data
   const projects = [
     {
-id: 1,
+      id: 1,
       title: "Procedural Parisian Cityscape",
       category: "Tools",
       tags: ["Unity 6", "C#", "Voronoi", "Editor Tooling"],
-      image: "/gamedev-portfolio/images/procedural-paris/image1.webp",
+      image: "/gamedev-portfolio/images/procedural-paris/city-angle.webp",
       description: "One-click generation of organic, 18th-century city layouts using Voronoi Tessellation.",
       longDescription: "A sophisticated two-layer procedural generation system designed to move away from grid-based layouts. The tool utilizes Voronoi diagrams for organic street distribution and Sutherland-Hodgman clipping for lot subdivision. Features a non-destructive custom Editor workflow, allowing real-time vertex manipulation of building footprints with instant mesh regeneration for facades and watertight Mansard roofs.",
       details: {
@@ -62,8 +62,47 @@ id: 1,
       links: { source: "https://github.com/HangyBoi/Procedural-Paris", artstation: "#", wiki: "https://github.com/HangyBoi/Procedural-Paris/wiki" },
       status: "Released"
     },
+
     {
       id: 2,
+      title: "Slice of Post-Soviet Yard",
+      category: "Shaders",
+      tags: ["Unity 6", "HLSL", "URP", "Tech Art"],
+      image: "/gamedev-portfolio/images/post-soviet/bloodmoon.webp",
+      description: "A custom URP rendering pipeline engineering a reactive, PSX-style retro aesthetic.",
+      longDescription: "A deep dive into the Universal Render Pipeline (URP) to bridge the gap between engine logic and visual art. This project implements a custom 'Digital Lens' stack, utilizing Fullscreen Renderer Features to achieve a pixel-perfect PSX aesthetic (Dithering, Quantization). It features a reactive environment where foliage blends with terrain via Render Textures and water interacts with depth buffers.",
+      details: {
+        role: "Technical Artist",
+        time: "3 Weeks",
+        tools: "Unity 6 (URP), HLSL, Shader Graph"
+      },
+      responsibilities: [
+        "Engineered a modular Post-Processing stack (Pixelation, Dithering) using custom URP Renderer Features.",
+        "Implemented reactive foliage shaders using Render Textures for seamless terrain blending and wind simulation.",
+        "Solved critical pipeline sorting issues between volumetric fog and transparency injection points.",
+        "Wrote custom HLSL lighting functions wrapped in Shader Graph nodes for stylized specular highlights."
+      ],
+      gallery: [
+        { type: 'video', url: "/gamedev-portfolio/videos/post-soviet/car-in-river_compr.mp4" },
+        { type: 'image', url: "/gamedev-portfolio/images/post-soviet/river-car.webp", align: "bottom" },
+        { type: 'video', url: "/gamedev-portfolio/videos/post-soviet/day-night-yard_compr.mp4" },
+        { type: 'image', url: "/gamedev-portfolio/images/post-soviet/broken-fence.webp", align: "bottom" },
+        { type: 'video', url: "/gamedev-portfolio/videos/post-soviet/retro-stack-showcase_compr.mp4" },
+        { type: 'image', url: "/gamedev-portfolio/images/post-soviet/car.webp", align: "bottom" },
+        { type: 'video', url: "/gamedev-portfolio/videos/post-soviet/color-palette-showcase_compr.mp4" },
+        { type: 'image', url: "/gamedev-portfolio/images/post-soviet/bloodyard.webp", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/post-soviet/orto-blackview_compr.mp4" },
+      ],
+      links: {
+        source: "https://github.com/HangyBoi/Slice-of-Post-Soviet-Yard",
+        artstation: "https://www.artstation.com/artwork/eRZ9kP",
+        wiki: "https://github.com/HangyBoi/Slice-of-Post-Soviet-Yard/wiki"
+      },
+      status: "Released"
+    },
+
+    {
+      id: 3,
       title: "Dynamic Weather System",
       category: "VFX",
       tags: ["Unity", "VFX Graph", "Particles"],
@@ -84,28 +123,9 @@ id: 1,
       links: { source: "https://github.com/HangyBoi", artstation: "#", wiki: "#" },
       status: "Released"
     },
-    {
-      id: 3,
-      title: "Post-Soviet Shader Showcase",
-      category: "Shaders",
-      tags: ["Unity", "Shader Graph", "Rendering"],
-      image: "/gamedev-portfolio/images/post-soviet.jpg",
-      description: "Complex environmental shaders including stylized grass, water, and fog.",
-      longDescription: "My deep dive into the Universal Render Pipeline (URP). This project features a collection of custom shaders designed to capture the specific 'Post-Soviet' aesthetic, including a PSX-style Renderer Feature for that retro feel.",
-      details: {
-        role: "Shader Artist",
-        time: "3 Weeks",
-        tools: "Unity Shader Graph"
-      },
-      responsibilities: [
-        "Developed interactive foliage and water shaders.",
-        "Implemented a custom PSX Render Feature for retro aliasing.",
-        "Designed the level environment to showcase shader capabilities."
-      ],
-      gallery: [{ type: 'image', url: "/gamedev-portfolio/images/post-soviet.jpg" }],
-      links: { source: "https://github.com/HangyBoi", artstation: "#", wiki: "#" },
-      status: "Released"
-    },
+
+
+
     {
       id: 4,
       title: "Swamp Horror Game",
@@ -129,6 +149,7 @@ id: 1,
       links: { source: "https://github.com/HangyBoi", artstation: "#", wiki: "#" },
       status: "Released"
     },
+
     {
       id: 5,
       title: "Sci-Fi Shield & UE5 Study",
