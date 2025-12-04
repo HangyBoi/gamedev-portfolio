@@ -28,7 +28,7 @@ const Projects = () => {
     return 'bg-purple-500 text-white';
   };
 
-  // Data from your original portfolio
+  // Data
   const projects = [
     {
       id: 1,
@@ -53,7 +53,7 @@ const Projects = () => {
         { type: 'image', url: "/gamedev-portfolio/images/city-generator.webp" },
         { type: 'video', url: "/gamedev-portfolio/videos/City-Generator-Showcase_compr2.mp4" }
       ],
-      links: { source: "https://github.com/HangyBoi", artstation: "#", wiki: "https://github.com/HangyBoi/wiki" }, // Added dummy wiki link to test component
+      links: { source: "https://github.com/HangyBoi", artstation: "#", wiki: "https://github.com/HangyBoi/wiki" },
       status: "Released"
     },
     {
@@ -153,7 +153,7 @@ const Projects = () => {
 
   const filters = ['All', 'Unity', 'Unreal', 'Shaders', 'Tools'];
 
-  // --- MODAL NAVIGATION LOGIC ---
+  // Modal handlers
   const handleNextProject = () => {
     if (!selectedProject) return;
     const currentIndex = filteredProjects.findIndex(p => p.id === selectedProject.id);
@@ -169,10 +169,14 @@ const Projects = () => {
   };
 
   return (
-    // FIX 1: Added 'relative z-10' to ensure this section sits ON TOP of any fixed backgrounds/prompts
-    // Added a background color (bg-[#0a0a0a]) so transparent parts don't show elements behind it
-    <section id="works" className="relative z-10 py-32 bg-[#0a0a0a] border-t border-white/5">
-      {/* 1. RENDER MODAL IF PROJECT SELECTED */}
+    // --- THE FIX IS HERE ---
+    // 1. 'z-40': High enough to cover the 'Scroll for Details' text from the Hero section.
+    // 2. 'z-[100]': When selectedProject is true, we force this ENTIRE section above the Navbar (usually z-50).
+    <section 
+      id="works" 
+      className={`relative py-32 bg-[#0a0a0a] border-t border-white/5 transition-all ${selectedProject ? 'z-[100]' : 'z-40'}`}
+    >
+      
       {selectedProject && (
         <ProjectModal
           project={selectedProject}
@@ -231,7 +235,7 @@ const Projects = () => {
               onClick={() => setSelectedProject(project)}
               className="group relative bg-[#111] rounded-2xl overflow-hidden border border-white/10 flex flex-col transition-all duration-300 hover:border-[#00f3ff] hover:shadow-[0_0_40px_rgba(0,243,255,0.1)] w-full h-full cursor-pointer"
             >
-              {/* FIX 3: Changed h-56 to 'aspect-video' for 16:9 ratio. Added w-full. */}
+              {/* Aspect-video forces 16:9 ratio */}
               <figure className="relative w-full aspect-video overflow-hidden bg-gray-900 shrink-0 m-0">
                 <img 
                   src={project.image} 
@@ -239,7 +243,7 @@ const Projects = () => {
                   className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" 
                 />
                 
-                {/* FIX 3 (continued): Added gradient overlay to preserve the 'subtle shading' effect */}
+                {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80 pointer-events-none" />
 
                 {project.status && (
@@ -263,9 +267,8 @@ const Projects = () => {
                 <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#00f3ff] transition-colors">{project.title}</h3>
                 <p className="text-gray-400 text-xs leading-relaxed mb-6 flex-grow">{project.description}</p>
 
-                {/* --- UPDATED FOOTER --- */}
                 <div className="mt-auto pt-4 border-t border-white/5 flex justify-between items-center gap-4">
-                  {/* FIX 2: Restored 'Read Docs' component logic */}
+                  {/* Logic for "Read Docs" button */}
                   {project.links.wiki && project.links.wiki !== "#" ? (
                     <a 
                       href={project.links.wiki} 
@@ -273,13 +276,12 @@ const Projects = () => {
                       onClick={(e) => e.stopPropagation()}
                       className="text-xs font-bold uppercase tracking-widest text-amber-400 hover:text-amber-300 flex items-center gap-1 transition-colors"
                     >
-                      <FileText size={12} /> Read Docs
+                      <FileText size={12} /> Read Technical Deep Dive
                     </a>
                   ) : (
                     <span className="text-xs text-[#00f3ff] font-bold uppercase tracking-widest group-hover:underline">View Details +</span>
                   )}
 
-                  {/* Mini Icons Row */}
                   <div className="flex gap-2" onClick={(e) => e.stopPropagation()}>
                     {project.links.source && (
                       <a href={project.links.source} target="_blank" className="p-2 bg-[#222] hover:bg-white hover:text-black rounded-lg transition-colors" title="View Code">
@@ -290,12 +292,6 @@ const Projects = () => {
                       <a href={project.links.artstation} target="_blank" className="p-2 bg-[#222] hover:bg-[#13aff0] hover:text-white rounded-lg transition-colors" title="View ArtStation">
                         <ExternalLink size={14} />
                       </a>
-                    )}
-                    {/* Kept Wiki icon here too just in case you want both */}
-                    {project.links.wiki && (
-                       <a href={project.links.wiki} target="_blank" className="p-2 bg-[#222] hover:bg-[#00f3ff] hover:text-black rounded-lg transition-colors" title="Read Wiki">
-                         <FileText size={14} />
-                       </a>
                     )}
                   </div>
                 </div>
