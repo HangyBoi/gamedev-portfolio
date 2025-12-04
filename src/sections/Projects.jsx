@@ -57,8 +57,7 @@ const Projects = () => {
         { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/procedural-house.webp" },
         { type: 'video', url: "/gamedev-portfolio/videos/procedural-paris/Building-Manipulation-Showcase_compr.mp4" },
         { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/modular-assets.webp" },
-        { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/procedural-roof.webp" },
-
+        { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/procedural-roof.webp" }
       ],
       links: { source: "https://github.com/HangyBoi", artstation: "#", wiki: "https://github.com/HangyBoi/wiki" },
       status: "Released"
