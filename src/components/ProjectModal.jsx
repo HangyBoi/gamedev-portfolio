@@ -70,8 +70,9 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
             className="overflow-y-auto scrollbar-hide h-full"
         >
             {/* --- GALLERY SECTION --- */}
+            {/* UPDATED: Increased height to 50vh (mobile) and 60vh (desktop) */}
             <div 
-              className="relative h-[40vh] md:h-[50vh] w-full bg-black shrink-0 group"
+              className="relative h-[50vh] md:h-[60vh] w-full bg-black shrink-0 group"
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
@@ -90,6 +91,7 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
                          className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                        />
                     )}
+                    {/* Subtle shading maintained */}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent"></div>
                 </div>
               ) : (
@@ -98,27 +100,29 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
 
               {/* Dots */}
               {project.gallery && project.gallery.length > 1 && (
-                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                   {project.gallery.map((_, idx) => (
-                     <button
-                       key={idx}
-                       onClick={() => setCurrentSlide(idx)}
-                       className={`w-2 h-2 rounded-full transition-all ${idx === currentSlide ? 'bg-[#00f3ff] w-6' : 'bg-white/50 hover:bg-white'}`}
-                     />
-                   ))}
-                 </div>
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                    {project.gallery.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setCurrentSlide(idx)}
+                        className={`w-2 h-2 rounded-full transition-all ${idx === currentSlide ? 'bg-[#00f3ff] w-6' : 'bg-white/50 hover:bg-white'}`}
+                      />
+                    ))}
+                  </div>
               )}
             </div>
 
-            {/* --- INFO SECTION --- */}
-            <div className="p-8 md:p-12 space-y-8 relative">
-               
-               {/* Scroll Indicator (Fades out) */}
-               <div className={`absolute -top-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50 transition-opacity duration-500 pointer-events-none ${showScrollIndicator ? 'opacity-100' : 'opacity-0'}`}>
-                  <span className="text-[10px] uppercase tracking-widest">Scroll for Details</span>
-                  <ArrowDown className="animate-bounce" size={16} />
-               </div>
+            {/* --- SCROLL PROMPT (RELOCATED) --- */}
+            {/* Now sits physically between Gallery and Info. No overlap issues. */}
+            <div className={`w-full flex flex-col items-center justify-center py-6 bg-[#111] transition-opacity duration-500 ${showScrollIndicator ? 'opacity-100' : 'opacity-0'}`}>
+               <span className="text-[10px] uppercase tracking-widest text-white/50 mb-2">Scroll for Details</span>
+               <ArrowDown className="animate-bounce text-white/50" size={16} />
+            </div>
 
+            {/* --- INFO SECTION --- */}
+            {/* Removed top padding adjustment since Scroll Prompt is external now */}
+            <div className="px-8 md:px-12 pb-12 space-y-8 bg-[#111]">
+               
                <div>
                   <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">{project.title}</h2>
                   <div className="flex flex-wrap gap-3 mb-6">
