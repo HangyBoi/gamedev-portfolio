@@ -59,7 +59,7 @@ const Projects = () => {
         { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/modular-assets.webp" },
         { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/procedural-roof.webp", align: "bottom" }
       ],
-      links: { source: "https://github.com/HangyBoi/Procedural-Paris", artstation: "#", wiki: "https://github.com/HangyBoi/Procedural-Paris/wiki" },
+      links: { source: "https://github.com/HangyBoi/Procedural-Paris", wiki: "https://github.com/HangyBoi/Procedural-Paris/wiki" },
       status: "Released"
     },
 
@@ -103,6 +103,45 @@ const Projects = () => {
 
     {
       id: 3,
+      title: "Procedural Creature Animation",
+      category: "Unity",
+      tags: ["Unity 6", "IK", "Procedural Animation", "C#"],
+      image: "/gamedev-portfolio/images/procedural-animation/gecko_skeleton_simple.webp",
+      description: "Real-time, terrain-adaptive locomotion systems for spider and lizard using Inverse Kinematics.",
+      longDescription: "A pure-code animation project exploring dynamic locomotion without keyframes. I engineered two distinct procedural architectures: an 8-legged spider utilizing a predictive tripod gait to navigate extreme topology (including ceilings), and a modular 'Gecko' controller driven by root motion, featuring independent head tracking and physics-based tail reactions.",
+      details: {
+        role: "Gameplay Engineer",
+        time: "4 Weeks",
+        tools: "Unity 6, Animation Rigging, C#"
+      },
+      responsibilities: [
+        "Architected a modular locomotion engine separating Gait Logic, Ground Detection, and IK Solving.",
+        "Implemented a robust Tripod Gait algorithm with predictive foot placement for uneven terrain.",
+        "Developed a reactive Tail Physics system using bone-chain reaction for natural secondary motion.",
+        "Created custom Editor Gizmos and Inspectors to visualize IK targets and limb constraints in real-time."
+      ],
+      gallery: [
+        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/bonehead-gecko-showcase_compr.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/spider-showcase_compr.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/gecko-constraint_compr.mp4" },
+        { type: 'image', url: "/gamedev-portfolio/images/procedural-animation/gecko_skeleton_simple.webp", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/gecko-control_compr.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/gecko-follow_compr.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/spider-upside_compr.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/spider-leg_compr.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/spider-leg-controller_compr.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/spider-constraints_compr.mp4" }
+      ],
+      links: {
+        source: "https://github.com/HangyBoi/Chunk-of-Procedural-Animation",
+        artstation: "#",
+        wiki: "https://github.com/HangyBoi/Chunk-of-Procedural-Animation/wiki"
+      },
+      status: "Prototype"
+    },
+
+    {
+      id: 4,
       title: "Dynamic Weather System",
       category: "VFX",
       tags: ["Unity", "VFX Graph", "Particles"],
@@ -124,10 +163,8 @@ const Projects = () => {
       status: "Released"
     },
 
-
-
     {
-      id: 4,
+      id: 5,
       title: "Swamp Horror Game",
       category: "Unity",
       tags: ["Unity", "AI Systems", "Architecture"],
@@ -151,7 +188,7 @@ const Projects = () => {
     },
 
     {
-      id: 5,
+      id: 6,
       title: "Sci-Fi Shield & UE5 Study",
       category: "Unreal",
       tags: ["UE5", "Niagara", "Materials"],
