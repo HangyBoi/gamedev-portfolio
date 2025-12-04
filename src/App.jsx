@@ -13,13 +13,13 @@ const Hero = () => (
 
       {/* Internship Badge - Updated Date */}
       <div className="inline-block px-5 py-2 border border-[#ff0055]/30 bg-[#ff0055]/10 rounded-full text-xs font-bold tracking-[0.2em] uppercase mb-8 text-[#ff0055] animate-pulse">
-        Open for Internships • Feb 2025
+        Open for Internships • Feb 2026
       </div>
 
       {/* Main Title */}
       <h1 className="text-5xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-6 text-white leading-none">
         GAMEPLAY <br />
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f3ff] to-[#0066ff]">ENGINEER</span>
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f3ff] to-[#0066ff]">PROGRAMMER</span>
       </h1>
 
       {/* Subtitle - New Colors (No Blue) */}
@@ -28,7 +28,7 @@ const Hero = () => (
         <br className="hidden md:block" />
         Specializing in <span className="text-[#00f3ff] font-medium">Technical Art</span>,
         <span className="text-emerald-400 font-medium"> Tools</span>,
-        <span className="text-[#ff0055] font-medium"> Shaders</span>, and
+        <span className="text-[#b145ff] font-medium"> Shaders</span>, and
         <span className="text-amber-400 font-medium"> VFX</span>.
       </p>
 
@@ -74,8 +74,8 @@ const App = () => {
             </p>
           </div>
 
-<div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
             {/* 1. UNITY ARCHITECT CARD (Emerald Glow) */}
             <article className="bg-[#111]/80 backdrop-blur-sm p-10 rounded-2xl border border-white/5 transition-all duration-300 hover:-translate-y-2 hover:border-emerald-500 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] group flex flex-col h-full">
               <div className="w-14 h-14 bg-[#1a1a1a] text-white rounded-xl flex items-center justify-center mb-8 transition-colors duration-300 border border-white/10 group-hover:bg-emerald-500 group-hover:text-black group-hover:border-transparent">
@@ -86,7 +86,7 @@ const App = () => {
                 My primary engine for 2+ years. Specializing in clean C# architecture, custom editor tooling, and procedural algorithms.
               </p>
               <ul className="space-y-3 mt-auto">
-                {['C# System Architecture', 'Editor Tools & Inspectors', 'Procedural Generation (WFC)', 'Multiplayer (Netcode)'].map(skill => (
+                {['C# System Architecture', 'Editor Tools & Inspectors', 'Procedural Generation', 'Multiplayer (Netcode)'].map(skill => (
                   <li key={skill} className="flex items-center gap-3 text-sm text-gray-300">
                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>{skill}
                   </li>
@@ -117,12 +117,12 @@ const App = () => {
               <div className="w-14 h-14 bg-[#1a1a1a] text-white rounded-xl flex items-center justify-center mb-8 transition-colors duration-300 border border-white/10 group-hover:bg-[#00f3ff] group-hover:text-black group-hover:border-transparent">
                 <Cpu size={28} />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">The Bridge</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Tech Art Bridge</h3>
               <p className="text-gray-400 leading-relaxed mb-6 text-sm">
-                Combining engineering logic with artistic vision. I ensure assets look great while maintaining 60fps performance.
+                Combining engineering logic with artistic vision. I ensure assets look great while maintaining high performance.
               </p>
               <ul className="space-y-3 mt-auto">
-                {['Render Pipelines (URP/HDRP)', 'Shader Graph & VFX Graph', 'Performance Profiling', 'Technical Animation (IK)'].map(skill => (
+                {['Shader Graph & VFX Graph', 'Procedural Animation (IK)', 'Render Pipelines (URP/HDRP)', 'Performance Profiling', ].map(skill => (
                   <li key={skill} className="flex items-center gap-3 text-sm text-gray-300">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#00f3ff]"></div>{skill}
                   </li>
@@ -149,7 +149,7 @@ const App = () => {
             </figure>
 
             <article className="flex-1 text-center md:text-left">
-              <h3 className="text-2xl font-bold text-white mb-4">Nikita Cebotari</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Nichita Cebotari</h3>
 
               <div className="flex items-center justify-center md:justify-start gap-2 text-gray-400 mb-6 font-mono text-sm">
                 <MapPin size={16} className="text-[#00f3ff]" />
@@ -161,7 +161,7 @@ const App = () => {
                 <span className="text-white font-medium"> C# Architecture</span> and <span className="text-white font-medium">Tool Development</span>,
                 I actively study rendering pipelines, shaders, and VFX to deliver products that feel as good as they run.
                 <br /><br />
-                Currently seeking an <span className="text-[#00f3ff] font-semibold">Internship starting February 2025</span>.
+                Currently seeking an <span className="text-[#00f3ff] font-semibold">Internship starting February 2026</span>.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
