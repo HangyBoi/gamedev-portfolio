@@ -144,7 +144,7 @@ const App = () => {
           <div className="flex flex-col md:flex-row items-center gap-12">
             <figure className="w-64 h-64 flex-shrink-0 relative group">
               <div className="absolute inset-0 border-2 border-[#00f3ff] rounded-2xl translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300"></div>
-              <img src="/gamedev-portfolio/images/photo.jpg" alt="Nikita Cebotari" className="w-full h-full object-cover rounded-2xl relative z-10 grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl" />
+              <img src="/gamedev-portfolio/images/pfp_color_compr.jpg" alt="Nichita Cebotari" className="w-full h-full object-cover rounded-2xl relative z-10 grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl" />
             </figure>
 
             <article className="flex-1 text-center md:text-left">
@@ -179,8 +179,8 @@ const App = () => {
             { href: "mailto:nik4eb@gmail.com", icon: <Mail size={20} />, label: "Email" },
             { href: "https://linkedin.com/in/nichita-cebotari-881979207/", icon: <Linkedin size={20} />, label: "LinkedIn" },
             { href: "https://github.com/HangyBoi", icon: <Github size={20} />, label: "GitHub" },
-            { href: "#", icon: <LinkIcon size={20} />, label: "Linktree" },
-            { href: "#", icon: <Disc size={20} />, label: "Discord" }
+            { href: "https://linktr.ee/nikkicheb", icon: <LinkIcon size={20} />, label: "Linktree" },
+            { href: "https://discord.com/users/406555739696529418", icon: <Disc size={20} />, label: "Discord" }
           ].map((link, i) => (
             <a key={i} href={link.href} target="_blank" rel="noreferrer" aria-label={link.label} className="text-gray-400 hover:text-[#00f3ff] transition-all transform hover:-translate-y-1 hover:scale-110">
               {link.icon}

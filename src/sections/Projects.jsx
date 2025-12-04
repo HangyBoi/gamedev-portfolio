@@ -50,14 +50,14 @@ const Projects = () => {
         "Designed a modular tile prefab system."
       ],
       gallery: [
-        { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/city-angle.webp" },
+        { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/city-angle.webp", align: "top" },
         { type: 'video', url: "/gamedev-portfolio/videos/procedural-paris/City-Showcase_compr.mp4" },
         { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/voronoi-cells.webp" },
         { type: 'video', url: "/gamedev-portfolio/videos/procedural-paris/City-Generator-Showcase_compr.mp4" },
         { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/procedural-house.webp" },
         { type: 'video', url: "/gamedev-portfolio/videos/procedural-paris/Building-Manipulation-Showcase_compr.mp4" },
         { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/modular-assets.webp" },
-        { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/procedural-roof.webp" }
+        { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/procedural-roof.webp", align: "bottom" }
       ],
       links: { source: "https://github.com/HangyBoi", artstation: "#", wiki: "https://github.com/HangyBoi/wiki" },
       status: "Released"
