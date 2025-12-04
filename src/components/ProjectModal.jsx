@@ -25,7 +25,7 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
     if (isPaused || !project.gallery || project.gallery.length <= 1) return;
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % project.gallery.length);
-    }, 3000);
+    }, 70000);
     return () => clearInterval(timer);
   }, [isPaused, project, currentSlide]);
 
@@ -204,7 +204,7 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
                     </div>
                     <div className="relative z-10">
                       <h4 className="text-[#00f3ff] font-bold text-lg mb-2 flex items-center gap-2">
-                        <FileText size={20} /> Read Technical Deep Dive
+                        <FileText size={20} /> Read Wiki
                       </h4>
                       <p className="text-gray-400 text-sm max-w-md">
                         Detailed breakdown of the architecture, algorithms, and performance challenges solved during development.
