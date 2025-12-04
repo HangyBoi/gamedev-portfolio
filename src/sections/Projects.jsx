@@ -51,6 +51,7 @@ const Projects = () => {
       ],
       gallery: [
         { type: 'image', url: "/gamedev-portfolio/images/city-generator.webp" },
+        { type: 'video', url: "/gamedev-portfolio/videos/CityGeneratorShowcase.gif" }
         // Example of adding more slides (use real paths):
         // { type: 'image', url: "/gamedev-portfolio/images/city-wireframe.jpg" },
         // { type: 'video', url: "/gamedev-portfolio/videos/city-demo.mp4" }
