@@ -6,12 +6,11 @@ import Projects from './sections/Projects';
 import { Layers, Gamepad2, Cpu, ArrowRight, Download, Mail, Linkedin, Github, Disc, Link as LinkIcon, MapPin } from 'lucide-react';
 
 // Hero Component (Internal for simplicity)
-// Updated Hero Component
 const Hero = () => (
   <section id="hero" className="h-screen w-full flex flex-col justify-center items-center relative px-6 z-10 overflow-hidden">
     <div className="max-w-7xl mx-auto text-center relative">
 
-      {/* Internship Badge - Updated Date */}
+      {/* Internship Badge*/}
       <div className="inline-block px-5 py-2 border border-[#ff0055]/30 bg-[#ff0055]/10 rounded-full text-xs font-bold tracking-[0.2em] uppercase mb-8 text-[#ff0055] animate-pulse">
         Open for Internships • Feb 2026
       </div>
@@ -22,11 +21,11 @@ const Hero = () => (
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f3ff] to-[#0066ff]">PROGRAMMER</span>
       </h1>
 
-      {/* Subtitle - New Colors (No Blue) */}
+      {/* Subtitle - New Colors*/}
       <p className="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 leading-relaxed mb-12 font-light">
         Bridging the gap between Code and Art.
         <br className="hidden md:block" />
-        Specializing in <span className="text-[#00f3ff] font-medium">Technical Art</span>,
+        Specializing in <span className="text-[#ff0055] font-medium">Technical Art</span>,
         <span className="text-emerald-400 font-medium"> Tools</span>,
         <span className="text-[#b145ff] font-medium"> Shaders</span>, and
         <span className="text-amber-400 font-medium"> VFX</span>.

@@ -34,9 +34,9 @@ const Projects = () => {
       id: 1,
       title: "Procedural City Generator",
       category: "Tools",
-      tags: ["Unity", "C#", "WFC Algorithm"],
-      image: "/gamedev-portfolio/images/city-generator.jpg", // <--- UPDATE THIS FILE
-      description: "Editor Utility Widget for quickly laying out city blocks using WFC.",
+      tags: ["Unity", "C#", "Voronoi Tessellation"],
+      image: "/gamedev-portfolio/images/city-generator.webp", // <--- UPDATE THIS FILE
+      description: "Editor Utility Tool for quickly laying out city blocks using .",
       longDescription: "My magnum opus of procedural generation. A sophisticated tool utilizing the Wave Function Collapse algorithm to generate infinite, logical city layouts. It features a custom editor window, constraint solving for roads and buildings, and optimized mesh combination for runtime performance.",
       details: { 
         role: "Tool Programmer", 
@@ -50,7 +50,7 @@ const Projects = () => {
         "Designed a modular tile prefab system."
       ],
       gallery: [
-        { type: 'image', url: "/gamedev-portfolio/images/city-generator.jpg" },
+        { type: 'image', url: "/gamedev-portfolio/images/city-generator.webp" },
         // Example of adding more slides (use real paths):
         // { type: 'image', url: "/gamedev-portfolio/images/city-wireframe.jpg" },
         // { type: 'video', url: "/gamedev-portfolio/videos/city-demo.mp4" }
