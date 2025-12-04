@@ -31,35 +31,35 @@ const Projects = () => {
   // Data
   const projects = [
     {
-      id: 1,
-      title: "Procedural City Generator",
+id: 1,
+      title: "Procedural Parisian Cityscape",
       category: "Tools",
-      tags: ["Unity", "C#", "Voronoi Tessellation"],
-      image: "/gamedev-portfolio/images/procedural-paris/city-angle.webp",
-      description: "Editor Utility Tool for quickly laying out city blocks using .",
-      longDescription: "My magnum opus of procedural generation. A sophisticated tool utilizing the Wave Function Collapse algorithm to generate infinite, logical city layouts. It features a custom editor window, constraint solving for roads and buildings, and optimized mesh combination for runtime performance.",
+      tags: ["Unity 6", "C#", "Voronoi", "Editor Tooling"],
+      image: "/gamedev-portfolio/images/procedural-paris/image1.webp",
+      description: "One-click generation of organic, 18th-century city layouts using Voronoi Tessellation.",
+      longDescription: "A sophisticated two-layer procedural generation system designed to move away from grid-based layouts. The tool utilizes Voronoi diagrams for organic street distribution and Sutherland-Hodgman clipping for lot subdivision. Features a non-destructive custom Editor workflow, allowing real-time vertex manipulation of building footprints with instant mesh regeneration for facades and watertight Mansard roofs.",
       details: {
-        role: "Tool Programmer",
-        time: "4 Weeks",
-        tools: "Unity, Odin Inspector"
+        role: "Tooling Engineer & Tech Art",
+        time: "4 weeks",
+        tools: "Unity 6, C#, Shader Graph"
       },
       responsibilities: [
-        "Implemented Wave Function Collapse with backtracking.",
-        "Created a custom Editor Window for seed management.",
-        "Optimized mesh combining for runtime performance.",
-        "Designed a modular tile prefab system."
+        "Engineered the 'City Planner' algorithm using Voronoi diagrams and Sutherland-Hodgman clipping.",
+        "Developed a custom Editor interface with scene-view handles for non-destructive, real-time building manipulation.",
+        "Implemented procedural mesh generation logic to create watertight Mansard roofs on arbitrary N-gon shapes.",
+        "Optimized rendering via Static Batching and GPU Instancing for high-density scenes."
       ],
       gallery: [
         { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/city-angle.webp", align: "top" },
         { type: 'video', url: "/gamedev-portfolio/videos/procedural-paris/City-Showcase_compr.mp4" },
-        { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/voronoi-cells.webp" },
+        { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/voronoi-cells.webp", align: "top" },
         { type: 'video', url: "/gamedev-portfolio/videos/procedural-paris/City-Generator-Showcase_compr.mp4" },
         { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/procedural-house.webp" },
         { type: 'video', url: "/gamedev-portfolio/videos/procedural-paris/Building-Manipulation-Showcase_compr.mp4" },
         { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/modular-assets.webp" },
         { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/procedural-roof.webp", align: "bottom" }
       ],
-      links: { source: "https://github.com/HangyBoi", artstation: "#", wiki: "https://github.com/HangyBoi/wiki" },
+      links: { source: "https://github.com/HangyBoi/Procedural-Paris", artstation: "#", wiki: "https://github.com/HangyBoi/Procedural-Paris/wiki" },
       status: "Released"
     },
     {
