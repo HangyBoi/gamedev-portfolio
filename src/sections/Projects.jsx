@@ -16,9 +16,22 @@ const Projects = () => {
 
   const getTagColor = (tag) => {
     const lower = tag.toLowerCase();
-    if (lower.includes('unity') || lower.includes('c#')) return 'text-cyan-400 border-cyan-400 bg-cyan-950/30';
-    if (lower.includes('unreal') || lower.includes('ue5')) return 'text-pink-500 border-pink-500 bg-pink-950/30';
-    if (lower.includes('hlsl') || lower.includes('shader')) return 'text-purple-400 border-purple-400 bg-purple-900/30';
+    // Core Engine (Cyan)
+    if (lower.includes('unity') || lower.includes('c#'))
+      return 'text-cyan-400 border-cyan-400 bg-cyan-950/30';
+    // Unreal (Pink)
+    if (lower.includes('unreal') || lower.includes('ue5'))
+      return 'text-pink-500 border-pink-500 bg-pink-950/30';
+    // Shaders & Tech Art (Purple)
+    if (lower.includes('hlsl') || lower.includes('shader') || lower.includes('tech art'))
+      return 'text-purple-400 border-purple-400 bg-purple-900/30';
+    // VFX (Orange/Fire)
+    if (lower.includes('vfx') || lower.includes('particle'))
+      return 'text-orange-400 border-orange-400 bg-orange-950/30';
+    // Animation & IK (Lime/Green)
+    if (lower.includes('ik') || lower.includes('animation') || lower.includes('rigging'))
+      return 'text-lime-400 border-lime-400 bg-lime-950/30';
+    // Default / Tools (Amber)
     return 'text-amber-400 border-amber-400 bg-amber-900/30';
   };
 
@@ -34,7 +47,7 @@ const Projects = () => {
       id: 1,
       title: "Procedural Parisian Cityscape",
       category: "Tools",
-      tags: ["Unity 6", "C#", "Voronoi", "Editor Tooling"],
+      tags: ["Unity 6", "C#", "Voronoi", "Editor Tooling", "HDRP"],
       image: "/gamedev-portfolio/images/procedural-paris/city-angle.webp",
       description: "One-click generation of organic, 18th-century city layouts using Voronoi Tessellation.",
       longDescription: "A sophisticated two-layer procedural generation system designed to move away from grid-based layouts. The tool utilizes Voronoi diagrams for organic street distribution and Sutherland-Hodgman clipping for lot subdivision. Features a non-destructive custom Editor workflow, allowing real-time vertex manipulation of building footprints with instant mesh regeneration for facades and watertight Mansard roofs.",
@@ -107,8 +120,8 @@ const Projects = () => {
     {
       id: 3,
       title: "Procedural Creature Animation",
-      category: "Unity",
-      tags: ["Unity 6", "IK", "Procedural Animation", "C#"],
+      category: "IK",
+      tags: ["Unity 6", "C#", "IK", "Procedural Animation", "URP"],
       image: "/gamedev-portfolio/images/procedural-animation/gecko_skeleton_simple.webp",
       description: "Real-time, terrain-adaptive locomotion systems for spider and lizard using Inverse Kinematics.",
       longDescription: "A pure-code animation project exploring dynamic locomotion without keyframes. I engineered two distinct procedural architectures: an 8-legged spider utilizing a predictive tripod gait to navigate extreme topology (including ceilings), and a modular 'Gecko' controller driven by root motion, featuring independent head tracking and physics-based tail reactions.",
@@ -146,7 +159,7 @@ const Projects = () => {
       id: 4,
       title: "Dynamic Weather System",
       category: "VFX",
-      tags: ["Unity, VFX Graph", "Technical Art", "Tools", "Shaders"],
+      tags: ["Unity 6", "VFX Graph", "Shaders", "Tech Art", "URP"],
       image: "/gamedev-portfolio/images/dynamic-weather/tornado-main.webp",
       description: "A centralized weather controller driving stylized tornado and atmospheric effects via VFX Graph.",
       longDescription: "A comprehensive technical art project focusing on system cohesion and tool design. The core of the project is the 'Weather Orchestrator,' a central C# controller that manipulates thousands of particle properties in real-time via a single 'Storm Intensity' float. It drives a multi-layered stylized tornado, GPU-accelerated rain, and directional wind trails with some lightning effects.",
@@ -229,7 +242,7 @@ const Projects = () => {
     ? projects
     : projects.filter(p => p.category === activeFilter || p.tags.includes(activeFilter));
 
-  const filters = ['All', 'Unity', 'Unreal', 'Shaders', 'Tools'];
+  const filters = ['All', 'Unity', 'Unreal', 'Game', 'Tech Art', 'Shaders', 'VFX', 'IK', 'Tools'];
 
   // Modal handlers
   const handleNextProject = () => {
