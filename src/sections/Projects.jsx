@@ -47,7 +47,7 @@ const Projects = () => {
       id: 1,
       title: "Procedural Parisian Cityscape",
       category: "Tools",
-      tags: ["Unity 6", "C#", "Voronoi", "Editor Tooling", "HDRP"],
+      tags: ["Unity 6", "C#", "Voronoi", "Editor Tooling", "Tech Art", "HDRP"],
       image: "/gamedev-portfolio/images/procedural-paris/city-angle.webp",
       description: "One-click generation of organic, 18th-century city layouts using Voronoi Tessellation.",
       longDescription: "A sophisticated two-layer procedural generation system designed to move away from grid-based layouts. The tool utilizes Voronoi diagrams for organic street distribution and Sutherland-Hodgman clipping for lot subdivision. Features a non-destructive custom Editor workflow, allowing real-time vertex manipulation of building footprints with instant mesh regeneration for facades and watertight Mansard roofs.",
@@ -121,7 +121,7 @@ const Projects = () => {
       id: 3,
       title: "Procedural Creature Animation",
       category: "IK",
-      tags: ["Unity 6", "C#", "IK", "Procedural Animation", "URP"],
+      tags: ["Unity 6", "C#", "IK", "Procedural Animation", "Tech Art", "URP"],
       image: "/gamedev-portfolio/images/procedural-animation/gecko_skeleton_simple.webp",
       description: "Real-time, terrain-adaptive locomotion systems for spider and lizard using Inverse Kinematics.",
       longDescription: "A pure-code animation project exploring dynamic locomotion without keyframes. I engineered two distinct procedural architectures: an 8-legged spider utilizing a predictive tripod gait to navigate extreme topology (including ceilings), and a modular 'Gecko' controller driven by root motion, featuring independent head tracking and physics-based tail reactions.",
@@ -192,25 +192,36 @@ const Projects = () => {
 
     {
       id: 5,
-      title: "Swamp Horror Game",
+      title: "The Tale of Aamsveen",
       category: "Unity",
-      tags: ["Unity", "AI Systems", "Architecture"],
-      image: "/gamedev-portfolio/images/swamp-horror.jpg",
-      description: "Complex survival horror featuring advanced AI and cinematics.",
-      longDescription: "A large-scale group project completed in 9 weeks. I served as the Lead Engineer, architecting the interaction systems and the complex AI for the stalking creatures. The game features cutscenes, an inventory system, and sound-reactive enemies.",
+      tags: ["Unity HDRP", "AI Architecture", "Team Lead"],
+      image: "/gamedev-portfolio/images/aamsveen/gameplay-still.jpg",
+      description: "Lead Engineer for a client-based atmospheric horror game featuring complex FSM AI and physics interactions.", 
+      longDescription: "An atmospheric horror experience based on Dutch folklore. A client-directed academic project developed under strict weekly Agile sprints. We presented progress to stakeholders weekly, iterating rapidly based on feedback. As the Lead Architectural Engineer, I established the codebase structure and managed the Git pipeline for the team. My primary technical contribution was the 'Thimble Hunter' AI - a complex Finite State Machine featuring volumetric line-of-sight, auditory detection, and dynamic animation blending, alongside a physics-based lantern interaction system.",
       details: {
-        role: "Lead Engineer",
-        time: "9 Weeks",
-        tools: "Unity, C#"
+        role: "Lead Engineer & AI Progr.",
+        time: "Client Project - 9 weeks",
+        tools: "Unity HDRP, C#, FMOD"
       },
       responsibilities: [
-        "Architected the AI state machine for stalking enemies.",
-        "Implemented the Interaction and Inventory systems.",
-        "Integrated cinematics and animation events.",
-        "Managed Git version control for the team."
+        "Led technical development in a client-based environment, managing weekly deliverables and stakeholder feedback loops.",
+        "Architected the 'Thimble Hunter' AI using a Finite State Machine with Volumetric Line-of-Sight and auditory sensors.",
+        "Co-developed a physics-driven Lantern system with fuel logic, dynamic sway, and FMOD audio integration.",
+        "Managed the Git flow (branching strategy, merge reviews), code reviews, and refactoring for modularity.",
+        "Implemented Entity-Player-Environment interactions and complex detection system, including water submersion and grass hiding features."
       ],
-      gallery: [{ type: 'image', url: "/gamedev-portfolio/images/swamp-horror.jpg" }],
-      links: { source: "https://github.com/HangyBoi", artstation: "#", wiki: "#" },
+      gallery: [
+        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/swamp-atmosphere.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/ai-vision-debug.mp4" }, // Crucial: Shows the "Brain" of the AI
+        { type: 'image', url: "/gamedev-portfolio/images/aamsveen/ai-architecture.jpg", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/animation-states.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/ai-awareness.mp4" }
+      ],
+      links: {
+        source: "https://github.com/miminashca/Project-Show-Off",
+        artstation: "https://m-nechepurenko.itch.io/tales-of-aamsveen",
+        wiki: "#"
+      },
       status: "Released"
     },
 
