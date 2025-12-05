@@ -17,7 +17,7 @@ const Projects = () => {
   const getTagColor = (tag) => {
     const lower = tag.toLowerCase();
     // Core Engine (Cyan)
-    if (lower.includes('unity') || lower.includes('unity 6') || lower.includes('c#') )
+    if (lower.includes('unity') || lower.includes('unity 6') || lower.includes('c#'))
       return 'text-cyan-400 border-cyan-400 bg-cyan-950/30';
     // Unreal (Pink)
     if (lower.includes('unreal') || lower.includes('unreal engine') || lower.includes('ue5'))
@@ -240,7 +240,10 @@ const Projects = () => {
 
   const filteredProjects = activeFilter === 'All'
     ? projects
-    : projects.filter(p => p.category === activeFilter || p.tags.includes(activeFilter));
+    : projects.filter(project =>
+      project.category === activeFilter ||
+      project.tags.some(tag => tag.toLowerCase().includes(activeFilter.toLowerCase()))
+    );
 
   const filters = ['All', 'Unity', 'Unreal', 'Game', 'Tech Art', 'Shaders', 'VFX', 'IK', 'Tools'];
 
