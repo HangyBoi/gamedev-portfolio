@@ -17,16 +17,16 @@ const Projects = () => {
   const getTagColor = (tag) => {
     const lower = tag.toLowerCase();
     // Core Engine (Cyan)
-    if (lower.includes('unity') || lower.includes('c#'))
+    if (lower.includes('unity') || lower.includes('unity 6') || lower.includes('c#') )
       return 'text-cyan-400 border-cyan-400 bg-cyan-950/30';
     // Unreal (Pink)
-    if (lower.includes('unreal') || lower.includes('ue5'))
+    if (lower.includes('unreal') || lower.includes('unreal engine') || lower.includes('ue5'))
       return 'text-pink-500 border-pink-500 bg-pink-950/30';
     // Shaders & Tech Art (Purple)
-    if (lower.includes('hlsl') || lower.includes('shader') || lower.includes('tech art'))
+    if (lower.includes('hlsl') || lower.includes('shader') || lower.includes('shader graph') || lower.includes('tech art'))
       return 'text-purple-400 border-purple-400 bg-purple-900/30';
     // VFX (Orange/Fire)
-    if (lower.includes('vfx') || lower.includes('particle'))
+    if (lower.includes('vfx') || lower.includes('vfx graph') || lower.includes('particle'))
       return 'text-orange-400 border-orange-400 bg-orange-950/30';
     // Animation & IK (Lime/Green)
     if (lower.includes('ik') || lower.includes('animation') || lower.includes('rigging'))
