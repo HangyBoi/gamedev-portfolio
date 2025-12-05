@@ -59,7 +59,10 @@ const Projects = () => {
         { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/modular-assets.webp" },
         { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/procedural-roof.webp", align: "bottom" }
       ],
-      links: { source: "https://github.com/HangyBoi/Procedural-Paris", wiki: "https://github.com/HangyBoi/Procedural-Paris/wiki" },
+      links: {
+        source: "https://github.com/HangyBoi/Procedural-Paris",
+        wiki: "https://github.com/HangyBoi/Procedural-Paris/wiki"
+      },
       status: "Released"
     },
 
@@ -134,7 +137,6 @@ const Projects = () => {
       ],
       links: {
         source: "https://github.com/HangyBoi/Chunk-of-Procedural-Animation",
-        artstation: "#",
         wiki: "https://github.com/HangyBoi/Chunk-of-Procedural-Animation/wiki"
       },
       status: "Prototype"
@@ -144,23 +146,35 @@ const Projects = () => {
       id: 4,
       title: "Dynamic Weather System",
       category: "VFX",
-      tags: ["Unity", "VFX Graph", "Particles"],
-      image: "/gamedev-portfolio/images/weather.jpg",
-      description: "Complete weather system with tornado, lightning, and rain effects.",
-      longDescription: "A visual-heavy technical art project focusing on environmental immersion. I utilized Unity's VFX Graph to create a performant, reactive weather system that transitions seamlessly between states (Sunny, Rain, Storm, Tornado).",
+      tags: ["Unity, VFX Graph", "Technical Art", "Tools", "Shaders"],
+      image: "/gamedev-portfolio/images/dynamic-weather/tornado-main.webp",
+      description: "A centralized weather controller driving stylized tornado and atmospheric effects via VFX Graph.",
+      longDescription: "A comprehensive technical art project focusing on system cohesion and tool design. The core of the project is the 'Weather Orchestrator,' a central C# controller that manipulates thousands of particle properties in real-time via a single 'Storm Intensity' float. It drives a multi-layered stylized tornado, GPU-accelerated rain, and directional wind trails with some lightning effects.",
       details: {
         role: "Technical Artist",
-        time: "3 Weeks",
-        tools: "Unity VFX Graph"
+        time: "2 Weeks",
+        tools: "Unity VFX Graph, Blender, C#"
       },
       responsibilities: [
-        "Simulated tornado physics using vector fields in VFX Graph.",
-        "Created lighting-reactive rain and dust particles.",
-        "Managed state transitions for seamless weather changes."
+        "Designed a centralized 'Weather Orchestrator' script to interpolate global atmospheric states (calm to storm) via a single float.",
+        "Created a multi-layered Tornado effect combining custom Blender meshes with VFX Graph vortex logic.",
+        "Implemented high-performance, GPU-accelerated rain, lightnings and wind trails using Leader-Follower particle architectures.",
+        "Modeled custom mesh emitters in Blender to control particle flow and structural definition."
       ],
-      gallery: [{ type: 'image', url: "/gamedev-portfolio/images/weather.jpg" }],
-      links: { source: "https://github.com/HangyBoi", artstation: "#", wiki: "#" },
-      status: "Released"
+      gallery: [
+        { type: 'video', url: "/gamedev-portfolio/videos/dynamic-weather/tornado-slider_compr.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/dynamic-weather/tornado-main-showcase_compr.mp4" },
+        { type: 'image', url: "/gamedev-portfolio/images/dynamic-weather/tornado-main.webp", align: "top" },
+        { type: 'video', url: "/gamedev-portfolio/videos/dynamic-weather/tornado-angle_compr.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/dynamic-weather/rain-showcase_compr.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/dynamic-weather/wind-types_compr.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/dynamic-weather/lightning-showcase_compr.mp4" }
+      ],
+      links: {
+        source: "https://github.com/HangyBoi/Piece-of-Dynamic-Weather",
+        wiki: "https://github.com/HangyBoi/Piece-of-Dynamic-Weather/wiki"
+      },
+      status: "Prototype"
     },
 
     {
