@@ -114,6 +114,8 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
                       'object-center';
 
                   if (slide.type === 'video') {
+                    // Default to true. Only false if explicitly set to false.
+                    const isMuted = slide.muted !== false;
                     return (
                       <video
                         // Key ensures React remounts the video element when slide changes
