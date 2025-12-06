@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { X, Github, ExternalLink, FileText, ChevronLeft, ChevronRight, Clock, User, Wrench, ArrowDown } from 'lucide-react';
+import { X, Github, ExternalLink, FileText, ChevronLeft, ChevronRight, Clock, User, Wrench, ArrowDown, Gamepad2 } from 'lucide-react';
 
 const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -262,13 +262,24 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
               <div className="space-y-6">
                 <h3 className="text-xl font-bold text-white">Project Links</h3>
                 <div className="flex flex-col gap-3">
+
+                  {/* Source Code */}
                   {project.links.source && (
-                    <a href={project.links.source} target="_blank" className="flex items-center gap-3 px-6 py-4 bg-[#222] hover:bg-white hover:text-black rounded-xl transition-all group font-bold">
+                    <a href={project.links.source} target="_blank" rel="noreferrer" className="flex items-center gap-3 px-6 py-4 bg-[#222] hover:bg-white hover:text-black rounded-xl transition-all group font-bold">
                       <Github size={20} /> Source Code
                     </a>
                   )}
+
+                  {/* NEW: Itch.io Link (Red Hover) */}
+                  {project.links.itch && (
+                    <a href={project.links.itch} target="_blank" rel="noreferrer" className="flex items-center gap-3 px-6 py-4 bg-[#222] hover:bg-[#fa5c5c] hover:text-white rounded-xl transition-all group font-bold">
+                      <Gamepad2 size={20} /> Play on Itch.io
+                    </a>
+                  )}
+
+                  {/* ArtStation Link (Blue Hover) */}
                   {project.links.artstation && (
-                    <a href={project.links.artstation} target="_blank" className="flex items-center gap-3 px-6 py-4 bg-[#222] hover:bg-[#13aff0] hover:text-white rounded-xl transition-all group font-bold">
+                    <a href={project.links.artstation} target="_blank" rel="noreferrer" className="flex items-center gap-3 px-6 py-4 bg-[#222] hover:bg-[#13aff0] hover:text-white rounded-xl transition-all group font-bold">
                       <ExternalLink size={20} /> ArtStation
                     </a>
                   )}

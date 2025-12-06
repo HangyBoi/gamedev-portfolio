@@ -195,8 +195,8 @@ const Projects = () => {
       title: "The Tale of Aamsveen",
       category: "Unity",
       tags: ["Unity HDRP", "AI Architecture", "Team Lead"],
-      image: "/gamedev-portfolio/images/aamsveen/gameplay-still.jpg",
-      description: "Lead Engineer for a client-based atmospheric horror game featuring complex FSM AI and physics interactions.", 
+      image: "/gamedev-portfolio/images/aamsveen/title-still.webp",
+      description: "Lead Engineer for a client-based atmospheric horror game featuring complex FSM AI and physics interactions.",
       longDescription: "An atmospheric horror experience based on Dutch folklore. A client-directed academic project developed under strict weekly Agile sprints. We presented progress to stakeholders weekly, iterating rapidly based on feedback. As the Lead Architectural Engineer, I established the codebase structure and managed the Git pipeline for the team. My primary technical contribution was the 'Thimble Hunter' AI - a complex Finite State Machine featuring volumetric line-of-sight, auditory detection, and dynamic animation blending, alongside a physics-based lantern interaction system.",
       details: {
         role: "Lead Engineer & AI Progr.",
@@ -211,15 +211,24 @@ const Projects = () => {
         "Implemented Entity-Player-Environment interactions and complex detection system, including water submersion and grass hiding features."
       ],
       gallery: [
-        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/swamp-atmosphere.mp4" },
-        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/ai-vision-debug.mp4" }, // Crucial: Shows the "Brain" of the AI
-        { type: 'image', url: "/gamedev-portfolio/images/aamsveen/ai-architecture.jpg", align: "center" },
-        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/animation-states.mp4" },
-        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/ai-awareness.mp4" }
+        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/start-screen.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/start-section.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/hunter-animcycles.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/hunter-blendanim_2.mp4" },
+        { type: 'image', url: "/gamedev-portfolio/images/aamsveen/hunter-ranges.webp", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/hunter-proto-awareness.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/hunter-proto-los.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/hunter-proto-supress.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/hunter-teleport.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/nixie-system.mp4" },
+        { type: 'image', url: "/gamedev-portfolio/images/aamsveen/nixie-zone.webp", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/lady-interact.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/lady-jumpscare.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/ending.mp4" },
       ],
       links: {
         source: "https://github.com/miminashca/Project-Show-Off",
-        artstation: "https://m-nechepurenko.itch.io/tales-of-aamsveen",
+        itch: "https://m-nechepurenko.itch.io/tales-of-aamsveen",
         wiki: "#"
       },
       status: "Released"
