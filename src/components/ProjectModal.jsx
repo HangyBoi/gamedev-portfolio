@@ -291,20 +291,16 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
   );
 };
 
-// --- NEW HELPER COMPONENT ---
 const VideoSlide = ({ url, className, isMuted, onEnded }) => {
   const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(isMuted); // If it's muted/autoplay, assume playing.
-  const [showOverlay, setShowOverlay] = useState(!isMuted); // Show overlay if sound is ON (not autoplaying)
+  const [isPlaying, setIsPlaying] = useState(isMuted); 
+  const [showOverlay, setShowOverlay] = useState(!isMuted);
 
-  const togglePlay = (e) => {
-    e.stopPropagation(); // Prevent modal from catching the click
-    if (!videoRef.current) return;
-
-    if (videoRef.current.paused) {
+  // Toggle Logic - Now only used by the Overlay
+  const handleOverlayClick = (e) => {
+    e.stopPropagation();
+    if (videoRef.current) {
       videoRef.current.play();
-    } else {
-      videoRef.current.pause();
     }
   };
 
@@ -319,7 +315,8 @@ const VideoSlide = ({ url, className, isMuted, onEnded }) => {
   };
 
   return (
-    <div className="relative w-full h-full group cursor-pointer" onClick={togglePlay}>
+    // FIX 3: Removed onClick={togglePlay} from this parent div to prevent double-toggling
+    <div className="relative w-full h-full group cursor-pointer">
       <video
         ref={videoRef}
         src={url}
@@ -327,30 +324,36 @@ const VideoSlide = ({ url, className, isMuted, onEnded }) => {
         autoPlay={isMuted}
         muted={isMuted}
         playsInline
-        controls={!isMuted} // Keep native controls available
+        controls={!isMuted}
         onEnded={onEnded}
         onPlay={handlePlay}
         onPause={handlePause}
       />
 
-      {/* CUSTOM OVERLAY: Shows if video is paused OR if it's strictly a 'Click to Play' video */}
+      {/* CUSTOM OVERLAY */}
       {showOverlay && (
-        <div className="absolute inset-0 flex items-center justify-center z-10 bg-black/30 backdrop-blur-[1px] group-hover:bg-black/40 transition-all">
+        <div 
+          onClick={handleOverlayClick} // FIX 3: Click listener is ONLY here now
+          className="absolute inset-0 flex flex-col items-center justify-center z-10 bg-black/30 backdrop-blur-[1px] group-hover:bg-black/40 transition-all"
+        >
+          {/* FIX 1: Centering the Icon */}
           <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-md border border-white/20 shadow-[0_0_30px_rgba(0,0,0,0.5)] group-hover:scale-110 transition-transform duration-300">
-            {/* The Play Icon */}
-            <Play fill="white" className="text-white ml-2" size={40} />
+             {/* Added 'ml-1' to push the triangle slightly right for visual balance */}
+             <Play fill="white" className="text-white ml-1" size={40} />
           </div>
-          <span className="absolute mt-28 text-sm font-bold tracking-widest uppercase text-white/80 drop-shadow-md">
+          
+          {/* FIX 2: Text is now naturally centered via Flexbox, no magic margins */}
+          <span className="mt-6 text-sm font-bold tracking-widest uppercase text-white/80 drop-shadow-md">
             Click to Play
           </span>
         </div>
       )}
-
-      {/* Optional: Mute Indicator icon in corner if it IS autoplaying */}
+      
+      {/* Mute Indicator (Only for Autoplay videos) */}
       {isMuted && isPlaying && (
-        <div className="absolute bottom-6 right-6 p-2 bg-black/50 rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
-          <Volume2 size={16} className="text-white/50 strike-through" />
-        </div>
+         <div className="absolute bottom-6 right-6 p-2 bg-black/50 rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
+            <Volume2 size={16} className="text-white/50" /> 
+         </div>
       )}
     </div>
   );
