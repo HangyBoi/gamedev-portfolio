@@ -118,15 +118,21 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
                     const isMuted = slide.muted !== false;
                     return (
                       <video
-                        // Key ensures React remounts the video element when slide changes
                         key={`video-${currentSlide}`}
                         src={slide.url}
                         className={`w-full h-full object-cover ${alignmentClass}`}
-                        autoPlay
-                        muted
+
+                        // 1. CONDITIONAL AUTOPLAY: Browsers block autoplay with sound. 
+                        // Only autoplay if muted. If sound is on, let user click play.
+                        autoPlay={isMuted}
+
+                        // 2. THE FIX: Pass the variable, don't just write 'muted'
+                        muted={isMuted}
+
+                        // 3. OPTIONAL: Add controls if sound is on, so user can actually start it
+                        controls={!isMuted}
+
                         playsInline
-                        // IMPORTANT: No 'loop' attribute.
-                        // When video ends, it triggers the next slide
                         onEnded={handleNextSlide}
                       />
                     );
