@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { X, Github, ExternalLink, FileText, ChevronLeft, ChevronRight, Clock, User, Wrench, ArrowDown, Gamepad2 } from 'lucide-react';
+import { X, Github, ExternalLink, FileText, ChevronLeft, ChevronRight, Clock, User, Wrench, ArrowDown, Gamepad2, Play, Volume2 } from 'lucide-react';
 
 const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -116,23 +116,13 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
                   if (slide.type === 'video') {
                     // Default to true. Only false if explicitly set to false.
                     const isMuted = slide.muted !== false;
+
                     return (
-                      <video
-                        key={`video-${currentSlide}`}
-                        src={slide.url}
+                      <VideoSlide
+                        key={`video-${currentSlide}`} // Key is crucial for resetting state on slide change
+                        url={slide.url}
                         className={`w-full h-full object-cover ${alignmentClass}`}
-
-                        // 1. CONDITIONAL AUTOPLAY: Browsers block autoplay with sound. 
-                        // Only autoplay if muted. If sound is on, let user click play.
-                        autoPlay={isMuted}
-
-                        // 2. THE FIX: Pass the variable, don't just write 'muted'
-                        muted={isMuted}
-
-                        // 3. OPTIONAL: Add controls if sound is on, so user can actually start it
-                        controls={!isMuted}
-
-                        playsInline
+                        isMuted={isMuted}
                         onEnded={handleNextSlide}
                       />
                     );
@@ -297,6 +287,71 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
           </div>
         </div>
       </div>
+    </div>
+  );
+};
+
+// --- NEW HELPER COMPONENT ---
+const VideoSlide = ({ url, className, isMuted, onEnded }) => {
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(isMuted); // If it's muted/autoplay, assume playing.
+  const [showOverlay, setShowOverlay] = useState(!isMuted); // Show overlay if sound is ON (not autoplaying)
+
+  const togglePlay = (e) => {
+    e.stopPropagation(); // Prevent modal from catching the click
+    if (!videoRef.current) return;
+
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+    } else {
+      videoRef.current.pause();
+    }
+  };
+
+  const handlePlay = () => {
+    setIsPlaying(true);
+    setShowOverlay(false);
+  };
+
+  const handlePause = () => {
+    setIsPlaying(false);
+    setShowOverlay(true);
+  };
+
+  return (
+    <div className="relative w-full h-full group cursor-pointer" onClick={togglePlay}>
+      <video
+        ref={videoRef}
+        src={url}
+        className={className}
+        autoPlay={isMuted}
+        muted={isMuted}
+        playsInline
+        controls={!isMuted} // Keep native controls available
+        onEnded={onEnded}
+        onPlay={handlePlay}
+        onPause={handlePause}
+      />
+
+      {/* CUSTOM OVERLAY: Shows if video is paused OR if it's strictly a 'Click to Play' video */}
+      {showOverlay && (
+        <div className="absolute inset-0 flex items-center justify-center z-10 bg-black/30 backdrop-blur-[1px] group-hover:bg-black/40 transition-all">
+          <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-md border border-white/20 shadow-[0_0_30px_rgba(0,0,0,0.5)] group-hover:scale-110 transition-transform duration-300">
+            {/* The Play Icon */}
+            <Play fill="white" className="text-white ml-2" size={40} />
+          </div>
+          <span className="absolute mt-28 text-sm font-bold tracking-widest uppercase text-white/80 drop-shadow-md">
+            Click to Play
+          </span>
+        </div>
+      )}
+
+      {/* Optional: Mute Indicator icon in corner if it IS autoplaying */}
+      {isMuted && isPlaying && (
+        <div className="absolute bottom-6 right-6 p-2 bg-black/50 rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
+          <Volume2 size={16} className="text-white/50 strike-through" />
+        </div>
+      )}
     </div>
   );
 };

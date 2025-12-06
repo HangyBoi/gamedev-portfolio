@@ -214,7 +214,7 @@ const Projects = () => {
         { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/start-section.mp4", muted: false, align: "bottom" },
         { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/clue-interact.mp4", muted: false },
         { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/hunter-interact_1.mp4", muted: false },
-        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/nixie-interact_alt.mp4", muted: false },
+        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/nixie-interact_alt.mp4" },
         { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/lady-interact.mp4", muted: false },
         { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/lady-jumpscare.mp4", muted: false },
         { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/ending.mp4", muted: false },
