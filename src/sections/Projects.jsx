@@ -211,8 +211,13 @@ const Projects = () => {
         "Implemented Entity-Player-Environment interactions and complex detection system, including water submersion and grass hiding features."
       ],
       gallery: [
-        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/start-screen.mp4" },
-        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/start-section.mp4", muted:false },
+        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/start-section.mp4", muted: false, align: "bottom" },
+        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/clue-interact.mp4", muted: false },
+        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/hunter-interact_1.mp4", muted: false },
+        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/nixie-interact_alt.mp4", muted: false },
+        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/lady-interact.mp4", muted: false },
+        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/lady-jumpscare.mp4", muted: false },
+        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/ending.mp4", muted: false },
         { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/hunter-animcycles.mp4" },
         { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/hunter-blendanim_2.mp4" },
         { type: 'image', url: "/gamedev-portfolio/images/aamsveen/hunter-ranges.webp", align: "center" },
@@ -220,11 +225,8 @@ const Projects = () => {
         { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/hunter-proto-los.mp4" },
         { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/hunter-proto-supress.mp4" },
         { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/hunter-teleport.mp4" },
-        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/nixie-system.mp4", muted:false },
+        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/nixie-system.mp4", },
         { type: 'image', url: "/gamedev-portfolio/images/aamsveen/nixie-zone.webp", align: "center" },
-        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/lady-interact.mp4", muted:false },
-        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/lady-jumpscare.mp4", muted:false },
-        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/ending.mp4", muted:false },
       ],
       links: {
         source: "https://github.com/miminashca/Project-Show-Off",
