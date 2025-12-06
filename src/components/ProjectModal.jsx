@@ -124,13 +124,13 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
 
                         // 1. CONDITIONAL AUTOPLAY: Browsers block autoplay with sound. 
                         // Only autoplay if muted. If sound is on, let user click play.
-                        autoPlay={isMuted}
+                        //autoPlay={isMuted}
 
                         // 2. THE FIX: Pass the variable, don't just write 'muted'
                         muted={isMuted}
 
                         // 3. OPTIONAL: Add controls if sound is on, so user can actually start it
-                        controls={!isMuted}
+                        //controls={!isMuted}
 
                         playsInline
                         onEnded={handleNextSlide}
