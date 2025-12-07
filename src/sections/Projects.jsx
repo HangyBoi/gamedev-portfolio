@@ -47,7 +47,7 @@ const Projects = () => {
       id: 1,
       title: "Procedural Parisian Cityscape",
       category: "Tools",
-      tags: ["Unity 6", "C#", "Voronoi", "Editor Tooling", "Tech Art", "HDRP"],
+      tags: ["Unity 6", "C#", "PCG", "Editor Tooling", "Tech Art", "HDRP"],
       image: "/gamedev-portfolio/images/procedural-paris/city-angle.webp",
       description: "One-click generation of organic, 18th-century city layouts using Voronoi Tessellation.",
       longDescription: "A sophisticated two-layer procedural generation system designed to move away from grid-based layouts. The tool utilizes Voronoi diagrams for organic street distribution and Sutherland-Hodgman clipping for lot subdivision. Features a non-destructive custom Editor workflow, allowing real-time vertex manipulation of building footprints with instant mesh regeneration for facades and watertight Mansard roofs.",
@@ -83,7 +83,7 @@ const Projects = () => {
       id: 2,
       title: "Slice of Post-Soviet Yard",
       category: "Shaders",
-      tags: ["Unity 6", "HLSL", "URP", "Tech Art"],
+      tags: ["Unity 6", "Shaders", "HLSL", "Tech Art", "URP"],
       image: "/gamedev-portfolio/images/post-soviet/bloodmoon.webp",
       description: "A custom URP rendering pipeline engineering a reactive, PSX-style retro aesthetic.",
       longDescription: "A deep dive into the Universal Render Pipeline (URP) to bridge the gap between engine logic and visual art. This project implements a custom 'Digital Lens' stack, utilizing Fullscreen Renderer Features to achieve a pixel-perfect PSX aesthetic (Dithering, Quantization). It features a reactive environment where foliage blends with terrain via Render Textures and water interacts with depth buffers.",
@@ -159,7 +159,7 @@ const Projects = () => {
       id: 4,
       title: "Dynamic Weather System",
       category: "VFX",
-      tags: ["Unity 6", "VFX Graph", "Shaders", "Tech Art", "URP"],
+      tags: ["Unity 6", "VFXs", "Shaders", "Tech Art", "URP"],
       image: "/gamedev-portfolio/images/dynamic-weather/tornado-main.webp",
       description: "A centralized weather controller driving stylized tornado and atmospheric effects via VFX Graph.",
       longDescription: "A comprehensive technical art project focusing on system cohesion and tool design. The core of the project is the 'Weather Orchestrator,' a central C# controller that manipulates thousands of particle properties in real-time via a single 'Storm Intensity' float. It drives a multi-layered stylized tornado, GPU-accelerated rain, and directional wind trails with some lightning effects.",
@@ -194,13 +194,13 @@ const Projects = () => {
       id: 5,
       title: "The Tale of Aamsveen",
       category: "Unity",
-      tags: ["Unity HDRP", "AI Architecture", "Team Lead"],
+      tags: ["Unity", "Game", "Team Lead", "AI Framework", "HDRP"],
       image: "/gamedev-portfolio/images/aamsveen/title-still.webp",
       description: "Lead Engineer for a client-based atmospheric horror game featuring complex FSM AI and physics interactions.",
       longDescription: "An atmospheric horror experience based on Dutch folklore. A client-directed academic project developed under strict weekly Agile sprints. We presented progress to stakeholders weekly, iterating rapidly based on feedback. As the Lead Architectural Engineer, I established the codebase structure and managed the Git pipeline for the team. My primary technical contribution was the 'Thimble Hunter' AI - a complex Finite State Machine featuring volumetric line-of-sight, auditory detection, and dynamic animation blending, alongside a physics-based lantern interaction system.",
       details: {
         role: "Lead Engineer & AI Progr.",
-        time: "Client Project - 9 weeks",
+        time: "9 Weeks (Client)",
         tools: "Unity HDRP, C#, FMOD"
       },
       responsibilities: [
@@ -240,7 +240,7 @@ const Projects = () => {
       id: 6,
       title: "Red Veil Operations",
       category: "Unity",
-      tags: ["Unity", "Photon PUN", "Mobile", "Multiplayer", "AI"],
+      tags: ["Unity", "Game", "Photon PUN", "Mobile", "Multiplayer", "AI Framework", "URP"],
       image: "/gamedev-portfolio/images/red-veil/bed-room.webp",
       description: "Asymmetric mobile co-op horror where players communicate via voice chat to evade a sound-sensitive monster.",
       longDescription: "A 3-week client project delivering a 2-player asymmetric horror experience on mobile. One player (The Thief) navigates a dark hospital in first-person, while the other (The Operator) guides them via CCTV feeds. I engineered the networking framework and a unique AI system where the monster reacts to the players' real-world microphone volume via Photon Voice.",
@@ -281,7 +281,40 @@ const Projects = () => {
       status: "Released"
     },
 
-    
+    {
+      id: 7,
+      title: "Modular Tower Defense",
+      category: "Tools",
+      tags: ["Unity", "C#", "Design Patterns", "Architecture", "ScriptableObjects"],
+      image: "/gamedev-portfolio/images/tower-defense/game-zoomed.webp",
+      description: "A scalable game architecture demonstrating SOLID principles and 5+ Design Patterns (Observer, Strategy, Factory).",
+      longDescription: "A technical showcase developed for a Software Architecture course, focusing on decoupling systems and data-driven design. The project utilizes a 'Designer-First' approach, where all game balance (Waves, Enemy Stats, Tower Properties) is handled via ScriptableObjects. The codebase strictly adheres to SOLID principles, using Event Buses to decouple the UI from the Game Loop.",
+      details: {
+        role: "Software Architect",
+        time: "4 Weeks",
+        tools: "Unity, C#, UML"
+      },
+      responsibilities: [
+        "Implemented the **Observer Pattern** via custom Event Buses to fully decouple the UI, Economy, and Wave systems.",
+        "Engineered a flexible **Strategy Pattern** for Tower projectiles, allowing hot-swapping of behaviors (AOE, Slow, Single) at runtime.",
+        "Designed a **Data-Driven Wave System** using ScriptableObjects, allowing designers to configure complex enemy waves without code.",
+        "Utilized the **Factory Pattern** for tower upgrades and **Object Pooling** for performant UI feedback."
+      ],
+      gallery: [
+        { type: 'image', url: "/gamedev-portfolio/videos/tower-defense/gameloop-full.mp4", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/tower-defense/game-no-hud.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/tower-defense/game-with-hud.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/tower-defense/game-zoomed.webp", align: "center" },
+      ],
+      links: {
+        source: "https://github.com/HangyBoi/Tower-Defense",
+        artstation: "#",
+        wiki: "#"
+      },
+      status: "Released"
+    },
+
+
   ];
 
   const filteredProjects = activeFilter === 'All'
@@ -309,9 +342,6 @@ const Projects = () => {
   };
 
   return (
-    // --- THE FIX IS HERE ---
-    // 1. 'z-40': High enough to cover the 'Scroll for Details' text from the Hero section.
-    // 2. 'z-[100]': When selectedProject is true, we force this ENTIRE section above the Navbar (usually z-50).
     <section
       id="works"
       className={`relative py-32 bg-[#0a0a0a] border-t border-white/5 transition-all ${selectedProject ? 'z-[100]' : 'z-40'}`}
