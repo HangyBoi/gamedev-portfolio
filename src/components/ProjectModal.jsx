@@ -293,7 +293,7 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
 
 const VideoSlide = ({ url, className, isMuted, onEnded }) => {
   const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(isMuted); 
+  const [isPlaying, setIsPlaying] = useState(isMuted);
   const [showOverlay, setShowOverlay] = useState(!isMuted);
 
   // Toggle Logic - Now only used by the Overlay
@@ -332,28 +332,28 @@ const VideoSlide = ({ url, className, isMuted, onEnded }) => {
 
       {/* CUSTOM OVERLAY */}
       {showOverlay && (
-        <div 
+        <div
           onClick={handleOverlayClick} // FIX 3: Click listener is ONLY here now
           className="absolute inset-0 flex flex-col items-center justify-center z-10 bg-black/30 backdrop-blur-[1px] group-hover:bg-black/40 transition-all"
         >
           {/* FIX 1: Centering the Icon */}
           <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-md border border-white/20 shadow-[0_0_30px_rgba(0,0,0,0.5)] group-hover:scale-110 transition-transform duration-300">
-             {/* Added 'ml-1' to push the triangle slightly right for visual balance */}
-             <Play fill="white" className="text-white ml-1" size={40} />
+            {/* Added 'ml-1' to push the triangle slightly right for visual balance */}
+            <Play fill="white" className="text-white ml-1" size={40} />
           </div>
-          
+
           {/* FIX 2: Text is now naturally centered via Flexbox, no magic margins */}
           <span className="mt-6 text-sm font-bold tracking-widest uppercase text-white/80 drop-shadow-md">
             Click to Play
           </span>
         </div>
       )}
-      
+
       {/* Mute Indicator (Only for Autoplay videos) */}
       {isMuted && isPlaying && (
-         <div className="absolute bottom-6 right-6 p-2 bg-black/50 rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
-            <Volume2 size={16} className="text-white/50" /> 
-         </div>
+        <div className="absolute bottom-6 right-6 p-2 bg-black/50 rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
+          <Volume2 size={16} className="text-white/50" />
+        </div>
       )}
     </div>
   );

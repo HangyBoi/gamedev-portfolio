@@ -144,7 +144,7 @@ const App = () => {
           <div className="flex flex-col md:flex-row items-center gap-12">
             <figure className="w-64 h-64 flex-shrink-0 relative group">
               <div className="absolute inset-0 border-2 border-[#00f3ff] rounded-2xl translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300"></div>
-              <img src="/gamedev-portfolio/images/pfp_color_compr.jpg" alt="Nichita Cebotari" className="w-full h-full object-cover rounded-2xl relative z-10 grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl" />
+              <img src="/gamedev-portfolio/images/misc/pfp_color_compr.jpg" alt="Nichita Cebotari" className="w-full h-full object-cover rounded-2xl relative z-10 grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl" />
             </figure>
 
             <article className="flex-1 text-center md:text-left">

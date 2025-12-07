@@ -220,10 +220,10 @@ const Projects = () => {
         { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/ending.mp4", muted: false },
         { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/hunter-animcycles.mp4" },
         { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/hunter-blendanim_2.mp4" },
-        { type: 'image', url: "/gamedev-portfolio/images/aamsveen/hunter-ranges.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/aamsveen/hunter-ranges.webp", align: "bottom" },
         { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/hunter-proto-awareness.mp4" },
         { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/hunter-proto-los.mp4" },
-        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/hunter-proto-supress.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/hunter-proto-supress.mp4", align: "bottom" },
         { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/hunter-teleport.mp4" },
         { type: 'video', url: "/gamedev-portfolio/videos/aamsveen/nixie-system.mp4", },
         { type: 'image', url: "/gamedev-portfolio/images/aamsveen/nixie-zone.webp", align: "center" },
@@ -238,26 +238,50 @@ const Projects = () => {
 
     {
       id: 6,
-      title: "Sci-Fi Shield & UE5 Study",
-      category: "Unreal",
-      tags: ["UE5", "Niagara", "Materials"],
-      image: "/gamedev-portfolio/images/shield.jpg",
-      description: "Reactive shield material with hex-grid displacement and Niagara collision.",
-      longDescription: "My transition project into Unreal Engine 5. I created a reactive Master Material for the shield effect and connected it to Niagara particle systems to detect and react to projectile hits in real-time.",
+      title: "Red Veil Operations",
+      category: "Unity",
+      tags: ["Unity", "Photon PUN", "Mobile", "Multiplayer", "AI"],
+      image: "/gamedev-portfolio/images/red-veil/bed-room.webp",
+      description: "Asymmetric mobile co-op horror where players communicate via voice chat to evade a sound-sensitive monster.",
+      longDescription: "A 3-week client project delivering a 2-player asymmetric horror experience on mobile. One player (The Thief) navigates a dark hospital in first-person, while the other (The Operator) guides them via CCTV feeds. I engineered the networking framework and a unique AI system where the monster reacts to the players' real-world microphone volume via Photon Voice.",
       details: {
-        role: "VFX Artist",
-        time: "1 Week",
-        tools: "Unreal 5, Niagara"
+        role: "Framework & Gameplay Eng.",
+        time: "3 Weeks (Client)",
+        tools: "Unity, Photon PUN 2, C#"
       },
       responsibilities: [
-        "Created Master Material with exposed parameters.",
-        "Implemented Niagara collision events for hit detection.",
-        "Optimized shader complexity for real-time use."
+        "Implemented real-time Voice Chat (Photon Voice) and integrated microphone input volume as a stealth mechanic for AI detection.",
+        "Architected the Monster's Finite State Machine (FSM) to handle sound-reactive patrolling and chasing.",
+        "Developed the 'Thief' vs 'Operator' asymmetric framework, syncing disparate player views and UI states over the network.",
+        "Managed the Git repository for a 7-person team, resolving merge conflicts and maintaining a stable main branch."
       ],
-      gallery: [{ type: 'image', url: "/gamedev-portfolio/images/shield.jpg" }],
-      links: { source: "https://github.com/HangyBoi", artstation: "#", wiki: "#" },
-      status: "Prototype"
-    }
+      gallery: [
+        { type: 'video', url: "/gamedev-portfolio/videos/red-veil/game-introduction.mp4", muted: false },
+        { type: 'image', url: "/gamedev-portfolio/images/red-veil/bed-room.webp", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/red-veil/jar-interact.mp4", muted: false },
+        { type: 'video', url: "/gamedev-portfolio/videos/red-veil/simeon-gyroscope-final.mp4", muted: false },
+        { type: 'image', url: "/gamedev-portfolio/images/red-veil/reception-jar.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/red-veil/reception-camera.webp", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/red-veil/intense-moment.mp4", muted: false },
+        { type: 'image', url: "/gamedev-portfolio/images/red-veil/monster-center.webp", align: "top" },
+        { type: 'video', url: "/gamedev-portfolio/videos/red-veil/toilet-hiding.mp4", muted: false },
+        { type: 'image', url: "/gamedev-portfolio/images/red-veil/monster-back.webp", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/red-veil/last-jars.mp4", muted: false },
+        { type: 'video', url: "/gamedev-portfolio/videos/red-veil/death-from-monster.mp4", muted: false },
+        { type: 'image', url: "/gamedev-portfolio/images/red-veil/style-sheet.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/red-veil/modelling-sheet.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/red-veil/map-layout.webp", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/red-veil/monster-twerk.mp4", muted: true },
+      ],
+      links: {
+        source: "https://github.com/miminashca/ProjectInnovation",
+        artstation: "#",
+        wiki: "#"
+      },
+      status: "Released"
+    },
+
+    
   ];
 
   const filteredProjects = activeFilter === 'All'

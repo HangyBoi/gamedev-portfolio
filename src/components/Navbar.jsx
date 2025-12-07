@@ -13,7 +13,7 @@ const Navigation = ({ isScrolled }) => {
         <div className="relative z-50 hover:-translate-y-1 transition-transform">
            <a href="#hero" aria-label="Home">
              <img 
-               src="/gamedev-portfolio/images/logo.png" 
+               src="/gamedev-portfolio/images/misc/logo.png" 
                alt="4ibik Logo" 
                className="h-8 w-auto object-contain invert brightness-0 filter" 
                // NOTE: Your logo is black. 'invert' makes it white to match the dark theme.
