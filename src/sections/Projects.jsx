@@ -301,10 +301,12 @@ const Projects = () => {
         "Utilized the **Factory Pattern** for tower upgrades and **Object Pooling** for performant UI feedback."
       ],
       gallery: [
-        { type: 'video', url: "/gamedev-portfolio/videos/tower-defense/gameloop-full.mp4", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/tower-defense/gameloop-full_speed.mp4", align: "center" },
         { type: 'image', url: "/gamedev-portfolio/images/tower-defense/game-no-hud.webp", align: "center" },
-        { type: 'image', url: "/gamedev-portfolio/images/tower-defense/game-with-hud.webp", align: "center" },
         { type: 'image', url: "/gamedev-portfolio/images/tower-defense/game-zoomed.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/tower-defense/game-with-hud.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/tower-defense/editor-gizmos.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/tower-defense/ufo-prefab.webp", align: "center" }
       ],
       links: {
         source: "https://github.com/HangyBoi/Tower-Defense",
