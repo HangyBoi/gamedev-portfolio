@@ -303,13 +303,47 @@ const Projects = () => {
       gallery: [
         { type: 'video', url: "/gamedev-portfolio/videos/tower-defense/gameloop-full_speed.mp4", align: "center" },
         { type: 'image', url: "/gamedev-portfolio/images/tower-defense/game-no-hud.webp", align: "center" },
-        { type: 'image', url: "/gamedev-portfolio/images/tower-defense/game-zoomed.webp", align: "center" },
-        { type: 'image', url: "/gamedev-portfolio/images/tower-defense/game-with-hud.webp", align: "center" },
-        { type: 'image', url: "/gamedev-portfolio/images/tower-defense/editor-gizmos.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/tower-defense/game-zoomed.webp", align: "top" },
+        { type: 'image', url: "/gamedev-portfolio/images/tower-defense/game-with-hud.webp", align: "bottom" },
+        { type: 'image', url: "/gamedev-portfolio/images/tower-defense/editor-gizmos.webp", align: "top" },
         { type: 'image', url: "/gamedev-portfolio/images/tower-defense/ufo-prefab.webp", align: "center" }
       ],
       links: {
         source: "https://github.com/HangyBoi/Tower-Defense",
+        artstation: "#",
+        wiki: "#"
+      },
+      status: "Released"
+    },
+
+    {
+      id: 8,
+      title: "Fading Colors",
+      category: "Unity",
+      tags: ["Unity", "Serious Game", "Narrative", "Post-Processing", "Shaders"],
+      image: "/gamedev-portfolio/images/fading-colors/post-processing-art.jpg",
+      description: "An educational narrative experience simulating Alzheimer's disease through distortive visual mechanics.",
+      longDescription: "A client-driven 'Serious Game' developed to raise awareness for the Alzheimer’s Association. The project simulates the cognitive decline of an artist through progressive visual distortion and disorientation mechanics. Players experience the world from two perspectives: the patient, struggling with memory loss and blurred reality, and the caregiver, using sticky notes and organization to restore order.",
+      details: {
+        role: "Engineer & Tech Art Support",
+        time: "3 Weeks (Client)",
+        tools: "Unity, C#, Shader Graph"
+      },
+      responsibilities: [
+        "Developed UI systems, such as monologue system via object interaction, allowing both the Patient and Caregiver explore the inner selves and the environment around.",
+        "Closely worked with Designers and Engineer to come up with a coherent game loop, understandable game progression and intuitive core mechanics",
+        "Implemented custom Post-Processing stacks to simulate progressive vision loss and cognitive distortion.",
+        "Programmed the 'Disorientation' system, handling seamless scene transitions and furniture shuffling to confuse the player.",
+        "Collaborated on Triplanar Mapping shaders to ensure consistent texture tiling across the evolving house geometry."
+      ],
+      gallery: [
+        { type: 'image', url: "/gamedev-portfolio/images/fading-colors/post-processing-art.jpg", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/fading-colors/gameplay-blur.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/fading-colors/environment-transition.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/fading-colors/painting-mechanic.mp4" }
+      ],
+      links: {
+        source: "https://github.com/BattleRamGamer/ProjectCustomer",
         artstation: "#",
         wiki: "#"
       },
