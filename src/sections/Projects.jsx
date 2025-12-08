@@ -414,7 +414,7 @@ const Projects = () => {
       tags: ["UE5", "Lumen", "Nanite", "Azure DevOps", "Environment"],
       image: "/gamedev-portfolio/images/ue5-citadel/castle-shot_1.webp",
       description: "My transition project into Unreal Engine 5, focusing on Landscape workflows, Lumen lighting, and Azure LFS pipelines.",
-      longDescription: "A comprehensive study project marking my transition from Unity to Unreal Engine 5. While following the 'Unreal Sensei' curriculum, I focused on analyzing the architectural differences between engines—specifically the shift from GameObjects to Actors and the power of the Material Graph. Crucially, I established a professional Version Control workflow using Azure DevOps to manage massive binary assets (LFS) without the storage constraints of GitHub.",
+      longDescription: "A comprehensive study project marking my transition from Unity to Unreal Engine 5. While following the 'Unreal Sensei' curriculum, I focused on analyzing the architectural differences between engines - specifically the shift from GameObjects to Actors and the power of the Material Graph. Crucially, I established a professional Version Control workflow using Azure DevOps to manage massive binary assets (LFS) without the storage constraints of GitHub.",
       details: {
         role: "Environment Artist (Study)",
         time: "3 weeks",
@@ -422,9 +422,9 @@ const Projects = () => {
       },
       responsibilities: [
         "Mastered the UE5 Landscape material workflow, utilizing Layer Blends and Weight Maps for organic terrain texturing.",
-        "Implemented **Lumen** Global Illumination and **Nanite** virtualized geometry to achieve cinematic fidelity.",
+        "Implemented Lumen Global Illumination and Nanite virtualized geometry to achieve cinematic fidelity.",
         "Optimized rendering settings for hardware-specific constraints (AMD Raytracing) to maintain editor stability.",
-        "Changed my Version Control pipeline using **Azure DevOps** to handle unlimited Git LFS storage for heavy Unreal assets."
+        "Changed my Version Control pipeline using Azure DevOps to handle unlimited Git LFS storage for heavy Unreal assets."
       ],
       gallery: [
         { type: 'video', url: "/gamedev-portfolio/videos/ue5-citadel/cinematic-tour.mp4" },
@@ -436,11 +436,50 @@ const Projects = () => {
         { type: 'video', url: "/gamedev-portfolio/videos/ue5-citadel/castle-scene-transition.mp4" },
       ],
       links: {
-        source: "#", // Keep private or link to a unlisted Azure repo if you want to show off the commit history
-        artstation: "#",
+        source: "https://dev.azure.com/nik4ebPortfolio/UE-Project-Zero-Citadel",
         wiki: "#"
       },
       status: "Prototype"
+    },
+
+    {
+      id: 11,
+      title: "Urban Alley",
+      category: "Unreal",
+      tags: ["UE5", "Niagara VFX", "Materials", "Lighting", "Tech Art"],
+      image: "/gamedev-portfolio/images/ue5-urban-alley/alley-shot_2.webp",
+      description: "A 4-week deep dive into UE5's rendering pipeline, culminating in a detailed urban diorama.",
+      longDescription: "A self-directed 'Tech Art Bootcamp' focused on mastering the core pillars of Unreal Engine 5: Niagara VFX, Material Graphs, and Lumen Lighting. What began as a broad theoretical study evolved into a targeted project where I engineered a complex 'Uber-Shader' Master Material and a modular VFX system. The final output is a highly detailed Urban Alley diorama, demonstrating the practical application of vertex painting, decal layering, and cinematic lighting.",
+      details: {
+        role: "Technical Artist (Study)",
+        time: "4 Weeks (In Progress)",
+        tools: "UE5, Niagara, Blender"
+      },
+      responsibilities: [
+        "Engineered a comprehensive Master Material ('Uber-Shader') supporting vertex painting for puddles, moss, and surface variation.",
+        "Developed a modular Niagara VFX system, creating assets for weather effects (rain with puddles).",
+        "Performed a deep-dive lighting study, rebuilding demo scenes from scratch to master Lumen's Global Illumination settings.",
+      ],
+      gallery: [
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/alley-shot_2.webp", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/ue5-urban-alley/cinematic-showcase.mp4" },
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/alley-shot_1.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/alley-shot_4.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/alley-shot_5.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/alley-step-process.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/lighting-playground.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/lumen-demo.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/lumen-screen-probes-demo.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/master-material-finished.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/master-material-instance.webp", align: "center" },
+
+      ],
+      links: {
+        source: "https://dev.azure.com/nik4ebPortfolio/UE-Project-One-Alley",
+        artstation: "#",
+        wiki: "#"
+      },
+      status: "In Development"
     },
 
   ];
