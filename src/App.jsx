@@ -17,18 +17,18 @@ const Hero = () => (
 
       {/* Main Title */}
       <h1 className="text-5xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-6 text-white leading-none">
-        GAMEPLAY <br />
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f3ff] to-[#0066ff]">PROGRAMMER</span>
+        НИКИТА + КАТЯ = <br />
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffc0cb] to-[#ff033e]">LOVE </span>
       </h1>
 
       {/* Subtitle - New Colors*/}
       <p className="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 leading-relaxed mb-12 font-light">
-        Bridging the gap between Code and Art.
+        Пупсик
         <br className="hidden md:block" />
-        Specializing in <span className="text-[#ff0055] font-medium">Technical Art</span>,
-        <span className="text-emerald-400 font-medium"> Tools</span>,
-        <span className="text-[#b145ff] font-medium"> Shaders</span>, and
-        <span className="text-amber-400 font-medium"> VFX</span>.
+        Бебрик <span className="text-[#ff0055] font-medium">Стрекозочка</span>,
+        <span className="text-emerald-400 font-medium"> Пепсик</span>,
+        <span className="text-[#b145ff] font-medium"> Миминяшка </span>, и
+        <span className="text-amber-400 font-medium"> Большой Грязный Вонючий Пузырь</span>.
       </p>
 
       <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
