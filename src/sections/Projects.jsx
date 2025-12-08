@@ -192,6 +192,40 @@ const Projects = () => {
 
     {
       id: 5,
+      title: "Modular Tower Defense",
+      category: "Tools",
+      tags: ["Unity", "Game", "C#", "Design Patterns", "Architecture", "ScriptableObjects"],
+      image: "/gamedev-portfolio/images/tower-defense/game-zoomed.webp",
+      description: "A scalable game architecture demonstrating SOLID principles and 5+ Design Patterns (Observer, Strategy, Factory).",
+      longDescription: "A technical showcase developed for a Software Architecture course, focusing on decoupling systems and data-driven design. The project utilizes a 'Designer-First' approach, where all game balance (Waves, Enemy Stats, Tower Properties) is handled via ScriptableObjects. The codebase strictly adheres to SOLID principles, using Event Buses to decouple the UI from the Game Loop.",
+      details: {
+        role: "Software Architect",
+        time: "4 Weeks",
+        tools: "Unity, C#, UML"
+      },
+      responsibilities: [
+        "Implemented the **Observer Pattern** via custom Event Buses to fully decouple the UI, Economy, and Wave systems.",
+        "Engineered a flexible **Strategy Pattern** for Tower projectiles, allowing hot-swapping of behaviors (AOE, Slow, Single) at runtime.",
+        "Designed a **Data-Driven Wave System** using ScriptableObjects, allowing designers to configure complex enemy waves without code.",
+        "Utilized the **Factory Pattern** for tower upgrades and **Object Pooling** for performant UI feedback."
+      ],
+      gallery: [
+        { type: 'video', url: "/gamedev-portfolio/videos/tower-defense/gameloop-full_speed.mp4", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/tower-defense/game-no-hud.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/tower-defense/game-zoomed.webp", align: "top" },
+        { type: 'image', url: "/gamedev-portfolio/images/tower-defense/game-with-hud.webp", align: "bottom" },
+        { type: 'image', url: "/gamedev-portfolio/images/tower-defense/editor-gizmos.webp", align: "top" },
+        { type: 'image', url: "/gamedev-portfolio/images/tower-defense/ufo-prefab.webp", align: "center" }
+      ],
+      links: {
+        source: "https://github.com/HangyBoi/Tower-Defense",
+        wiki: "#"
+      },
+      status: "Released"
+    },
+
+    {
+      id: 6,
       title: "The Tale of Aamsveen",
       category: "Unity",
       tags: ["Unity", "Game", "Team Lead", "AI Framework", "HDRP"],
@@ -237,7 +271,7 @@ const Projects = () => {
     },
 
     {
-      id: 6,
+      id: 7,
       title: "Red Veil Operations",
       category: "Unity",
       tags: ["Unity", "Game", "Photon PUN", "Mobile", "Multiplayer", "AI Framework", "URP"],
@@ -275,40 +309,6 @@ const Projects = () => {
       ],
       links: {
         source: "https://github.com/miminashca/ProjectInnovation",
-        wiki: "#"
-      },
-      status: "Released"
-    },
-
-    {
-      id: 7,
-      title: "Modular Tower Defense",
-      category: "Tools",
-      tags: ["Unity", "Game", "C#", "Design Patterns", "Architecture", "ScriptableObjects"],
-      image: "/gamedev-portfolio/images/tower-defense/game-zoomed.webp",
-      description: "A scalable game architecture demonstrating SOLID principles and 5+ Design Patterns (Observer, Strategy, Factory).",
-      longDescription: "A technical showcase developed for a Software Architecture course, focusing on decoupling systems and data-driven design. The project utilizes a 'Designer-First' approach, where all game balance (Waves, Enemy Stats, Tower Properties) is handled via ScriptableObjects. The codebase strictly adheres to SOLID principles, using Event Buses to decouple the UI from the Game Loop.",
-      details: {
-        role: "Software Architect",
-        time: "4 Weeks",
-        tools: "Unity, C#, UML"
-      },
-      responsibilities: [
-        "Implemented the **Observer Pattern** via custom Event Buses to fully decouple the UI, Economy, and Wave systems.",
-        "Engineered a flexible **Strategy Pattern** for Tower projectiles, allowing hot-swapping of behaviors (AOE, Slow, Single) at runtime.",
-        "Designed a **Data-Driven Wave System** using ScriptableObjects, allowing designers to configure complex enemy waves without code.",
-        "Utilized the **Factory Pattern** for tower upgrades and **Object Pooling** for performant UI feedback."
-      ],
-      gallery: [
-        { type: 'video', url: "/gamedev-portfolio/videos/tower-defense/gameloop-full_speed.mp4", align: "center" },
-        { type: 'image', url: "/gamedev-portfolio/images/tower-defense/game-no-hud.webp", align: "center" },
-        { type: 'image', url: "/gamedev-portfolio/images/tower-defense/game-zoomed.webp", align: "top" },
-        { type: 'image', url: "/gamedev-portfolio/images/tower-defense/game-with-hud.webp", align: "bottom" },
-        { type: 'image', url: "/gamedev-portfolio/images/tower-defense/editor-gizmos.webp", align: "top" },
-        { type: 'image', url: "/gamedev-portfolio/images/tower-defense/ufo-prefab.webp", align: "center" }
-      ],
-      links: {
-        source: "https://github.com/HangyBoi/Tower-Defense",
         wiki: "#"
       },
       status: "Released"
@@ -404,9 +404,44 @@ const Projects = () => {
         source: "https://github.com/HangyBoi/Business-Startup",
         wiki: "#"
       },
-      status: "Released"
+      status: "Vertical Slice"
     },
 
+    {
+      id: 10,
+      title: "UE5 Study: Alpine Citadel",
+      category: "Unreal",
+      tags: ["UE5", "Lumen", "Nanite", "Azure DevOps", "Environment"],
+      image: "/gamedev-portfolio/images/ue5-citadel/castle-shot_1.webp",
+      description: "My transition project into Unreal Engine 5, focusing on Landscape workflows, Lumen lighting, and Azure LFS pipelines.",
+      longDescription: "A comprehensive study project marking my transition from Unity to Unreal Engine 5. While following the 'Unreal Sensei' curriculum, I focused on analyzing the architectural differences between engines—specifically the shift from GameObjects to Actors and the power of the Material Graph. Crucially, I established a professional Version Control workflow using Azure DevOps to manage massive binary assets (LFS) without the storage constraints of GitHub.",
+      details: {
+        role: "Environment Artist (Study)",
+        time: "3 weeks",
+        tools: "UE5, Quixel Bridge, Azure DevOps"
+      },
+      responsibilities: [
+        "Mastered the UE5 Landscape material workflow, utilizing Layer Blends and Weight Maps for organic terrain texturing.",
+        "Implemented **Lumen** Global Illumination and **Nanite** virtualized geometry to achieve cinematic fidelity.",
+        "Optimized rendering settings for hardware-specific constraints (AMD Raytracing) to maintain editor stability.",
+        "Changed my Version Control pipeline using **Azure DevOps** to handle unlimited Git LFS storage for heavy Unreal assets."
+      ],
+      gallery: [
+        { type: 'video', url: "/gamedev-portfolio/videos/ue5-citadel/cinematic-tour.mp4" },
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-citadel/castle-shot_1.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-citadel/castle-shot_2.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-citadel/castle-shot_3.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-citadel/castle-shot_4.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-citadel/castle-shot_5.webp", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/ue5-citadel/castle-scene-transition.mp4" },
+      ],
+      links: {
+        source: "#", // Keep private or link to a unlisted Azure repo if you want to show off the commit history
+        artstation: "#",
+        wiki: "#"
+      },
+      status: "Prototype"
+    },
 
   ];
 
