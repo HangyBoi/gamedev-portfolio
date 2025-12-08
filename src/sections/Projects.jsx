@@ -279,10 +279,10 @@ const Projects = () => {
         tools: "Unity, C#, UML"
       },
       responsibilities: [
-        "Implemented the **Observer Pattern** via custom Event Buses to fully decouple the UI, Economy, and Wave systems.",
-        "Engineered a flexible **Strategy Pattern** for Tower projectiles, allowing hot-swapping of behaviors (AOE, Slow, Single) at runtime.",
-        "Designed a **Data-Driven Wave System** using ScriptableObjects, allowing designers to configure complex enemy waves without code.",
-        "Utilized the **Factory Pattern** for tower upgrades and **Object Pooling** for performant UI feedback."
+        "Implemented the Observer Pattern via custom Event Buses to fully decouple the UI, Economy, and Wave systems.",
+        "Engineered a flexible Strategy Pattern for Tower projectiles, allowing hot-swapping of behaviors (AOE, Slow, Single) at runtime.",
+        "Designed a Data-Driven Wave System using ScriptableObjects, allowing designers to configure complex enemy waves without code.",
+        "Utilized the Factory Pattern for tower upgrades and Object Pooling for performant UI feedback."
       ],
       gallery: [
         { type: 'video', url: "/gamedev-portfolio/videos/tower-defense/gameloop-full_speed.mp4", align: "center" },
@@ -294,7 +294,7 @@ const Projects = () => {
       ],
       links: {
         source: "https://github.com/HangyBoi/Tower-Defense",
-        wiki: "#"
+        wiki: "https://github.com/HangyBoi/Tower-Defense"
       },
       status: "Released"
     },
