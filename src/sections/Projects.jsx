@@ -275,7 +275,6 @@ const Projects = () => {
       ],
       links: {
         source: "https://github.com/miminashca/ProjectInnovation",
-        artstation: "#",
         wiki: "#"
       },
       status: "Released"
@@ -310,7 +309,6 @@ const Projects = () => {
       ],
       links: {
         source: "https://github.com/HangyBoi/Tower-Defense",
-        artstation: "#",
         wiki: "#"
       },
       status: "Released"
@@ -362,7 +360,6 @@ const Projects = () => {
       ],
       links: {
         source: "https://github.com/BattleRamGamer/ProjectCustomer",
-        artstation: "#",
         wiki: "#"
       },
       status: "Released"
@@ -405,7 +402,6 @@ const Projects = () => {
       ],
       links: {
         source: "https://github.com/HangyBoi/Business-Startup",
-        artstation: "#",
         wiki: "#"
       },
       status: "Released"
