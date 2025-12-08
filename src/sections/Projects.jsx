@@ -389,10 +389,10 @@ const Projects = () => {
       ],
       gallery: [
         { type: 'image', url: "/gamedev-portfolio/images/folksroad/folksroad-theme.webp", align: "center" },
-        { type: 'image', url: "/gamedev-portfolio/images/folksroad/poster-studio.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/folksroad/poster-studio.webp", align: "bottom" },
         { type: 'image', url: "/gamedev-portfolio/images/folksroad/main-mara.webp", align: "top" },
         { type: 'video', url: "/gamedev-portfolio/videos/folksroad/main-theme.mp4", align: "center", muted: false },
-        { type: 'image', url: "/gamedev-portfolio/images/folksroad/enemy-forces.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/folksroad/enemy-forces.webp", align: "bottom" },
         { type: 'video', url: "/gamedev-portfolio/videos/folksroad/camera-showcase.mp4", align: "center", muted: false },
         { type: 'video', url: "/gamedev-portfolio/videos/folksroad/dialogue-showcase.mp4", align: "bottom", muted: false },
         { type: 'image', url: "/gamedev-portfolio/images/folksroad/dialogue.webp", align: "center" },
