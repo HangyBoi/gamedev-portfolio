@@ -338,8 +338,8 @@ const Projects = () => {
       ],
       gallery: [
         { type: 'image', url: "/gamedev-portfolio/images/fading-colors/main-theme.webp", align: "center" },
-        { type: 'video', url: "/gamedev-portfolio/videos/fading-colors/day1-intro.mp4", align: "center", muted: false },
-        { type: 'video', url: "/gamedev-portfolio/videos/fading-colors/day1-music-painting.mp4", align: "center", muted: false },
+        { type: 'video', url: "/gamedev-portfolio/videos/fading-colors/day1-intro.mp4", align: "bottom", muted: false },
+        { type: 'video', url: "/gamedev-portfolio/videos/fading-colors/day1-music-painting.mp4", align: "bottom", muted: false },
         { type: 'image', url: "/gamedev-portfolio/images/fading-colors/bedroom.webp", align: "center" },
         { type: 'image', url: "/gamedev-portfolio/images/fading-colors/house-layout.webp", align: "center" },
         { type: 'video', url: "/gamedev-portfolio/videos/fading-colors/day2-check-painting.mp4", align: "bottom", muted: false },
@@ -364,6 +364,38 @@ const Projects = () => {
         source: "https://github.com/BattleRamGamer/ProjectCustomer",
         artstation: "#",
         wiki: "#"
+      },
+      status: "Released"
+    },
+
+    {
+      id: 9,
+      title: "Folksroad",
+      category: "Unity",
+      tags: ["Unity 2.5D", "Team Lead", "Agile", "Business Dev"],
+      image: "/gamedev-portfolio/images/folksroad/poster-studio.webp",
+      description: "A 2.5D RPG vertical slice developed alongside a complete business model for investor pitching.",
+      longDescription: "A dual-focus project combining technical game development with business strategy. We built a polished Vertical Slice of 'Folksroad', a folklore-inspired RPG, while simultaneously developing a go-to-market Business Plan for a 'Dragon's Den' style investor pitch. As Team Lead, I restructured the development pipeline after an initial setback, implementing strict Agile processes (Daily Stand-ups, QA) to deliver a high-quality product on a tight deadline.",
+      details: {
+        role: "Team Lead & Gameplay Eng.",
+        time: "3 Weeks (Client)",
+        tools: "Unity 2.5D, C#, Tilemap, Agile"
+      },
+      responsibilities: [
+        "Led a critical project turnaround by instituting Agile methodologies (Daily Stand-ups, QA loops) to recover from early production delays.",
+        "Engineered a custom 2.5D Rendering Framework, implementing 'Don't Starve'-style billboard logic with 360° camera rotation.",
+        "Programmed the core Combat System and basic Enemy AI, integrating frame-by-frame 2D animations into the 3D physics world.",
+        "Established an efficient asset pipeline for 2D artists to deliver sprites that functioned correctly within the 2.5D perspective."
+      ],
+      gallery: [
+        { type: 'image', url: "/gamedev-portfolio/images/folksroad/poster-studio.webp", align: "bottom" },
+        { type: 'video', url: "/gamedev-portfolio/videos/folksroad/camera-tech.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/folksroad/combat-ai.mp4" },
+      ],
+      links: { 
+        source: "https://github.com/HangyBoi/Business-Startup",
+        artstation: "#", 
+        wiki: "#" 
       },
       status: "Released"
     },
