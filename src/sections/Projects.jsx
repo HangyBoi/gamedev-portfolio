@@ -373,7 +373,7 @@ const Projects = () => {
       title: "Folksroad",
       category: "Unity",
       tags: ["Unity 2.5D", "Team Lead", "Agile", "Business Dev"],
-      image: "/gamedev-portfolio/images/folksroad/poster-studio.webp",
+      image: "/gamedev-portfolio/images/folksroad/main-mara.webp",
       description: "A 2.5D RPG vertical slice developed alongside a complete business model for investor pitching.",
       longDescription: "A dual-focus project combining technical game development with business strategy. We built a polished Vertical Slice of 'Folksroad', a folklore-inspired RPG, while simultaneously developing a go-to-market Business Plan for a 'Dragon's Den' style investor pitch. As Team Lead, I restructured the development pipeline after an initial setback, implementing strict Agile processes (Daily Stand-ups, QA) to deliver a high-quality product on a tight deadline.",
       details: {
@@ -389,13 +389,22 @@ const Projects = () => {
       ],
       gallery: [
         { type: 'image', url: "/gamedev-portfolio/images/folksroad/poster-studio.webp", align: "bottom" },
-        { type: 'video', url: "/gamedev-portfolio/videos/folksroad/camera-tech.mp4" },
-        { type: 'video', url: "/gamedev-portfolio/videos/folksroad/combat-ai.mp4" },
+        { type: 'image', url: "/gamedev-portfolio/images/folksroad/main-mara.webp", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/folksroad/main-theme.mp4", align: "center", muted: false },
+        { type: 'video', url: "/gamedev-portfolio/videos/folksroad/camera-showcase.mp4", align: "center", muted: false },
+        { type: 'video', url: "/gamedev-portfolio/videos/folksroad/dialogue-showcase.mp4", align: "bottom", muted: false },
+        { type: 'image', url: "/gamedev-portfolio/images/folksroad/dialogue.webp", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/folksroad/fight-showcase.mp4", align: "center", muted: false },
+        { type: 'image', url: "/gamedev-portfolio/images/folksroad/fight.webp", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/folksroad/restoring-showcase.mp4", align: "center", muted: false },
+        { type: 'image', url: "/gamedev-portfolio/images/folksroad/home.webp", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/folksroad/bestiary-showcase.mp4", align: "center", muted: false },
+        { type: 'image', url: "/gamedev-portfolio/images/folksroad/bestiary.webp", align: "center" },
       ],
-      links: { 
+      links: {
         source: "https://github.com/HangyBoi/Business-Startup",
-        artstation: "#", 
-        wiki: "#" 
+        artstation: "#",
+        wiki: "#"
       },
       status: "Released"
     },
