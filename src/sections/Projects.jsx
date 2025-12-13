@@ -93,11 +93,11 @@ const Projects = () => {
         "tools": "Unity 6 (URP), HLSL, Shader Graph"
       },
       "responsibilities": [
-        "Designed the environment layout using 'Iterative Detailing,' layering architectural blockers and debris to guide player focus.",
-        "Implemented a strategic lighting pass (Directional/Spot/AO) to create depth and separate the foreground from the volumetric fog.",
+        "Designed the environment layout using 'Iterative Detailing, which is supposed to evoke a specific Post-Soviet nostalgia.",
         "Engineered a modular Post-Processing stack (Pixelation, Dithering) using custom URP Renderer Features.",
-        "Optimized high-density foliage using GPU Instancing and an auxiliary Orthographic camera for cost-effective rendering.",
-        "Solved critical pipeline sorting issues between volumetric fog and transparency injection points."
+        "Implemented reactive foliage shaders using Render Textures for seamless terrain blending and wind simulation.",
+        "Solved critical pipeline sorting issues between volumetric fog and transparency injection points.",
+        "Wrote custom HLSL lighting functions wrapped in Shader Graph nodes for stylized specular highlights."
       ],
       "gallery": [
         { "type": "video", "url": "/gamedev-portfolio/videos/post-soviet/car-in-river_compr.mp4" },
