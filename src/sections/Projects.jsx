@@ -80,41 +80,42 @@ const Projects = () => {
     },
 
     {
-      id: 2,
-      title: "Slice of Post-Soviet Yard",
-      category: "Shaders",
-      tags: ["Unity 6", "Shaders", "HLSL", "Tech Art", "URP"],
-      image: "/gamedev-portfolio/images/post-soviet/bloodmoon.webp",
-      description: "A custom URP rendering pipeline engineering a reactive, PSX-style retro aesthetic.",
-      longDescription: "A deep dive into the Universal Render Pipeline (URP) to bridge the gap between engine logic and visual art. This project implements a custom 'Digital Lens' stack, utilizing Fullscreen Renderer Features to achieve a pixel-perfect PSX aesthetic (Dithering, Quantization). It features a reactive environment where foliage blends with terrain via Render Textures and water interacts with depth buffers.",
-      details: {
-        role: "Technical Artist",
-        time: "3 Weeks",
-        tools: "Unity 6 (URP), HLSL, Shader Graph"
+      "id": 2,
+      "title": "Slice of Post-Soviet Yard",
+      "category": "Technical Environment Art",
+      "tags": ["Unity 6", "Level Design", "Lighting", "Shaders", "Optimization"],
+      "image": "/gamedev-portfolio/images/post-soviet/bloodmoon.webp",
+      "description": "A technical environment showcase combining atmospheric level design, lighting composition, and a custom URP rendering pipeline.",
+      "longDescription": "A deep dive into bridging the gap between engine logic and visual art. Beyond the custom 'Digital Lens' PSX rendering stack, this project focuses on environmental storytelling through light and composition. I utilized 'Iterative Detailing' to construct a nostalgic Post-Soviet yard, using lighting to create specific atmospheric pockets while strictly managing render costs via GPU Instancing and Orthographic culling.",
+      "details": {
+        "role": "Technical Level Designer",
+        "time": "3 Weeks",
+        "tools": "Unity 6 (URP), HLSL, Shader Graph"
       },
-      responsibilities: [
+      "responsibilities": [
+        "Designed the environment layout using 'Iterative Detailing,' layering architectural blockers and debris to guide player focus.",
+        "Implemented a strategic lighting pass (Directional/Spot/AO) to create depth and separate the foreground from the volumetric fog.",
         "Engineered a modular Post-Processing stack (Pixelation, Dithering) using custom URP Renderer Features.",
-        "Implemented reactive foliage shaders using Render Textures for seamless terrain blending and wind simulation.",
-        "Solved critical pipeline sorting issues between volumetric fog and transparency injection points.",
-        "Wrote custom HLSL lighting functions wrapped in Shader Graph nodes for stylized specular highlights."
+        "Optimized high-density foliage using GPU Instancing and an auxiliary Orthographic camera for cost-effective rendering.",
+        "Solved critical pipeline sorting issues between volumetric fog and transparency injection points."
       ],
-      gallery: [
-        { type: 'video', url: "/gamedev-portfolio/videos/post-soviet/car-in-river_compr.mp4" },
-        { type: 'image', url: "/gamedev-portfolio/images/post-soviet/river-car.webp", align: "bottom" },
-        { type: 'video', url: "/gamedev-portfolio/videos/post-soviet/day-night-yard_compr.mp4" },
-        { type: 'image', url: "/gamedev-portfolio/images/post-soviet/broken-fence.webp", align: "bottom" },
-        { type: 'video', url: "/gamedev-portfolio/videos/post-soviet/retro-stack-showcase_compr.mp4" },
-        { type: 'image', url: "/gamedev-portfolio/images/post-soviet/car.webp", align: "bottom" },
-        { type: 'video', url: "/gamedev-portfolio/videos/post-soviet/color-palette-showcase_compr.mp4" },
-        { type: 'image', url: "/gamedev-portfolio/images/post-soviet/bloodyard.webp", align: "center" },
-        { type: 'video', url: "/gamedev-portfolio/videos/post-soviet/orto-blackview_compr.mp4" },
+      "gallery": [
+        { "type": "video", "url": "/gamedev-portfolio/videos/post-soviet/car-in-river_compr.mp4" },
+        { "type": "image", "url": "/gamedev-portfolio/images/post-soviet/river-car.webp", "align": "bottom" },
+        { "type": "video", "url": "/gamedev-portfolio/videos/post-soviet/day-night-yard_compr.mp4" },
+        { "type": "image", "url": "/gamedev-portfolio/images/post-soviet/broken-fence.webp", "align": "bottom" },
+        { "type": "video", "url": "/gamedev-portfolio/videos/post-soviet/retro-stack-showcase_compr.mp4" },
+        { "type": "image", "url": "/gamedev-portfolio/images/post-soviet/car.webp", "align": "bottom" },
+        { "type": "video", "url": "/gamedev-portfolio/videos/post-soviet/color-palette-showcase_compr.mp4" },
+        { "type": "image", "url": "/gamedev-portfolio/images/post-soviet/bloodyard.webp", "align": "center" },
+        { "type": "video", "url": "/gamedev-portfolio/videos/post-soviet/orto-blackview_compr.mp4" },
       ],
-      links: {
-        source: "https://github.com/HangyBoi/Slice-of-Post-Soviet-Yard",
-        artstation: "https://www.artstation.com/artwork/eRZ9kP",
-        wiki: "https://github.com/HangyBoi/Slice-of-Post-Soviet-Yard/wiki"
+      "links": {
+        "source": "https://github.com/HangyBoi/Slice-of-Post-Soviet-Yard",
+        "artstation": "https://www.artstation.com/artwork/eRZ9kP",
+        "wiki": "https://github.com/HangyBoi/Slice-of-Post-Soviet-Yard/wiki"
       },
-      status: "Released"
+      "status": "Released"
     },
 
     {
