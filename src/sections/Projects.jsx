@@ -86,7 +86,7 @@ const Projects = () => {
       "tags": ["Unity 6", "Level Design", "Lighting", "Shaders", "Optimization"],
       "image": "/gamedev-portfolio/images/post-soviet/bloodmoon.webp",
       "description": "A technical environment showcase combining atmospheric level design, lighting composition, and a custom URP rendering pipeline.",
-      "longDescription": "A deep dive into bridging the gap between engine logic and visual art. Beyond the custom 'Digital Lens' PSX rendering stack, this project focuses on environmental storytelling through light and composition. I utilized 'Iterative Detailing' to construct a nostalgic Post-Soviet yard, using lighting to create specific atmospheric pockets while strictly managing render costs via GPU Instancing and Orthographic culling.",
+      "longDescription": "A deep dive into the Universal Render Pipeline (URP) to bridge the gap between engine logic and visual art. This project implements a custom 'Digital Lens' stack, utilizing Fullscreen Renderer Features to achieve a pixel-perfect PSX aesthetic (Dithering, Quantization). It features a reactive environment where foliage blends with terrain via Render Textures and water interacts with depth buffers.",
       "details": {
         "role": "Technical Level Designer",
         "time": "3 Weeks",
