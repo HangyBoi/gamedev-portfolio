@@ -11,8 +11,8 @@ const Hero = () => (
     <div className="max-w-7xl mx-auto text-center relative">
 
       {/* Internship Badge*/}
-      <div className="inline-block px-5 py-2 border border-[#ff0055]/30 bg-[#ff0055]/10 rounded-full text-xs font-bold tracking-[0.2em] uppercase mb-8 text-[#ff0055] animate-pulse">
-        Open for Internships • Feb 2026
+      <div className="inline-block px-5 py-2 border border-emerald-500/30 bg-emerald-500/10 rounded-full text-xs font-bold tracking-[0.2em] uppercase mb-8 text-emerald-400 animate-pulse">
+        Currently Interning • Seeking Grad Internship 2027
       </div>
 
       {/* Main Title */}
@@ -160,7 +160,7 @@ const App = () => {
                 <span className="text-white font-medium"> C# Architecture</span> and <span className="text-white font-medium">Tool Development</span>,
                 I actively study rendering pipelines, shaders, and VFX to deliver products that feel as good as they run.
                 <br /><br />
-                Currently seeking an <span className="text-[#00f3ff] font-semibold">Internship starting February 2026</span>.
+                Currently interning, and seeking a <span className="text-[#00f3ff] font-semibold">Graduation Internship for early 2027</span>.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
