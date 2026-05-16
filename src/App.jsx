@@ -75,7 +75,25 @@ const App = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-            {/* 1. UNITY ARCHITECT CARD (Emerald Glow) */}
+            {/* 1. UNREAL ENGINE CARD (Pink Glow) */}
+            <article className="bg-[#111]/80 backdrop-blur-sm p-10 rounded-2xl border border-white/5 transition-all duration-300 hover:-translate-y-2 hover:border-[#ff0055] hover:shadow-[0_0_30px_rgba(255,0,85,0.15)] group flex flex-col h-full">
+              <div className="w-14 h-14 bg-[#1a1a1a] text-white rounded-xl flex items-center justify-center mb-8 transition-colors duration-300 border border-white/10 group-hover:bg-[#ff0055] group-hover:text-white group-hover:border-transparent">
+                <Gamepad2 size={28} />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">Unreal Engine 5</h3>
+              <p className="text-gray-400 leading-relaxed mb-6 text-sm">
+                Expanding my skillset into high-fidelity pipelines. Focusing on visual scripting, materials, and environment design.
+              </p>
+              <ul className="space-y-3 mt-auto">
+                {['Blueprints & Logic', 'Material Graph / Shaders', 'Niagara VFX Systems', 'Level Design & Lighting'].map(skill => (
+                  <li key={skill} className="flex items-center gap-3 text-sm text-gray-300">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#ff0055]"></div>{skill}
+                  </li>
+                ))}
+              </ul>
+            </article>
+
+            {/* 2. UNITY ARCHITECT CARD (Emerald Glow) */}
             <article className="bg-[#111]/80 backdrop-blur-sm p-10 rounded-2xl border border-white/5 transition-all duration-300 hover:-translate-y-2 hover:border-emerald-500 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] group flex flex-col h-full">
               <div className="w-14 h-14 bg-[#1a1a1a] text-white rounded-xl flex items-center justify-center mb-8 transition-colors duration-300 border border-white/10 group-hover:bg-emerald-500 group-hover:text-black group-hover:border-transparent">
                 <Layers size={28} />
@@ -93,24 +111,6 @@ const App = () => {
               </ul>
             </article>
 
-            {/* 2. UNREAL ENGINE CARD (Pink Glow) */}
-            <article className="bg-[#111]/80 backdrop-blur-sm p-10 rounded-2xl border border-white/5 transition-all duration-300 hover:-translate-y-2 hover:border-[#ff0055] hover:shadow-[0_0_30px_rgba(255,0,85,0.15)] group flex flex-col h-full">
-              <div className="w-14 h-14 bg-[#1a1a1a] text-white rounded-xl flex items-center justify-center mb-8 transition-colors duration-300 border border-white/10 group-hover:bg-[#ff0055] group-hover:text-white group-hover:border-transparent">
-                <Gamepad2 size={28} />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Unreal Engine 5</h3>
-              <p className="text-gray-400 leading-relaxed mb-6 text-sm">
-                Expanding my skillset into high-fidelity pipelines. Focusing on visual scripting, materials, and environment design.
-              </p>
-              <ul className="space-y-3 mt-auto">
-                {['Blueprints & Logic', 'Material Graph / HLSL', 'Niagara VFX Systems', 'Level Design & Lighting'].map(skill => (
-                  <li key={skill} className="flex items-center gap-3 text-sm text-gray-300">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#ff0055]"></div>{skill}
-                  </li>
-                ))}
-              </ul>
-            </article>
-
             {/* 3. TECH ART CARD (Cyan Glow) */}
             <article className="bg-[#111]/80 backdrop-blur-sm p-10 rounded-2xl border border-white/5 transition-all duration-300 hover:-translate-y-2 hover:border-[#00f3ff] hover:shadow-[0_0_30px_rgba(0,243,255,0.15)] group flex flex-col h-full">
               <div className="w-14 h-14 bg-[#1a1a1a] text-white rounded-xl flex items-center justify-center mb-8 transition-colors duration-300 border border-white/10 group-hover:bg-[#00f3ff] group-hover:text-black group-hover:border-transparent">
@@ -121,7 +121,7 @@ const App = () => {
                 Combining engineering logic with artistic vision. I ensure assets look great while maintaining high performance.
               </p>
               <ul className="space-y-3 mt-auto">
-                {['Shader Graph & VFX Graph', 'Procedural Animation (IK)', 'Render Pipelines (URP/HDRP)', 'Performance Profiling', ].map(skill => (
+                {['Shader Graph & VFX Graph', 'Procedural Animation (IK)', 'Animation Pipeline', 'Performance Profiling'].map(skill => (
                   <li key={skill} className="flex items-center gap-3 text-sm text-gray-300">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#00f3ff]"></div>{skill}
                   </li>
@@ -157,8 +157,8 @@ const App = () => {
 
               <p className="text-lg text-gray-400 mb-8 leading-relaxed">
                 I am a Gameplay Engineer with a keen eye for visual polish. While my core strength lies in
-                <span className="text-white font-medium"> C# Architecture</span> and <span className="text-white font-medium">Tool Development</span>,
-                I actively study rendering pipelines, shaders, and VFX to deliver products that feel as good as they run.
+                <span className="text-white font-medium"> Unreal Engine</span> and <span className="text-white font-medium">Blueprints</span>,
+                I actively study animation pipelines, shaders, and VFX to deliver products that feel as good as they run.
                 <br /><br />
                 Currently interning, and seeking a <span className="text-[#00f3ff] font-semibold">Graduation Internship for early 2027</span>.
               </p>

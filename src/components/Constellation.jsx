@@ -18,17 +18,14 @@ const ConstellationBackground = () => {
 
     const initParticles = () => {
       particles = [];
-      const particleCount = window.innerWidth < 768 ? 40 : 80; // Increased count slightly for better fluid feel
+      const particleCount = window.innerWidth < 768 ? 40 : 80;
       for (let i = 0; i < particleCount; i++) {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          // Lower base velocity for a calmer drift
           vx: (Math.random() - 0.5) * 0.2, 
           vy: (Math.random() - 0.5) * 0.2,
-          // Store base size to oscillate around
           baseSize: Math.random() * 1.5 + 0.5,
-          // Randomize the twinkling phase so they don't pulse in unison
           pulsePhase: Math.random() * Math.PI * 2,
           pulseSpeed: 0.02 + Math.random() * 0.02,
         });
@@ -43,42 +40,50 @@ const ConstellationBackground = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       particles.forEach((p, index) => {
-        // 1. TWINKLE EFFECT
-        // Oscillate size using sine wave for smooth "breathing"
         p.pulsePhase += p.pulseSpeed;
-        const currentSize = p.baseSize + Math.sin(p.pulsePhase) * 0.5; // Fluctuate size by +/- 0.5px
-        // Ensure size doesn't go negative
+        const currentSize = p.baseSize + Math.sin(p.pulsePhase) * 0.5;
         const drawSize = Math.max(0.1, currentSize);
 
-        // 2. MOUSE ATTRACTION (The "Magnetic" Feel)
         const dxMouse = mouseRef.current.x - p.x;
         const dyMouse = mouseRef.current.y - p.y;
         const distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
         
-        // If within range, gently pull particle towards mouse
-        if (distMouse < 250) {
-            const force = (250 - distMouse) / 250; // Stronger force when closer
-            // Add a tiny vector towards the mouse (Subtle gravity)
-            p.vx += (dxMouse / distMouse) * force * 0.02; 
-            p.vy += (dyMouse / distMouse) * force * 0.02;
+        // ORBITAL SWIRL (Black Hole)
+        if (distMouse < 300) {
+            const force = (300 - distMouse) / 300;
+            // Tangent vector for swirl (-dy, dx)
+            p.vx += (-dyMouse / distMouse) * force * 0.04; 
+            p.vy += (dxMouse / distMouse) * force * 0.04;
+            // Very slight gravity so they don't completely fly away forever
+            p.vx += (dxMouse / distMouse) * force * 0.01; 
+            p.vy += (dyMouse / distMouse) * force * 0.01;
         }
 
-        // Apply Friction (to stop them from speeding up infinitely)
+        // Apply Friction
         p.vx *= 0.98;
         p.vy *= 0.98;
+
+        // Restore natural drift if they slow down too much
+        if (Math.abs(p.vx) < 0.05 && Math.abs(p.vy) < 0.05) {
+            p.vx += (Math.random() - 0.5) * 0.01;
+            p.vy += (Math.random() - 0.5) * 0.01;
+        }
 
         // Update Position
         p.x += p.vx;
         p.y += p.vy;
 
-        // Bounce off walls
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+        // Bounce off walls smoothly
+        if (p.x < 0) { p.x = 0; p.vx *= -1; }
+        if (p.x > canvas.width) { p.x = canvas.width; p.vx *= -1; }
+        if (p.y < 0) { p.y = 0; p.vy *= -1; }
+        if (p.y > canvas.height) { p.y = canvas.height; p.vy *= -1; }
 
         // Draw Star
         ctx.beginPath();
         ctx.arc(p.x, p.y, drawSize, 0, Math.PI * 2);
-        // Use your Cyan brand color for stars near mouse, white for others
+        
+        // Brand color for stars near mouse
         if (distMouse < 200) {
            ctx.fillStyle = `rgba(0, 243, 255, ${0.6 * (1 - distMouse / 200)})`; 
         } else {
@@ -86,7 +91,7 @@ const ConstellationBackground = () => {
         }
         ctx.fill();
 
-        // 3. DRAW CONNECTIONS
+        // DRAW CONNECTIONS
         // Mouse Connection (Cyan)
         if (distMouse < 180) {
            ctx.beginPath();
@@ -97,7 +102,7 @@ const ConstellationBackground = () => {
            ctx.stroke();
         }
 
-        // Particle Connections (Subtle White)
+        // Particle Connections
         for (let j = index + 1; j < particles.length; j++) {
           const p2 = particles[j];
           const dx = p.x - p2.x;

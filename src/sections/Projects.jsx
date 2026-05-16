@@ -492,7 +492,7 @@ const Projects = () => {
       project.tags.some(tag => tag.toLowerCase().includes(activeFilter.toLowerCase()))
     );
 
-  const filters = ['All', 'Unity', 'Unreal', 'Game', 'Tech Art', 'Shaders', 'VFX', 'IK', 'Tools'];
+  const filters = ['All', 'Unreal', 'Unity', 'Game', 'Tech Art', 'Shaders', 'VFX', 'IK', 'Tools'];
 
   // Modal handlers
   const handleNextProject = () => {
