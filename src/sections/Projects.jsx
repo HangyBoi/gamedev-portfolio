@@ -4,8 +4,42 @@ import ProjectModal from '../components/ProjectModal';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All');
+  const [showAllProjects, setShowAllProjects] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
   const scrollContainerRef = useRef(null);
+
+  // Drag to scroll states
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const [dragMoved, setDragMoved] = useState(false);
+
+  const handleMouseDown = (e) => {
+    if (!scrollContainerRef.current) return;
+    setIsDragging(true);
+    setDragMoved(false);
+    setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
+    setScrollLeft(scrollContainerRef.current.scrollLeft);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging || !scrollContainerRef.current) return;
+    e.preventDefault(); // Prevents text selection/image dragging
+    const x = e.pageX - scrollContainerRef.current.offsetLeft;
+    const walk = (x - startX) * 2; // scroll speed multiplier
+    if (Math.abs(walk) > 5) {
+      setDragMoved(true);
+    }
+    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
+  };
 
   const scroll = (direction) => {
     if (scrollContainerRef.current) {
@@ -121,7 +155,7 @@ const Projects = () => {
     {
       id: 3,
       title: "Procedural Creature Animation",
-      category: "IK",
+      category: "Animation",
       tags: ["Unity 6", "C#", "IK", "Procedural Animation", "Tech Art", "URP"],
       image: "/gamedev-portfolio/images/procedural-animation/gecko_skeleton_simple.webp",
       description: "Real-time, terrain-adaptive locomotion systems for spider and lizard using Inverse Kinematics.",
@@ -193,7 +227,7 @@ const Projects = () => {
 
     {
       id: 5,
-      title: "UE5 Study: Alpine Citadel",
+      title: "Alpine Citadel",
       category: "Unreal",
       tags: ["UE5", "Lumen", "Nanite", "Azure DevOps", "Environment"],
       image: "/gamedev-portfolio/images/ue5-citadel/castle-shot_1.webp",
@@ -241,21 +275,18 @@ const Projects = () => {
       },
       responsibilities: [
         "Engineered a comprehensive Master Material ('Uber-Shader') supporting vertex painting for puddles, moss, and surface variation.",
-        "Developed a modular Niagara VFX system, creating assets for weather effects (rain with puddles).",
+        "Developed a modular Niagara VFX system, creating assets for weather effects (rain with puddles) and others.",
         "Performed a deep-dive lighting study, rebuilding demo scenes from scratch to master Lumen's Global Illumination settings.",
       ],
       gallery: [
-        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/alley-shot_2.webp", align: "center" },
-        { type: 'video', url: "/gamedev-portfolio/videos/ue5-urban-alley/cinematic-showcase.mp4" },
-        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/alley-shot_1.webp", align: "center" },
-        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/alley-shot_4.webp", align: "center" },
-        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/alley-shot_5.webp", align: "center" },
-        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/alley-step-process.webp", align: "center" },
-        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/lighting-playground.webp", align: "center" },
-        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/lumen-demo.webp", align: "center" },
-        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/lumen-screen-probes-demo.webp", align: "center" },
-        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/master-material-finished.webp", align: "center" },
-        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/master-material-instance.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/angle1_final.png", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/ue5-urban-alley/all_angles.mp4" },
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/angle2_final.png", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/angle3_final.png", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/angle4_final.png", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/ue5-urban-alley/main_angle_static.mp4", align: "top" },
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/angle5_final.png", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/angle6_final.png", align: "center" }
 
       ],
       links: {
@@ -486,13 +517,13 @@ const Projects = () => {
   ];
 
   const filteredProjects = activeFilter === 'All'
-    ? projects
+    ? (showAllProjects ? projects : projects.slice(0, 6))
     : projects.filter(project =>
       project.category === activeFilter ||
       project.tags.some(tag => tag.toLowerCase().includes(activeFilter.toLowerCase()))
     );
 
-  const filters = ['All', 'Unreal', 'Unity', 'Game', 'Tech Art', 'Shaders', 'VFX', 'IK', 'Tools'];
+  const filters = ['All', 'Unreal', 'Unity', 'Game', 'Tech Art', 'Shaders', 'VFX', 'Animation', 'Tools'];
 
   // Modal handlers
   const handleNextProject = () => {
@@ -540,7 +571,10 @@ const Projects = () => {
               {filters.map(filter => (
                 <button
                   key={filter}
-                  onClick={() => setActiveFilter(filter)}
+                  onClick={() => {
+                    setActiveFilter(filter);
+                    if (filter === 'All') setShowAllProjects(false);
+                  }}
                   className={`px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider border transition-all hover:-translate-y-1 ${activeFilter === filter
                     ? 'bg-[#00f3ff] border-[#00f3ff] text-black shadow-[0_0_15px_rgba(0,243,255,0.5)]'
                     : 'bg-transparent border-white/20 text-gray-400 hover:border-white hover:text-white'
@@ -564,13 +598,25 @@ const Projects = () => {
         {/* Project Grid */}
         <div
           ref={scrollContainerRef}
-          className="grid grid-rows-2 grid-flow-col gap-8 overflow-x-auto pb-12 px-4 scrollbar-hide auto-cols-[350px] md:auto-cols-[450px]"
+          onMouseDown={handleMouseDown}
+          onMouseLeave={handleMouseLeave}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
+          className={`grid grid-rows-2 grid-flow-col gap-8 overflow-x-auto pb-12 px-4 scrollbar-hide auto-cols-[350px] md:auto-cols-[450px] transition-all duration-500 ease-in-out ${activeFilter === 'All' && !showAllProjects ? 'xl:justify-center justify-start' : 'justify-start'
+            } ${isDragging ? 'cursor-grabbing select-none' : 'cursor-grab'}`}
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {filteredProjects.map((project) => (
             <article
               key={project.id}
-              onClick={() => setSelectedProject(project)}
+              onClick={(e) => {
+                if (dragMoved) {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  return;
+                }
+                setSelectedProject(project);
+              }}
               className="group relative bg-[#111] rounded-2xl overflow-hidden border border-white/10 flex flex-col transition-all duration-300 hover:border-[#00f3ff] hover:shadow-[0_0_40px_rgba(0,243,255,0.1)] w-full h-full cursor-pointer"
             >
               {/* Aspect-video forces 16:9 ratio */}
@@ -578,6 +624,7 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
+                  draggable={false}
                   className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
                 />
 
@@ -611,7 +658,10 @@ const Projects = () => {
                     <a
                       href={project.links.wiki}
                       target="_blank"
-                      onClick={(e) => e.stopPropagation()}
+                      onClick={(e) => {
+                        if (dragMoved) e.preventDefault();
+                        e.stopPropagation();
+                      }}
                       className="text-xs font-bold uppercase tracking-widest text-amber-400 hover:text-amber-300 flex items-center gap-1 transition-colors"
                     >
                       <FileText size={12} /> Read Tech Wiki
@@ -620,7 +670,10 @@ const Projects = () => {
                     <span className="text-xs text-[#00f3ff] font-bold uppercase tracking-widest group-hover:underline">View Details +</span>
                   )}
 
-                  <div className="flex gap-2" onClick={(e) => e.stopPropagation()}>
+                  <div className="flex gap-2" onClick={(e) => {
+                    if (dragMoved) e.preventDefault();
+                    e.stopPropagation();
+                  }}>
                     {project.links.source && (
                       <a href={project.links.source} target="_blank" className="p-2 bg-[#222] hover:bg-white hover:text-black rounded-lg transition-colors" title="View Code">
                         <Github size={14} />
@@ -637,6 +690,20 @@ const Projects = () => {
             </article>
           ))}
         </div>
+
+        {/* View More Button */}
+        {activeFilter === 'All' && !showAllProjects && projects.length > 6 && (
+          <div className="flex justify-center mt-4">
+            <button
+              onClick={() => {
+                setShowAllProjects(true);
+              }}
+              className="px-8 py-3 rounded-full bg-[#111] border border-[#00f3ff]/50 text-[#00f3ff] font-bold tracking-widest uppercase hover:bg-[#00f3ff] hover:text-black hover:shadow-[0_0_30px_rgba(0,243,255,0.4)] transition-all hover:-translate-y-1 active:scale-95 flex items-center gap-2"
+            >
+              View More Projects <ChevronRight size={18} />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

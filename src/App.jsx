@@ -187,7 +187,7 @@ const App = () => {
             </a>
           ))}
         </div>
-        <p className="text-gray-600 text-sm font-mono">&copy; 2025 Nichita Cebotari. Built with React.</p>
+        <p className="text-gray-600 text-sm font-mono">&copy; 2026 Nichita Cebotari. Built with React.</p>
       </footer>
     </main>
   );

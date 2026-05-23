@@ -23,7 +23,7 @@ const ConstellationBackground = () => {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.2, 
+          vx: (Math.random() - 0.5) * 0.2,
           vy: (Math.random() - 0.5) * 0.2,
           baseSize: Math.random() * 1.5 + 0.5,
           pulsePhase: Math.random() * Math.PI * 2,
@@ -38,7 +38,7 @@ const ConstellationBackground = () => {
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       particles.forEach((p, index) => {
         p.pulsePhase += p.pulseSpeed;
         const currentSize = p.baseSize + Math.sin(p.pulsePhase) * 0.5;
@@ -47,16 +47,16 @@ const ConstellationBackground = () => {
         const dxMouse = mouseRef.current.x - p.x;
         const dyMouse = mouseRef.current.y - p.y;
         const distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
-        
+
         // ORBITAL SWIRL (Black Hole)
         if (distMouse < 300) {
-            const force = (300 - distMouse) / 300;
-            // Tangent vector for swirl (-dy, dx)
-            p.vx += (-dyMouse / distMouse) * force * 0.04; 
-            p.vy += (dxMouse / distMouse) * force * 0.04;
-            // Very slight gravity so they don't completely fly away forever
-            p.vx += (dxMouse / distMouse) * force * 0.01; 
-            p.vy += (dyMouse / distMouse) * force * 0.01;
+          const force = (300 - distMouse) / 300;
+          // Tangent vector for swirl (-dy, dx)
+          p.vx += (-dyMouse / distMouse) * force * 0.04;
+          p.vy += (dxMouse / distMouse) * force * 0.04;
+          // Very slight gravity so they don't completely fly away forever
+          p.vx += (dxMouse / distMouse) * force * 0.01;
+          p.vy += (dyMouse / distMouse) * force * 0.01;
         }
 
         // Apply Friction
@@ -65,8 +65,8 @@ const ConstellationBackground = () => {
 
         // Restore natural drift if they slow down too much
         if (Math.abs(p.vx) < 0.05 && Math.abs(p.vy) < 0.05) {
-            p.vx += (Math.random() - 0.5) * 0.01;
-            p.vy += (Math.random() - 0.5) * 0.01;
+          p.vx += (Math.random() - 0.5) * 0.01;
+          p.vy += (Math.random() - 0.5) * 0.01;
         }
 
         // Update Position
@@ -82,24 +82,24 @@ const ConstellationBackground = () => {
         // Draw Star
         ctx.beginPath();
         ctx.arc(p.x, p.y, drawSize, 0, Math.PI * 2);
-        
+
         // Brand color for stars near mouse
         if (distMouse < 200) {
-           ctx.fillStyle = `rgba(0, 243, 255, ${0.6 * (1 - distMouse / 200)})`; 
+          ctx.fillStyle = `rgba(0, 243, 255, ${0.6 * (1 - distMouse / 200)})`;
         } else {
-           ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+          ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
         }
         ctx.fill();
 
         // DRAW CONNECTIONS
         // Mouse Connection (Cyan)
         if (distMouse < 180) {
-           ctx.beginPath();
-           ctx.strokeStyle = `rgba(0, 243, 255, ${0.3 * (1 - distMouse / 180)})`;
-           ctx.lineWidth = 0.6;
-           ctx.moveTo(p.x, p.y);
-           ctx.lineTo(mouseRef.current.x, mouseRef.current.y);
-           ctx.stroke();
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(0, 243, 255, ${0.3 * (1 - distMouse / 180)})`;
+          ctx.lineWidth = 0.6;
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(mouseRef.current.x, mouseRef.current.y);
+          ctx.stroke();
         }
 
         // Particle Connections
@@ -119,7 +119,7 @@ const ConstellationBackground = () => {
           }
         }
       });
-      
+
       animationFrameId = requestAnimationFrame(animate);
     };
 
@@ -136,8 +136,8 @@ const ConstellationBackground = () => {
   }, []);
 
   return (
-    <canvas 
-      ref={canvasRef} 
+    <canvas
+      ref={canvasRef}
       role="presentation"
       className="fixed top-0 left-0 w-full h-full pointer-events-none z-0 opacity-50"
     />
