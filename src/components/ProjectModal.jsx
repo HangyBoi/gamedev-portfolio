@@ -101,7 +101,7 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
           className="overflow-y-auto scrollbar-hide h-full"
         >
           {/* --- GALLERY SECTION --- */}
-          <div className="relative h-[50vh] md:h-[60vh] w-full bg-black shrink-0">
+          <div className="relative h-[55vh] md:h-[70vh] w-full bg-black shrink-0">
 
             {project.gallery && project.gallery.length > 0 ? (
               <div className="w-full h-full relative overflow-hidden">
@@ -121,19 +121,29 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
                       <VideoSlide
                         key={`video-${currentSlide}`} // Key is crucial for resetting state on slide change
                         url={slide.url}
-                        className={`w-full h-full object-cover ${alignmentClass}`}
+                        bgImage={project.image}
+                        className="relative z-10 w-full h-full object-contain drop-shadow-2xl"
                         isMuted={isMuted}
                         onEnded={handleNextSlide}
                       />
                     );
                   } else {
                     return (
-                      <img
-                        key={`img-${currentSlide}`}
-                        src={slide.url}
-                        alt={`Slide ${currentSlide}`}
-                        className={`w-full h-full object-cover ${alignmentClass} transition-transform duration-700 hover:scale-105`}
-                      />
+                      <div key={`img-${currentSlide}`} className="w-full h-full relative flex items-center justify-center overflow-hidden">
+                        {/* Ambient Blur Background */}
+                        <img 
+                          src={slide.url} 
+                          alt="" 
+                          className="absolute inset-0 w-full h-full object-cover scale-[1.15] blur-3xl opacity-40 saturate-[1.5]" 
+                          aria-hidden="true" 
+                        />
+                        {/* Foreground Image */}
+                        <img
+                          src={slide.url}
+                          alt={`Slide ${currentSlide}`}
+                          className="relative z-10 w-full h-full object-contain transition-transform duration-700 hover:scale-[1.02] drop-shadow-[0_0_30px_rgba(0,0,0,0.8)]"
+                        />
+                      </div>
                     );
                   }
                 })()}
@@ -142,11 +152,19 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent pointer-events-none"></div>
               </div>
             ) : (
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover object-top"
-              />
+              <div className="w-full h-full relative flex items-center justify-center overflow-hidden">
+                <img 
+                  src={project.image} 
+                  alt="" 
+                  className="absolute inset-0 w-full h-full object-cover scale-[1.15] blur-3xl opacity-40 saturate-[1.5]" 
+                  aria-hidden="true" 
+                />
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="relative z-10 w-full h-full object-contain drop-shadow-[0_0_30px_rgba(0,0,0,0.8)]"
+                />
+              </div>
             )}
 
             {/* Dots Navigation */}
@@ -291,7 +309,7 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
   );
 };
 
-const VideoSlide = ({ url, className, isMuted, onEnded }) => {
+const VideoSlide = ({ url, className, isMuted, onEnded, bgImage }) => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(isMuted);
   const [showOverlay, setShowOverlay] = useState(!isMuted);
@@ -316,7 +334,16 @@ const VideoSlide = ({ url, className, isMuted, onEnded }) => {
 
   return (
     // FIX 3: Removed onClick={togglePlay} from this parent div to prevent double-toggling
-    <div className="relative w-full h-full group cursor-pointer">
+    <div className="relative w-full h-full group cursor-pointer overflow-hidden flex items-center justify-center">
+      {/* Ambient Background for Video */}
+      {bgImage && (
+        <img 
+          src={bgImage} 
+          alt="" 
+          className="absolute inset-0 w-full h-full object-cover scale-[1.15] blur-3xl opacity-30 saturate-[1.5] pointer-events-none" 
+          aria-hidden="true" 
+        />
+      )}
       <video
         ref={videoRef}
         src={url}

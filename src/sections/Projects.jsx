@@ -279,12 +279,12 @@ const Projects = () => {
         "Performed a deep-dive lighting study, rebuilding demo scenes from scratch to master Lumen's Global Illumination settings.",
       ],
       gallery: [
-        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/angle1_final.png", align: "center" },
         { type: 'video', url: "/gamedev-portfolio/videos/ue5-urban-alley/all_angles.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/ue5-urban-alley/main_angle_static.mp4", align: "top" },
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/angle1_final.png", align: "center" },
         { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/angle2_final.png", align: "center" },
         { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/angle3_final.png", align: "center" },
         { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/angle4_final.png", align: "center" },
-        { type: 'video', url: "/gamedev-portfolio/videos/ue5-urban-alley/main_angle_static.mp4", align: "top" },
         { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/angle5_final.png", align: "center" },
         { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/angle6_final.png", align: "center" }
 
@@ -294,7 +294,7 @@ const Projects = () => {
         artstation: "#",
         wiki: "#"
       },
-      status: "In Development"
+      status: "Released"
     },
 
     {
@@ -511,7 +511,7 @@ const Projects = () => {
         source: "https://github.com/HangyBoi/Business-Startup",
         wiki: "#"
       },
-      status: "Vertical Slice"
+      status: "Prototype"
     },
 
   ];
