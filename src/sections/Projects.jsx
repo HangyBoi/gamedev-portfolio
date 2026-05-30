@@ -226,38 +226,34 @@ const Projects = () => {
     },
 
     {
-      id: 5,
-      title: "Alpine Citadel",
-      category: "Unreal",
-      tags: ["UE5", "Lumen", "Nanite", "Azure DevOps", "Environment"],
-      image: "/gamedev-portfolio/images/ue5-citadel/castle-shot_1.webp",
-      description: "My transition project into Unreal Engine 5, focusing on Landscape workflows, Lumen lighting, and Azure LFS pipelines.",
-      longDescription: "A comprehensive study project marking my transition from Unity to Unreal Engine 5. While following the 'Unreal Sensei' curriculum, I focused on analyzing the architectural differences between engines - specifically the shift from GameObjects to Actors and the power of the Material Graph. Crucially, I established a professional Version Control workflow using Azure DevOps to manage massive binary assets (LFS) without the storage constraints of GitHub.",
+      id: 12,
+      title: "\VR Fluid Simulation",
+      category: "Technical Gameplay & Rendering",
+      tags: ["UE5", "VR", "Niagara Data Interfaces", "Advanced Materials", "Blueprints"],
+      image: "/gamedev-portfolio/images/quantum-delta/squeezebottle-multiple.png",
+      description: "A highly optimized, mathematically driven VR fluid and chemistry simulation utilizing custom rendering techniques and Niagara data payloads to achieve realistic liquid interactions without expensive fluid solvers.",
+      longDescription: "Built from the ground up for VR performance, this project completely bypasses expensive traditional fluid simulations. It uses a custom math-driven approach to handle fluid physics, spatial displacement, and multi-state chemical reactions (solvents, solutes, and solids). A major focus of the project is deep interactability, allowing players to pour, mix, and react different chemicals seamlessly across various shapes and sizes of containers. It also uses a custom particle payload system to transfer liquids perfectly between containers without losing a single drop, regardless of the game's framerate.",
       details: {
-        role: "Environment Artist (Study)",
-        time: "3 weeks",
-        tools: "UE5, Quixel Bridge, Azure DevOps"
+        role: "Technical Artist / VR Programmer",
+        time: "Ongoing",
+        tools: "Unreal Engine 5 (Blueprints, Niagara, Material Graph), VR Expansion Plugin"
       },
       responsibilities: [
-        "Mastered the UE5 Landscape material workflow, utilizing Layer Blends and Weight Maps for organic terrain texturing.",
-        "Implemented Lumen Global Illumination and Nanite virtualized geometry to achieve cinematic fidelity.",
-        "Optimized rendering settings for hardware-specific constraints (AMD Raytracing) to maintain editor stability.",
-        "Changed my Version Control pipeline using Azure DevOps to handle unlimited Git LFS storage for heavy Unreal assets."
+        "Architected a scalable, modular chemical framework handling multi-state matter calculations and dynamic density displacement.",
+        "Engineered a highly interactive physics system that allows different chemicals to seamlessly react and mix when transferred between various containers.",
+        "Developed a framerate-independent Niagara 'Backpack' payload system that exports exact metric volume/mass data per particle via CPU raytraced collisions to ensure a 1:1 conservation of mass.",
+        "Programmed a custom virtual pendulum inertia and internal liquid physics system to simulate physical sloshing, tangent clamping, and surface rippling completely in mathematical space."
       ],
       gallery: [
-        { type: 'video', url: "/gamedev-portfolio/videos/ue5-citadel/cinematic-tour.mp4" },
-        { type: 'image', url: "/gamedev-portfolio/images/ue5-citadel/castle-shot_1.webp", align: "center" },
-        { type: 'image', url: "/gamedev-portfolio/images/ue5-citadel/castle-shot_2.webp", align: "center" },
-        { type: 'image', url: "/gamedev-portfolio/images/ue5-citadel/castle-shot_3.webp", align: "center" },
-        { type: 'image', url: "/gamedev-portfolio/images/ue5-citadel/castle-shot_4.webp", align: "center" },
-        { type: 'image', url: "/gamedev-portfolio/images/ue5-citadel/castle-shot_5.webp", align: "center" },
-        { type: 'video', url: "/gamedev-portfolio/videos/ue5-citadel/castle-scene-transition.mp4" },
+        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/liquidsim-showcase.mp4" },
+        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/squeezebottle-physics.mp4" },
+        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/squeezebottle-vfx.mp4" },
+        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/squeezebottle-beaker-interaction.mp4" },
+        { type: "image", url: "/gamedev-portfolio/images/quantum-delta/squeezebottle-with-splashes.png", align: "center" },
+        { type: "image", url: "/gamedev-portfolio/images/quantum-delta/squeezebottle-multiple.png", align: "center" }
       ],
-      links: {
-        source: "https://dev.azure.com/nik4ebPortfolio/UE-Project-Zero-Citadel",
-        wiki: "#"
-      },
-      status: "Prototype"
+      links: {},
+      status: "In Development"
     },
 
     {
@@ -295,6 +291,41 @@ const Projects = () => {
         wiki: "#"
       },
       status: "Released"
+    },
+
+    {
+      id: 5,
+      title: "Alpine Citadel",
+      category: "Unreal",
+      tags: ["UE5", "Lumen", "Nanite", "Azure DevOps", "Environment"],
+      image: "/gamedev-portfolio/images/ue5-citadel/castle-shot_1.webp",
+      description: "My transition project into Unreal Engine 5, focusing on Landscape workflows, Lumen lighting, and Azure LFS pipelines.",
+      longDescription: "A comprehensive study project marking my transition from Unity to Unreal Engine 5. While following the 'Unreal Sensei' curriculum, I focused on analyzing the architectural differences between engines - specifically the shift from GameObjects to Actors and the power of the Material Graph. Crucially, I established a professional Version Control workflow using Azure DevOps to manage massive binary assets (LFS) without the storage constraints of GitHub.",
+      details: {
+        role: "Environment Artist (Study)",
+        time: "3 weeks",
+        tools: "UE5, Quixel Bridge, Azure DevOps"
+      },
+      responsibilities: [
+        "Mastered the UE5 Landscape material workflow, utilizing Layer Blends and Weight Maps for organic terrain texturing.",
+        "Implemented Lumen Global Illumination and Nanite virtualized geometry to achieve cinematic fidelity.",
+        "Optimized rendering settings for hardware-specific constraints (AMD Raytracing) to maintain editor stability.",
+        "Changed my Version Control pipeline using Azure DevOps to handle unlimited Git LFS storage for heavy Unreal assets."
+      ],
+      gallery: [
+        { type: 'video', url: "/gamedev-portfolio/videos/ue5-citadel/cinematic-tour.mp4" },
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-citadel/castle-shot_1.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-citadel/castle-shot_2.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-citadel/castle-shot_3.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-citadel/castle-shot_4.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/ue5-citadel/castle-shot_5.webp", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/ue5-citadel/castle-scene-transition.mp4" },
+      ],
+      links: {
+        source: "https://dev.azure.com/nik4ebPortfolio/UE-Project-Zero-Citadel",
+        wiki: "#"
+      },
+      status: "Prototype"
     },
 
     {
