@@ -227,7 +227,7 @@ const Projects = () => {
 
     {
       id: 12,
-      title: "\VR Fluid Simulation",
+      title: "VR Fluid Simulation",
       category: "Technical Gameplay & Rendering",
       tags: ["UE5", "VR", "Niagara Data Interfaces", "Advanced Materials", "Blueprints"],
       image: "/gamedev-portfolio/images/quantum-delta/squeezebottle-multiple.png",
