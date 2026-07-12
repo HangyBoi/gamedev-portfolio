@@ -65,6 +65,9 @@ const Projects = () => {
     // Animation & IK (Lime/Green)
     if (lower.includes('ik') || lower.includes('animation') || lower.includes('rigging'))
       return 'text-lime-400 border-lime-400 bg-lime-950/30';
+    // Experience (Indigo)
+    if (lower.includes('internship') || lower.includes('professional') || lower.includes('client'))
+      return 'text-indigo-400 border-indigo-400 bg-indigo-900/30';
     // Default / Tools (Amber)
     return 'text-amber-400 border-amber-400 bg-amber-900/30';
   };
@@ -81,7 +84,7 @@ const Projects = () => {
       id: 1,
       title: "Procedural Parisian Cityscape",
       category: "Tools",
-      tags: ["Unity 6", "C#", "PCG", "Editor Tooling", "Tech Art", "HDRP"],
+      tags: ["Unity", "Tech Art", "Editor Tooling", "PCG", "C#"],
       image: "/gamedev-portfolio/images/procedural-paris/city-angle.webp",
       description: "One-click generation of organic, 18th-century city layouts using Voronoi Tessellation.",
       longDescription: "A sophisticated two-layer procedural generation system designed to move away from grid-based layouts. The tool utilizes Voronoi diagrams for organic street distribution and Sutherland-Hodgman clipping for lot subdivision. Features a non-destructive custom Editor workflow, allowing real-time vertex manipulation of building footprints with instant mesh regeneration for facades and watertight Mansard roofs.",
@@ -117,7 +120,7 @@ const Projects = () => {
       "id": 2,
       "title": "Slice of Post-Soviet Yard",
       "category": "Technical Environment Art",
-      "tags": ["Unity 6", "Level Design", "Lighting", "Shaders", "Optimization"],
+      "tags": ["Unity", "Shaders", "Lighting", "HDRP", "Level Design", "Optimization"],
       "image": "/gamedev-portfolio/images/post-soviet/bloodmoon.webp",
       "description": "A technical environment showcase combining atmospheric level design, lighting composition, and a custom URP rendering pipeline.",
       "longDescription": "A deep dive into the Universal Render Pipeline (URP) to bridge the gap between engine logic and visual art. This project implements a custom 'Digital Lens' stack, utilizing Fullscreen Renderer Features to achieve a pixel-perfect PSX aesthetic (Dithering, Quantization). It features a reactive environment where foliage blends with terrain via Render Textures and water interacts with depth buffers.",
@@ -156,7 +159,7 @@ const Projects = () => {
       id: 3,
       title: "Procedural Creature Animation",
       category: "Animation",
-      tags: ["Unity 6", "C#", "IK", "Procedural Animation", "Tech Art", "URP"],
+      tags: ["Unity", "Tech Art", "Procedural Animation", "IK", "URP", "C#"],
       image: "/gamedev-portfolio/images/procedural-animation/gecko_skeleton_simple.webp",
       description: "Real-time, terrain-adaptive locomotion systems for spider and lizard using Inverse Kinematics.",
       longDescription: "A pure-code animation project exploring dynamic locomotion without keyframes. I engineered two distinct procedural architectures: an 8-legged spider utilizing a predictive tripod gait to navigate extreme topology (including ceilings), and a modular 'Gecko' controller driven by root motion, featuring independent head tracking and physics-based tail reactions.",
@@ -194,7 +197,7 @@ const Projects = () => {
       id: 4,
       title: "Dynamic Weather System",
       category: "VFX",
-      tags: ["Unity 6", "VFXs", "Shaders", "Tech Art", "URP"],
+      tags: ["Unity", "Tech Art", "Shaders", "VFX", "URP"],
       image: "/gamedev-portfolio/images/dynamic-weather/tornado-main.webp",
       description: "A centralized weather controller driving stylized tornado and atmospheric effects via VFX Graph.",
       longDescription: "A comprehensive technical art project focusing on system cohesion and tool design. The core of the project is the 'Weather Orchestrator,' a central C# controller that manipulates thousands of particle properties in real-time via a single 'Storm Intensity' float. It drives a multi-layered stylized tornado, GPU-accelerated rain, and directional wind trails with some lightning effects.",
@@ -229,38 +232,41 @@ const Projects = () => {
       id: 12,
       title: "VR Fluid Simulation",
       category: "Technical Gameplay & Rendering",
-      tags: ["UE5", "VR", "Niagara Data Interfaces", "Advanced Materials", "Blueprints"],
+      tags: ["UE5", "Internship", "VR", "Tech Art", "VFX", "Blueprints"],
       image: "/gamedev-portfolio/images/quantum-delta/squeezebottle-multiple.png",
-      description: "A highly optimized, mathematically driven VR fluid and chemistry simulation utilizing custom rendering techniques and Niagara data payloads to achieve realistic liquid interactions without expensive fluid solvers.",
-      longDescription: "Built from the ground up for VR performance, this project completely bypasses expensive traditional fluid simulations. It uses a custom math-driven approach to handle fluid physics, spatial displacement, and multi-state chemical reactions (solvents, solutes, and solids). A major focus of the project is deep interactability, allowing players to pour, mix, and react different chemicals seamlessly across various shapes and sizes of containers. It also uses a custom particle payload system to transfer liquids perfectly between containers without losing a single drop, regardless of the game's framerate.",
+      description: "A performance-optimized VR fluid and chemistry simulation built for cleanroom training. It authentically replicates liquid physics and chemical reactions for interactive lab equipment.",
+      longDescription: "Developed as an internship project, this VR simulation serves as a training platform for operating sensitive cleanroom equipment. To maintain high framerates in VR, it bypasses expensive traditional fluid solvers in favor of a custom math-driven approach to handle fluid physics, spatial displacement, and complex chemical reactions. Players can intuitively pour, mix, and weigh chemicals with realistic mass conservation, creating an immersive and physically accurate lab environment without performance bottlenecks.",
       details: {
         role: "Technical Artist / VR Programmer",
-        time: "Ongoing",
+        time: "Internship",
         tools: "Unreal Engine 5 (Blueprints, Niagara, Material Graph), VR Expansion Plugin"
       },
       responsibilities: [
-        "Architected a scalable, modular chemical framework handling multi-state matter calculations and dynamic density displacement.",
-        "Engineered a highly interactive physics system that allows different chemicals to seamlessly react and mix when transferred between various containers.",
-        "Developed a framerate-independent Niagara 'Backpack' payload system that exports exact metric volume/mass data per particle via CPU raytraced collisions to ensure a 1:1 conservation of mass.",
-        "Programmed a custom virtual pendulum inertia and internal liquid physics system to simulate physical sloshing, tangent clamping, and surface rippling completely in mathematical space."
+        "Architected a scalable, modular chemistry framework tracking mass, volume, and solution concentration for interactive chemical reactions.",
+        "Engineered a fluid physics system simulating realistic wobbling, pouring, and splashing across various glassware without traditional expensive solvers.",
+        "Developed a framerate-independent particle payload system ensuring 1:1 conservation of mass when transferring liquids.",
+        "Programmed physical skill-based interaction models, allowing players to manually mix and weigh chemicals using accurate in-game scales."
       ],
       gallery: [
-        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/liquidsim-showcase.mp4" },
-        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/squeezebottle-physics.mp4" },
-        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/squeezebottle-vfx.mp4" },
-        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/squeezebottle-beaker-interaction.mp4" },
-        { type: "image", url: "/gamedev-portfolio/images/quantum-delta/squeezebottle-with-splashes.png", align: "center" },
-        { type: "image", url: "/gamedev-portfolio/images/quantum-delta/squeezebottle-multiple.png", align: "center" }
+        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/liquid-wobbling.mov" },
+        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/liquid-squeezing.mov" },
+        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/beakers-interact.mov" },
+        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/mass-conservation.mov" },
+        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/koh-preparation.mov" },
+        { type: "image", url: "/gamedev-portfolio/images/quantum-delta/squeezebottle-multiple.png", align: "center" },
+        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/squeezebottle-physics.mov" },
+        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/squeezebottle-beaker-interaction.mov" },
+        { type: "image", url: "/gamedev-portfolio/images/quantum-delta/squeezebottle-with-splashes.png", align: "center" }
       ],
       links: {},
-      status: "In Development"
+      status: "Released"
     },
 
     {
       id: 6,
       title: "Urban Alley",
       category: "Unreal",
-      tags: ["UE5", "Niagara VFX", "Materials", "Lighting", "Tech Art"],
+      tags: ["UE5", "Tech Art", "Lighting", "Materials", "Niagara VFX"],
       image: "/gamedev-portfolio/images/ue5-urban-alley/alley-shot_2.webp",
       description: "A 4-week deep dive into UE5's rendering pipeline, culminating in a detailed urban diorama.",
       longDescription: "A self-directed 'Tech Art Bootcamp' focused on mastering the core pillars of Unreal Engine 5: Niagara VFX, Material Graphs, and Lumen Lighting. What began as a broad theoretical study evolved into a targeted project where I engineered a complex 'Uber-Shader' Master Material and a modular VFX system. The final output is a highly detailed Urban Alley diorama, demonstrating the practical application of vertex painting, decal layering, and cinematic lighting.",
@@ -297,7 +303,7 @@ const Projects = () => {
       id: 5,
       title: "Alpine Citadel",
       category: "Unreal",
-      tags: ["UE5", "Lumen", "Nanite", "Azure DevOps", "Environment"],
+      tags: ["UE5", "Environment", "Lumen", "Nanite", "Azure DevOps"],
       image: "/gamedev-portfolio/images/ue5-citadel/castle-shot_1.webp",
       description: "My transition project into Unreal Engine 5, focusing on Landscape workflows, Lumen lighting, and Azure LFS pipelines.",
       longDescription: "A comprehensive study project marking my transition from Unity to Unreal Engine 5. While following the 'Unreal Sensei' curriculum, I focused on analyzing the architectural differences between engines - specifically the shift from GameObjects to Actors and the power of the Material Graph. Crucially, I established a professional Version Control workflow using Azure DevOps to manage massive binary assets (LFS) without the storage constraints of GitHub.",
@@ -332,7 +338,7 @@ const Projects = () => {
       id: 7,
       title: "Modular Tower Defense",
       category: "Tools",
-      tags: ["Unity", "Game", "C#", "Design Patterns", "Architecture", "ScriptableObjects"],
+      tags: ["Unity", "Architecture", "Design Patterns", "ScriptableObjects", "C#", "Game"],
       image: "/gamedev-portfolio/images/tower-defense/game-zoomed.webp",
       description: "A scalable game architecture demonstrating SOLID principles and 5+ Design Patterns (Observer, Strategy, Factory).",
       longDescription: "A technical showcase developed for a Software Architecture course, focusing on decoupling systems and data-driven design. The project utilizes a 'Designer-First' approach, where all game balance (Waves, Enemy Stats, Tower Properties) is handled via ScriptableObjects. The codebase strictly adheres to SOLID principles, using Event Buses to decouple the UI from the Game Loop.",
@@ -366,7 +372,7 @@ const Projects = () => {
       id: 8,
       title: "The Tale of Aamsveen",
       category: "Unity",
-      tags: ["Unity", "Game", "Team Lead", "AI Framework", "HDRP"],
+      tags: ["Unity", "Team Lead", "AI Framework", "HDRP", "Game"],
       image: "/gamedev-portfolio/images/aamsveen/title-still.webp",
       description: "Lead Engineer for a client-based atmospheric horror game featuring complex FSM AI and physics interactions.",
       longDescription: "An atmospheric horror experience based on Dutch folklore. A client-directed academic project developed under strict weekly Agile sprints. We presented progress to stakeholders weekly, iterating rapidly based on feedback. As the Lead Architectural Engineer, I established the codebase structure and managed the Git pipeline for the team. My primary technical contribution was the 'Thimble Hunter' AI - a complex Finite State Machine featuring volumetric line-of-sight, auditory detection, and dynamic animation blending, alongside a physics-based lantern interaction system.",
@@ -412,7 +418,7 @@ const Projects = () => {
       id: 9,
       title: "Red Veil Operations",
       category: "Unity",
-      tags: ["Unity", "Game", "Photon PUN", "Mobile", "Multiplayer", "AI Framework", "URP"],
+      tags: ["Unity", "Multiplayer", "AI Framework", "Photon PUN", "Mobile", "URP", "Game"],
       image: "/gamedev-portfolio/images/red-veil/bed-room.webp",
       description: "Asymmetric mobile co-op horror where players communicate via voice chat to evade a sound-sensitive monster.",
       longDescription: "A 3-week client project delivering a 2-player asymmetric horror experience on mobile. One player (The Thief) navigates a dark hospital in first-person, while the other (The Operator) guides them via CCTV feeds. I engineered the networking framework and a unique AI system where the monster reacts to the players' real-world microphone volume via Photon Voice.",
@@ -456,7 +462,7 @@ const Projects = () => {
       id: 10,
       title: "Fading Colors",
       category: "Unity",
-      tags: ["Unity", "Serious Game", "Narrative", "Post-Processing", "Shaders", "Game"],
+      tags: ["Unity", "Shaders", "Post-Processing", "Narrative", "Serious Game"],
       image: "/gamedev-portfolio/images/fading-colors/main-theme.webp",
       description: "An educational narrative experience simulating Alzheimer's disease through distortive visual mechanics.",
       longDescription: "A client-driven 'Serious Game' developed to raise awareness for the Alzheimer’s Association. The project simulates the cognitive decline of an artist through progressive visual distortion and disorientation mechanics. Players experience the world from two perspectives: the patient, struggling with memory loss and blurred reality, and the caregiver, using sticky notes and organization to restore order.",
@@ -507,7 +513,7 @@ const Projects = () => {
       id: 11,
       title: "Folksroad",
       category: "Unity",
-      tags: ["Unity 2.5D", "Team Lead", "Agile", "Business Dev"],
+      tags: ["Unity", "Team Lead", "Agile", "Business Dev"],
       image: "/gamedev-portfolio/images/folksroad/main-mara.webp",
       description: "A 2.5D RPG vertical slice developed alongside a complete business model for investor pitching.",
       longDescription: "A dual-focus project combining technical game development with business strategy. We built a polished Vertical Slice of 'Folksroad', a folklore-inspired RPG, while simultaneously developing a go-to-market Business Plan for a 'Dragon's Den' style investor pitch. As Team Lead, I restructured the development pipeline after an initial setback, implementing strict Agile processes (Daily Stand-ups, QA) to deliver a high-quality product on a tight deadline.",
@@ -554,7 +560,7 @@ const Projects = () => {
       project.tags.some(tag => tag.toLowerCase().includes(activeFilter.toLowerCase()))
     );
 
-  const filters = ['All', 'Unreal', 'Unity', 'Game', 'Tech Art', 'Shaders', 'VFX', 'Animation', 'Tools'];
+  const filters = ['All', 'UE5', 'Unity', 'Game', 'Tech Art', 'Shaders', 'VFX', 'Animation', 'Tools'];
 
   // Modal handlers
   const handleNextProject = () => {

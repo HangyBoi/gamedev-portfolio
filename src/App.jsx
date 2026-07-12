@@ -11,9 +11,9 @@ const Hero = () => (
     <div className="max-w-7xl mx-auto text-center relative">
 
       {/* Internship Badge*/}
-      <div className="inline-block px-5 py-2 border border-emerald-500/30 bg-emerald-500/10 rounded-full text-xs font-bold tracking-[0.2em] uppercase mb-8 text-emerald-400 animate-pulse">
-        Currently Interning • Seeking Grad Internship 2027
-      </div>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nik4eb@gmail.com" target="_blank" rel="noopener noreferrer" className="inline-block px-5 py-2 border border-cyan-500/50 bg-cyan-500/10 rounded-full text-xs font-bold tracking-[0.2em] uppercase mb-8 text-cyan-400 hover:bg-[#00f3ff] hover:text-black hover:border-[#00f3ff] hover:shadow-[0_0_30px_rgba(0,243,255,0.6)] hover:scale-105 transition-all duration-300 animate-pulse cursor-pointer shadow-[0_0_15px_rgba(0,243,255,0.2)]">
+        Seeking Grad Internship 2027 • Contact Me
+      </a>
 
       {/* Main Title */}
       <h1 className="text-5xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-6 text-white leading-none">
@@ -176,7 +176,7 @@ const App = () => {
       <footer className="py-12 bg-[#050505] border-t border-white/10 text-center relative z-10">
         <div className="flex justify-center gap-8 mb-8">
           {[
-            { href: "mailto:nik4eb@gmail.com", icon: <Mail size={20} />, label: "Email" },
+            { href: "https://mail.google.com/mail/?view=cm&fs=1&to=nik4eb@gmail.com", icon: <Mail size={20} />, label: "Email" },
             { href: "https://linkedin.com/in/nichita-cebotari-881979207/", icon: <Linkedin size={20} />, label: "LinkedIn" },
             { href: "https://github.com/HangyBoi", icon: <Github size={20} />, label: "GitHub" },
             { href: "https://linktr.ee/nikkicheb", icon: <LinkIcon size={20} />, label: "Linktree" },

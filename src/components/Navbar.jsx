@@ -29,7 +29,7 @@ const Navigation = ({ isScrolled }) => {
           <a href="#works" className="hover:text-[#00f3ff] transition-all hover:-translate-y-0.5 uppercase tracking-widest text-xs font-bold">Work</a>
           <a href="#about" className="hover:text-[#00f3ff] transition-all hover:-translate-y-0.5 uppercase tracking-widest text-xs font-bold">About</a>
           
-          <a href="mailto:nik4eb@gmail.com" className="px-6 py-2.5 rounded-full border border-[#00f3ff] text-[#00f3ff] hover:bg-[#00f3ff] hover:text-black transition-all duration-300 hover:-translate-y-1 uppercase text-xs font-bold tracking-widest shadow-[0_0_10px_rgba(0,243,255,0.2)] hover:shadow-[0_0_20px_rgba(0,243,255,0.6)]">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nik4eb@gmail.com" target="_blank" rel="noopener noreferrer" className="px-6 py-2.5 rounded-full border border-[#00f3ff] text-[#00f3ff] hover:bg-[#00f3ff] hover:text-black transition-all duration-300 hover:-translate-y-1 uppercase text-xs font-bold tracking-widest shadow-[0_0_10px_rgba(0,243,255,0.2)] hover:shadow-[0_0_20px_rgba(0,243,255,0.6)]">
             Contact
           </a>
         </nav>
