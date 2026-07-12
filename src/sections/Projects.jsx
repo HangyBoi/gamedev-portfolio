@@ -194,38 +194,32 @@ const Projects = () => {
     },
 
     {
-      id: 4,
-      title: "Dynamic Weather System",
-      category: "VFX",
-      tags: ["Unity", "Tech Art", "Shaders", "VFX", "URP"],
-      image: "/gamedev-portfolio/images/dynamic-weather/tornado-main.webp",
-      description: "A centralized weather controller driving stylized tornado and atmospheric effects via VFX Graph.",
-      longDescription: "A comprehensive technical art project focusing on system cohesion and tool design. The core of the project is the 'Weather Orchestrator,' a central C# controller that manipulates thousands of particle properties in real-time via a single 'Storm Intensity' float. It drives a multi-layered stylized tornado, GPU-accelerated rain, and directional wind trails with some lightning effects.",
+      id: 13,
+      title: "ICover",
+      category: "Technical Art",
+      tags: ["UE5", "Internship", "VR", "Tech Art", "VFX", "Animation", "Motion Capture"],
+      image: "/gamedev-portfolio/images/icover/placeholder.webp",
+      description: "A realistic military training VR simulation featuring immersive atmospheric VFX, a hero explosion, and cleaned motion-capture animations.",
+      longDescription: "Developed as a client project for the Dutch Ministry of Defence, ICover is a high-stakes VR military simulation designed to teach protocol under extreme pressure. Operating as a Technical Artist, I created ambient volumetric dust and reusable fire/smoke systems to drive visual immersion. The core of my work involved building the central drone explosion VFX entirely from scratch using Niagara additive layers and post-process camera shakes to evoke genuine player reactions. I also managed the Xsens motion capture pipeline, processing raw recordings of military personnel into clean, in-engine animations.",
       details: {
         role: "Technical Artist",
-        time: "2 Weeks",
-        tools: "Unity VFX Graph, Blender, C#"
+        time: "Internship",
+        tools: "Unreal Engine 5 (Niagara, Material Graph), Xsens"
       },
       responsibilities: [
-        "Designed a centralized 'Weather Orchestrator' script to interpolate global atmospheric states (calm to storm) via a single float.",
-        "Created a multi-layered Tornado effect combining custom Blender meshes with VFX Graph vortex logic.",
-        "Implemented high-performance, GPU-accelerated rain, lightnings and wind trails using Leader-Follower particle architectures.",
-        "Modeled custom mesh emitters in Blender to control particle flow and structural definition."
+        "Built all central atmospheric VFX from scratch, including volumetric dust for interiors, falling ash for exteriors, reusable fire and smoke systems, and falling building debris.",
+        "Engineered the core 'Hero Explosion' VFX using Niagara additive layers, custom shaders, and post-process camera shakes to maximize player impact.",
+        "Managed the Xsens motion capture pipeline, processing and cleaning raw recordings into polished, in-engine animations.",
+        "Evaluated visual feedback directly with Ministry of Defence clients to ensure VFX landed with the intended emotional weight."
       ],
       gallery: [
-        { type: 'video', url: "/gamedev-portfolio/videos/dynamic-weather/tornado-slider_compr.mp4" },
-        { type: 'video', url: "/gamedev-portfolio/videos/dynamic-weather/tornado-main-showcase_compr.mp4" },
-        { type: 'image', url: "/gamedev-portfolio/images/dynamic-weather/tornado-main.webp", align: "top" },
-        { type: 'video', url: "/gamedev-portfolio/videos/dynamic-weather/tornado-angle_compr.mp4" },
-        { type: 'video', url: "/gamedev-portfolio/videos/dynamic-weather/rain-showcase_compr.mp4" },
-        { type: 'video', url: "/gamedev-portfolio/videos/dynamic-weather/wind-types_compr.mp4" },
-        { type: 'video', url: "/gamedev-portfolio/videos/dynamic-weather/lightning-showcase_compr.mp4" }
+        { type: 'image', url: "/gamedev-portfolio/images/icover/placeholder-image1.webp", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/icover/placeholder-video1.mp4" },
+        { type: 'image', url: "/gamedev-portfolio/images/icover/placeholder-image2.webp", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/icover/placeholder-video2.mp4" }
       ],
-      links: {
-        source: "https://github.com/HangyBoi/Piece-of-Dynamic-Weather",
-        wiki: "https://github.com/HangyBoi/Piece-of-Dynamic-Weather/wiki"
-      },
-      status: "Prototype"
+      links: {},
+      status: "Released"
     },
 
     {
@@ -297,6 +291,41 @@ const Projects = () => {
         wiki: "#"
       },
       status: "Released"
+    },
+
+    {
+      id: 4,
+      title: "Dynamic Weather System",
+      category: "VFX",
+      tags: ["Unity", "Tech Art", "Shaders", "VFX", "URP"],
+      image: "/gamedev-portfolio/images/dynamic-weather/tornado-main.webp",
+      description: "A centralized weather controller driving stylized tornado and atmospheric effects via VFX Graph.",
+      longDescription: "A comprehensive technical art project focusing on system cohesion and tool design. The core of the project is the 'Weather Orchestrator,' a central C# controller that manipulates thousands of particle properties in real-time via a single 'Storm Intensity' float. It drives a multi-layered stylized tornado, GPU-accelerated rain, and directional wind trails with some lightning effects.",
+      details: {
+        role: "Technical Artist",
+        time: "2 Weeks",
+        tools: "Unity VFX Graph, Blender, C#"
+      },
+      responsibilities: [
+        "Designed a centralized 'Weather Orchestrator' script to interpolate global atmospheric states (calm to storm) via a single float.",
+        "Created a multi-layered Tornado effect combining custom Blender meshes with VFX Graph vortex logic.",
+        "Implemented high-performance, GPU-accelerated rain, lightnings and wind trails using Leader-Follower particle architectures.",
+        "Modeled custom mesh emitters in Blender to control particle flow and structural definition."
+      ],
+      gallery: [
+        { type: 'video', url: "/gamedev-portfolio/videos/dynamic-weather/tornado-slider_compr.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/dynamic-weather/tornado-main-showcase_compr.mp4" },
+        { type: 'image', url: "/gamedev-portfolio/images/dynamic-weather/tornado-main.webp", align: "top" },
+        { type: 'video', url: "/gamedev-portfolio/videos/dynamic-weather/tornado-angle_compr.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/dynamic-weather/rain-showcase_compr.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/dynamic-weather/wind-types_compr.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/dynamic-weather/lightning-showcase_compr.mp4" }
+      ],
+      links: {
+        source: "https://github.com/HangyBoi/Piece-of-Dynamic-Weather",
+        wiki: "https://github.com/HangyBoi/Piece-of-Dynamic-Weather/wiki"
+      },
+      status: "Prototype"
     },
 
     {
