@@ -3,7 +3,7 @@ import CustomCursor from './components/Cursor';
 import ConstellationBackground from './components/Constellation';
 import Navigation from './components/Navbar';
 import Projects from './sections/Projects';
-import { Layers, Gamepad2, Cpu, ArrowRight, Download, Mail, Linkedin, Github, Disc, Link as LinkIcon, MapPin } from 'lucide-react';
+import { Layers, Gamepad2, Cpu, ArrowRight, Download, Mail, Linkedin, Github, Disc, Link as LinkIcon, MapPin, ChevronDown, ChevronUp, Briefcase, GraduationCap } from 'lucide-react';
 
 // Hero Component (Internal for simplicity)
 const Hero = () => (
@@ -43,6 +43,79 @@ const Hero = () => (
     </div>
   </section>
 );
+
+const ExperienceSection = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="mb-8 border border-white/10 rounded-2xl bg-white/5 overflow-hidden transition-all duration-300">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex items-center justify-between px-5 py-3.5 hover:bg-white/5 transition-colors focus:outline-none"
+      >
+        <span className="text-base font-semibold text-gray-200 flex items-center gap-2">
+          <Briefcase className="text-[#00f3ff]" size={18} />
+          Experience & Education
+        </span>
+        {isOpen ? <ChevronUp size={18} className="text-gray-400" /> : <ChevronDown size={18} className="text-[#00f3ff]" />}
+      </button>
+
+      <div className={`grid transition-all duration-500 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+        <div className="overflow-hidden">
+          <div className="p-5 pt-0 text-left">
+
+            {/* Work Experience */}
+            <div className="mb-6 relative border-l-2 border-[#00f3ff]/30 pl-5 ml-2.5">
+              <div className="absolute w-2.5 h-2.5 bg-[#00f3ff] rounded-full -left-[6px] top-1.5 shadow-[0_0_10px_rgba(0,243,255,0.5)]"></div>
+              <h4 className="text-base font-bold text-white mb-1">UE5 Technical Artist & VR Engineer Intern</h4>
+              <div className="text-sm text-[#ff0055] font-semibold mb-1">Saxion XR Lab</div>
+              <div className="text-xs text-gray-500 font-mono mb-3">Enschede, NL | Feb 2026 - Jul 2026</div>
+
+              <ul className="space-y-4">
+                <li className="text-sm text-gray-400 leading-relaxed">
+                  <div className="flex items-center flex-wrap gap-2 mb-1.5">
+                    <strong className="text-gray-200">ICover</strong>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#00f3ff] px-2 py-0.5 border border-[#00f3ff]/30 rounded bg-[#00f3ff]/10">
+                      Client: Ministry of Defence (NL)
+                    </span>
+                  </div>
+                  Developed immersive Niagara VFX and managed the Xsens mocap pipeline for a VR training simulation.
+                </li>
+                <li className="text-sm text-gray-400 leading-relaxed">
+                  <div className="flex items-center flex-wrap gap-2 mb-1.5">
+                    <strong className="text-gray-200">Quantum Delta</strong>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#00f3ff] px-2 py-0.5 border border-[#00f3ff]/30 rounded bg-[#00f3ff]/10">
+                      Client: University of Twente Labs
+                    </span>
+                  </div>
+                  Engineered a highly performant VR fluid and chemistry simulation using custom math models and UE5 Blueprints.
+                </li>
+              </ul>
+            </div>
+
+            {/* Education */}
+            <div className="relative border-l-2 border-emerald-500/30 pl-5 ml-2.5">
+              <div className="absolute w-2.5 h-2.5 bg-emerald-500 rounded-full -left-[6px] top-1.5 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
+              <h4 className="text-base font-bold text-white mb-1">B.Sc. Creative Media and Game Technology</h4>
+              <div className="text-sm text-emerald-400 font-semibold mb-1">Saxion University of Applied Sciences</div>
+              <div className="text-xs text-gray-500 font-mono mb-3">Enschede, NL | 2023 - Present</div>
+
+              <ul className="space-y-1">
+                <li className="text-sm text-gray-400">
+                  <span className="text-[#00f3ff] mr-2">▹</span> Specialization: Engineer
+                </li>
+                <li className="text-sm text-gray-400">
+                  <span className="text-[#00f3ff] mr-2">▹</span> Expected Graduation: 2027
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -160,8 +233,10 @@ const App = () => {
                 <span className="text-white font-medium"> Unreal Engine</span> and <span className="text-white font-medium">Blueprints</span>,
                 I actively study animation pipelines, shaders, and VFX to deliver products that feel as good as they run.
                 <br /><br />
-                Currently interning, and seeking a <span className="text-[#00f3ff] font-semibold">Graduation Internship for early 2027</span>.
+                Seeking a <span className="text-[#00f3ff] font-semibold">Graduation Internship for early 2027</span>.
               </p>
+
+              <ExperienceSection />
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                 <a href="/gamedev-portfolio/resume.pdf" target="_blank" className="px-8 py-3 rounded-full bg-[#ff0055] text-white font-bold uppercase tracking-widest hover:bg-[#d40047] hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,0,85,0.4)] transition-all duration-300 flex items-center justify-center gap-2">
