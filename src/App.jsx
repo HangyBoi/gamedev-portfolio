@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CustomCursor from './components/Cursor';
-import ConstellationBackground from './components/Constellation';
+import FluidBackground from './components/FluidBackground';
 import Navigation from './components/Navbar';
 import Projects from './sections/Projects';
 import { Layers, Gamepad2, Cpu, ArrowRight, Download, Mail, Linkedin, Github, Disc, Link as LinkIcon, MapPin, ChevronDown, ChevronUp, Briefcase, GraduationCap } from 'lucide-react';
@@ -8,7 +8,7 @@ import { Layers, Gamepad2, Cpu, ArrowRight, Download, Mail, Linkedin, Github, Di
 // Hero Component (Internal for simplicity)
 const Hero = () => (
   <section id="hero" className="h-screen w-full flex flex-col justify-center items-center relative px-6 z-10 overflow-hidden">
-    <div className="max-w-7xl mx-auto text-center relative">
+    <div className="max-w-7xl mx-auto text-center relative z-10">
 
       {/* Internship Badge*/}
       <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nik4eb@gmail.com" target="_blank" rel="noopener noreferrer" className="inline-block px-5 py-2 border border-cyan-500/50 bg-cyan-500/10 rounded-full text-xs font-bold tracking-[0.2em] uppercase mb-8 text-cyan-400 hover:bg-[#00f3ff] hover:text-black hover:border-[#00f3ff] hover:shadow-[0_0_30px_rgba(0,243,255,0.6)] hover:scale-105 transition-all duration-300 animate-pulse cursor-pointer shadow-[0_0_15px_rgba(0,243,255,0.2)]">
@@ -16,13 +16,13 @@ const Hero = () => (
       </a>
 
       {/* Main Title */}
-      <h1 className="text-5xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-6 text-white leading-none">
+      <h1 className="text-5xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-6 text-white leading-none mix-blend-difference">
         GAMEPLAY <br />
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f3ff] to-[#0066ff]">PROGRAMMER</span>
       </h1>
 
-      {/* Subtitle - New Colors*/}
-      <p className="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 leading-relaxed mb-12 font-light">
+      {/* Subtitle */}
+      <p className="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 leading-relaxed mb-12 font-light mix-blend-difference pointer-events-none">
         Bridging the gap between Code and Art.
         <br className="hidden md:block" />
         Specializing in <span className="text-[#ff0055] font-medium">Technical Art</span>,
@@ -36,6 +36,7 @@ const Hero = () => (
           Selected Works <ArrowRight size={18} />
         </a>
       </div>
+
     </div>
 
     <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-gray-500 animate-bounce">
@@ -129,7 +130,7 @@ const App = () => {
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-gray-200 font-sans selection:bg-[#ff0055] selection:text-white">
       <CustomCursor />
-      <ConstellationBackground />
+      <FluidBackground />
       <Navigation isScrolled={isScrolled} />
 
       <Hero />
@@ -158,7 +159,7 @@ const App = () => {
                 Expanding my skillset into high-fidelity pipelines. Focusing on visual scripting, materials, and environment design.
               </p>
               <ul className="space-y-3 mt-auto">
-                {['Blueprints & Logic', 'Material Graph / Shaders', 'Niagara VFX Systems', 'Level Design & Lighting'].map(skill => (
+                {['Blueprints & VR Simulations', 'Material Graph / Shaders', 'Niagara VFX Systems', 'Level Design & Lighting'].map(skill => (
                   <li key={skill} className="flex items-center gap-3 text-sm text-gray-300">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#ff0055]"></div>{skill}
                   </li>
@@ -194,7 +195,7 @@ const App = () => {
                 Combining engineering logic with artistic vision. I ensure assets look great while maintaining high performance.
               </p>
               <ul className="space-y-3 mt-auto">
-                {['Shader Graph & VFX Graph', 'Procedural Animation (IK)', 'Animation Pipeline', 'Performance Profiling'].map(skill => (
+                {['Shader Graph & VFX Graph', 'Procedural Animation (IK)', 'Animation Pipeline', 'Motion Capture (Xsens)'].map(skill => (
                   <li key={skill} className="flex items-center gap-3 text-sm text-gray-300">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#00f3ff]"></div>{skill}
                   </li>
