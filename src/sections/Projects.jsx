@@ -198,7 +198,7 @@ const Projects = () => {
       title: "ICover",
       category: "Technical Art",
       tags: ["UE5", "Internship", "VR", "Tech Art", "VFX", "Animation", "Motion Capture"],
-      image: "/gamedev-portfolio/images/icover/placeholder.webp",
+      image: "/gamedev-portfolio/images/icover/mainshot.webp",
       description: "A realistic military training VR simulation featuring immersive atmospheric VFX, a hero explosion, and cleaned motion-capture animations.",
       longDescription: "Developed as a client project for the Dutch Ministry of Defence, ICover is a high-stakes VR military simulation designed to teach protocol under extreme pressure. Operating as a Technical Artist, I created ambient volumetric dust and reusable fire/smoke systems to drive visual immersion. The core of my work involved building the central drone explosion VFX entirely from scratch using Niagara additive layers and post-process camera shakes to evoke genuine player reactions. I also managed the Xsens motion capture pipeline, processing raw recordings of military personnel into clean, in-engine animations.",
       details: {
@@ -208,15 +208,24 @@ const Projects = () => {
       },
       responsibilities: [
         "Built all central atmospheric VFX from scratch, including volumetric dust for interiors, falling ash for exteriors, reusable fire and smoke systems, and falling building debris.",
-        "Engineered the core 'Hero Explosion' VFX using Niagara additive layers, custom shaders, and post-process camera shakes to maximize player impact.",
+        "Engineered the core 'Hero Explosion' VFX entirely from scratch using Niagara additive layers, custom shaders, and post-process camera shakes to maximize player impact.",
         "Managed the Xsens motion capture pipeline, processing and cleaning raw recordings into polished, in-engine animations.",
         "Evaluated visual feedback directly with Ministry of Defence clients to ensure VFX landed with the intended emotional weight."
       ],
       gallery: [
-        { type: 'image', url: "/gamedev-portfolio/images/icover/placeholder-image1.webp", align: "center" },
-        { type: 'video', url: "/gamedev-portfolio/videos/icover/placeholder-video1.mp4" },
-        { type: 'image', url: "/gamedev-portfolio/images/icover/placeholder-image2.webp", align: "center" },
-        { type: 'video', url: "/gamedev-portfolio/videos/icover/placeholder-video2.mp4" }
+        { type: 'image', url: "/gamedev-portfolio/images/icover/mainshot.webp", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/icover/icover-vfx-outside.mov", muted: false },
+        { type: 'image', url: "/gamedev-portfolio/images/icover/explosion-outside-v1.webp", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/icover/explosion-angles.mov" },
+        { type: 'image', url: "/gamedev-portfolio/images/icover/explosion-outside-v2.webp", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/icover/explosion-breakdown.mov" },
+        { type: 'image', url: "/gamedev-portfolio/images/icover/explosion-niagara-editor.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/icover/fire-interior.webp", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/icover/fire-interior.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/icover/fire-vfx-showcase.mov" },
+        { type: 'image', url: "/gamedev-portfolio/images/icover/fire-niagara-editor.webp", align: "center" },
+        { type: 'image', url: "/gamedev-portfolio/images/icover/dust-interior.webp", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/icover/dust-vfx-showcase.mp4" }
       ],
       links: {},
       status: "Released"
