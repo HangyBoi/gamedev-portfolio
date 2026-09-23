@@ -66,7 +66,35 @@ const ExperienceSection = () => {
           <div className="p-5 pt-0 text-left">
 
             {/* Work Experience */}
-            <div className="mb-6 relative border-l-2 border-[#00f3ff]/30 pl-5 ml-2.5">
+            <div className="pb-8 relative border-l-2 border-[#00f3ff]/30 pl-5 ml-2.5">
+              <div className="absolute w-2.5 h-2.5 bg-[#00f3ff] rounded-full -left-[6px] top-1.5 shadow-[0_0_10px_rgba(0,243,255,0.5)]"></div>
+              <h4 className="text-base font-bold text-white mb-1">Teaching Assistant</h4>
+              <div className="text-sm text-[#00f3ff] font-semibold mb-1">Saxion University of Applied Sciences</div>
+              <div className="text-xs text-gray-500 font-mono mb-3">Enschede, NL | Sep 2026 - Present</div>
+
+              <ul className="space-y-3">
+                <li className="text-sm text-gray-400 leading-relaxed">
+                  <div className="flex items-center flex-wrap gap-2 mb-1">
+                    <strong className="text-gray-200">Programming Fundamentals</strong>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#00f3ff] px-2 py-0.5 border border-[#00f3ff]/30 rounded bg-[#00f3ff]/10">
+                      Unity / C#
+                    </span>
+                  </div>
+                  Facilitating bootcamps, course materials, and student mentoring for 1st-year programming.
+                </li>
+                <li className="text-sm text-gray-400 leading-relaxed">
+                  <div className="flex items-center flex-wrap gap-2 mb-1">
+                    <strong className="text-gray-200">Rendering Engines</strong>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#00f3ff] px-2 py-0.5 border border-[#00f3ff]/30 rounded bg-[#00f3ff]/10">
+                      C++ / GLSL
+                    </span>
+                  </div>
+                  Guiding 2nd-year students in building a custom C++ rendering engine from scratch.
+                </li>
+              </ul>
+            </div>
+
+            <div className="pb-8 relative border-l-2 border-[#00f3ff]/30 pl-5 ml-2.5">
               <div className="absolute w-2.5 h-2.5 bg-[#00f3ff] rounded-full -left-[6px] top-1.5 shadow-[0_0_10px_rgba(0,243,255,0.5)]"></div>
               <h4 className="text-base font-bold text-white mb-1">UE5 Technical Artist & VR Engineer Intern</h4>
               <div className="text-sm text-[#ff0055] font-semibold mb-1">Saxion XR Lab</div>
