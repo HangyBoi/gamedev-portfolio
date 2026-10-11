@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { X, Github, ExternalLink, FileText, ChevronLeft, ChevronRight, Clock, User, Wrench, ArrowDown, Gamepad2, Play, Volume2 } from 'lucide-react';
+import { X, Github, ExternalLink, FileText, ChevronLeft, ChevronRight, Clock, User, Wrench, ArrowDown, Gamepad2, Play, Volume2, Lock } from 'lucide-react';
 
 const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -116,6 +116,7 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
                   if (slide.type === 'video') {
                     // Default to true. Only false if explicitly set to false.
                     const isMuted = slide.muted !== false;
+                    const isLoop = slide.loop === true;
 
                     return (
                       <VideoSlide
@@ -124,7 +125,8 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
                         bgImage={project.image}
                         className="relative z-10 w-full h-full object-contain drop-shadow-2xl"
                         isMuted={isMuted}
-                        onEnded={handleNextSlide}
+                        isLoop={isLoop}
+                        onEnded={isLoop ? undefined : handleNextSlide}
                       />
                     );
                   } else {
@@ -252,7 +254,7 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
                 )}
 
                 {/* HIGH CONVERSION WIKI CARD */}
-                {project.links.wiki && project.links.wiki !== "#" && (
+                {project.links?.wiki && project.links.wiki !== "#" && (
                   <a
                     href={project.links.wiki}
                     target="_blank"
@@ -272,34 +274,93 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
                     </div>
                   </a>
                 )}
+
+                {/* HIGH CONVERSION PROCESS / BREAKDOWN DOC CARD */}
+                {project.links?.processDoc && project.links.processDoc !== "#" && (
+                  <a
+                    href={project.links.processDoc}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block p-6 rounded-xl border border-orange-500/30 bg-orange-500/5 hover:bg-orange-500/10 hover:border-orange-400 transition-all group cursor-pointer relative overflow-hidden"
+                  >
+                    <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity text-orange-400">
+                      <FileText size={100} />
+                    </div>
+                    <div className="relative z-10">
+                      <h4 className="text-orange-400 font-bold text-lg mb-2 flex items-center gap-2">
+                        <FileText size={20} /> {project.links.processDocTitle || "Read Tech Breakdown"}
+                      </h4>
+                      <p className="text-gray-400 text-sm max-w-md">
+                        {project.links.processDocSubtitle || "Comprehensive breakdown detailing development, technical challenges, and iterative passes."}
+                      </p>
+                    </div>
+                  </a>
+                )}
               </div>
 
-              {/* Sidebar Links */}
+              {/* Sidebar Links & Client Status */}
               <div className="space-y-6">
-                <h3 className="text-xl font-bold text-white">Project Links</h3>
-                <div className="flex flex-col gap-3">
+                {project.isClientProject && (
+                  <div className="p-6 rounded-xl border border-cyan-500/30 bg-cyan-950/20 space-y-3">
+                    <div className="flex items-center gap-2 text-cyan-400 font-bold text-xs tracking-widest uppercase">
+                      <Lock size={15} /> Client Project
+                    </div>
+                    <h4 className="text-white font-bold text-sm">
+                      {project.client || project.details?.client || "External Client"}
+                    </h4>
+                    <p className="text-gray-300 text-xs leading-relaxed">
+                      Developed for an external client. Due to non-disclosure and client confidentiality agreements, the project repository and proprietary codebase cannot be shared or accessed publicly.
+                    </p>
+                  </div>
+                )}
 
-                  {/* Source Code */}
-                  {project.links.source && (
-                    <a href={project.links.source} target="_blank" rel="noreferrer" className="flex items-center gap-3 px-6 py-4 bg-[#222] hover:bg-white hover:text-black rounded-xl transition-all group font-bold">
-                      <Github size={20} /> Source Code
-                    </a>
-                  )}
+                {Boolean(
+                  (project.links?.source && project.links.source !== "#") ||
+                  (project.links?.itch && project.links.itch !== "#") ||
+                  (project.links?.artstation && project.links.artstation !== "#") ||
+                  (project.links?.processDoc && project.links.processDoc !== "#") ||
+                  (project.links?.wiki && project.links.wiki !== "#")
+                ) && (
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-white">Project Links</h3>
+                    <div className="flex flex-col gap-3">
+                      {/* Source Code */}
+                      {project.links?.source && project.links.source !== "#" && (
+                        <a href={project.links.source} target="_blank" rel="noreferrer" className="flex items-center gap-3 px-6 py-4 bg-[#222] hover:bg-white hover:text-black rounded-xl transition-all group font-bold">
+                          <Github size={20} /> Source Code
+                        </a>
+                      )}
 
-                  {/* NEW: Itch.io Link (Red Hover) */}
-                  {project.links.itch && (
-                    <a href={project.links.itch} target="_blank" rel="noreferrer" className="flex items-center gap-3 px-6 py-4 bg-[#222] hover:bg-[#fa5c5c] hover:text-white rounded-xl transition-all group font-bold">
-                      <Gamepad2 size={20} /> Play on Itch.io
-                    </a>
-                  )}
+                      {/* Itch.io Link */}
+                      {project.links?.itch && project.links.itch !== "#" && (
+                        <a href={project.links.itch} target="_blank" rel="noreferrer" className="flex items-center gap-3 px-6 py-4 bg-[#222] hover:bg-[#fa5c5c] hover:text-white rounded-xl transition-all group font-bold">
+                          <Gamepad2 size={20} /> Play on Itch.io
+                        </a>
+                      )}
 
-                  {/* ArtStation Link (Blue Hover) */}
-                  {project.links.artstation && (
-                    <a href={project.links.artstation} target="_blank" rel="noreferrer" className="flex items-center gap-3 px-6 py-4 bg-[#222] hover:bg-[#13aff0] hover:text-white rounded-xl transition-all group font-bold">
-                      <ExternalLink size={20} /> ArtStation
-                    </a>
-                  )}
-                </div>
+                      {/* ArtStation Link */}
+                      {project.links?.artstation && project.links.artstation !== "#" && (
+                        <a href={project.links.artstation} target="_blank" rel="noreferrer" className="flex items-center gap-3 px-6 py-4 bg-[#222] hover:bg-[#13aff0] hover:text-white rounded-xl transition-all group font-bold">
+                          <ExternalLink size={20} /> ArtStation
+                        </a>
+                      )}
+
+                      {/* Breakdown Document Link */}
+                      {project.links?.processDoc && project.links.processDoc !== "#" && (
+                        <a href={project.links.processDoc} target="_blank" rel="noreferrer" className="flex items-center gap-3 px-6 py-4 bg-[#222] hover:bg-orange-500 hover:text-black rounded-xl transition-all group font-bold">
+                          <FileText size={20} /> {project.links.processDocBtnTitle || "Tech Breakdown"}
+                        </a>
+                      )}
+
+                      {/* Wiki Link */}
+                      {project.links?.wiki && project.links.wiki !== "#" && (
+                        <a href={project.links.wiki} target="_blank" rel="noreferrer" className="flex items-center gap-3 px-6 py-4 bg-[#222] hover:bg-[#00f3ff] hover:text-black rounded-xl transition-all group font-bold">
+                          <FileText size={20} /> Technical Wiki
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -309,10 +370,16 @@ const ProjectModal = ({ project, onClose, onNext, onPrev }) => {
   );
 };
 
-const VideoSlide = ({ url, className, isMuted, onEnded, bgImage }) => {
+const VideoSlide = ({ url, className, isMuted, isLoop, onEnded, bgImage }) => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(isMuted);
   const [showOverlay, setShowOverlay] = useState(!isMuted);
+
+  useEffect(() => {
+    if (videoRef.current && isMuted) {
+      videoRef.current.play().catch(() => {});
+    }
+  }, [url, isMuted]);
 
   // Toggle Logic - Now only used by the Overlay
   const handleOverlayClick = (e) => {
@@ -350,6 +417,7 @@ const VideoSlide = ({ url, className, isMuted, onEnded, bgImage }) => {
         className={className}
         autoPlay={isMuted}
         muted={isMuted}
+        loop={isLoop}
         playsInline
         controls={!isMuted}
         onEnded={onEnded}

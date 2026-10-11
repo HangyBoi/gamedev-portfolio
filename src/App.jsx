@@ -187,7 +187,7 @@ const App = () => {
                 Expanding my skillset into high-fidelity pipelines. Focusing on visual scripting, materials, and environment design.
               </p>
               <ul className="space-y-3 mt-auto">
-                {['Blueprints & VR Simulations', 'Material Graph / Shaders', 'Niagara VFX Systems', 'Level Design & Lighting'].map(skill => (
+                {['Blueprints & C++', 'VR Simulations (Meta Quest 3)', 'Material Graph / Shaders', 'Niagara VFXs & Environmental Design'].map(skill => (
                   <li key={skill} className="flex items-center gap-3 text-sm text-gray-300">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#ff0055]"></div>{skill}
                   </li>
@@ -223,7 +223,7 @@ const App = () => {
                 Combining engineering logic with artistic vision. I ensure assets look great while maintaining high performance.
               </p>
               <ul className="space-y-3 mt-auto">
-                {['Shader Graph & VFX Graph', 'Procedural Animation (IK)', 'Animation Pipeline', 'Motion Capture (Xsens)'].map(skill => (
+                {['Shader Graph & VFX Graph', 'Motion Capture (Xsens)', 'Procedural Animation (IK)', 'Animation Pipeline'].map(skill => (
                   <li key={skill} className="flex items-center gap-3 text-sm text-gray-300">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#00f3ff]"></div>{skill}
                   </li>

@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { ChevronLeft, ChevronRight, Github, ExternalLink, FileText } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Github, ExternalLink, FileText, Lock, Gamepad2 } from 'lucide-react';
 import ProjectModal from '../components/ProjectModal';
 
 const Projects = () => {
@@ -60,7 +60,7 @@ const Projects = () => {
     if (lower.includes('hlsl') || lower.includes('shader') || lower.includes('shader graph') || lower.includes('tech art'))
       return 'text-purple-400 border-purple-400 bg-purple-900/30';
     // VFX (Orange/Fire)
-    if (lower.includes('vfx') || lower.includes('vfx graph') || lower.includes('particle'))
+    if (lower.includes('vfx') || lower.includes('vfx graph') || lower.includes('niagara') || lower.includes('particle'))
       return 'text-orange-400 border-orange-400 bg-orange-950/30';
     // Animation & IK (Lime/Green)
     if (lower.includes('ik') || lower.includes('animation') || lower.includes('rigging'))
@@ -75,6 +75,7 @@ const Projects = () => {
   const getStatusColor = (status) => {
     if (status === 'Released') return 'bg-emerald-500 text-black';
     if (status === 'In Development') return 'bg-amber-400 text-black';
+    if (status === 'Study' || status === 'R&D') return 'bg-cyan-400 text-black';
     return 'bg-purple-500 text-white';
   };
 
@@ -201,10 +202,13 @@ const Projects = () => {
       image: "/gamedev-portfolio/images/icover/mainshot.webp",
       description: "A realistic military training VR simulation featuring immersive atmospheric VFX, a hero explosion, and cleaned motion-capture animations.",
       longDescription: "Developed as a client project for the Dutch Ministry of Defence, ICover is a high-stakes VR military simulation designed to teach protocol under extreme pressure. Operating as a Technical Artist, I created ambient volumetric dust and reusable fire/smoke systems to drive visual immersion. The core of my work involved building the central drone explosion VFX entirely from scratch using Niagara additive layers and post-process camera shakes to evoke genuine player reactions. I also managed the Xsens motion capture pipeline, processing raw recordings of military personnel into clean, in-engine animations.",
+      isClientProject: true,
+      client: "Ministry of Defence (NL)",
       details: {
         role: "Technical Artist",
         time: "Internship",
-        tools: "Unreal Engine 5 (Niagara, Material Graph), Xsens"
+        tools: "Unreal Engine 5 (Niagara, Material Graph), Xsens",
+        client: "Ministry of Defence (NL)"
       },
       responsibilities: [
         "Built all central atmospheric VFX from scratch, including volumetric dust for interiors, falling ash for exteriors, reusable fire and smoke systems, and falling building debris.",
@@ -239,10 +243,13 @@ const Projects = () => {
       image: "/gamedev-portfolio/images/quantum-delta/squeezebottle-multiple.png",
       description: "A performance-optimized VR fluid and chemistry simulation built for cleanroom training. It authentically replicates liquid physics and chemical reactions for interactive lab equipment.",
       longDescription: "Developed as an internship project, this VR simulation serves as a training platform for operating sensitive cleanroom equipment. To maintain high framerates in VR, it bypasses expensive traditional fluid solvers in favor of a custom math-driven approach to handle fluid physics, spatial displacement, and complex chemical reactions. Players can intuitively pour, mix, and weigh chemicals with realistic mass conservation, creating an immersive and physically accurate lab environment without performance bottlenecks.",
+      isClientProject: true,
+      client: "University of Twente Labs / Quantum Delta",
       details: {
         role: "Technical Artist / VR Programmer",
         time: "Internship",
-        tools: "Unreal Engine 5 (Blueprints, Niagara, Material Graph), VR Expansion Plugin"
+        tools: "Unreal Engine 5 (Blueprints, Niagara, Material Graph), VR Expansion Plugin",
+        client: "University of Twente Labs"
       },
       responsibilities: [
         "Architected a scalable, modular chemistry framework tracking mass, volume, and solution concentration for interactive chemical reactions.",
@@ -271,17 +278,18 @@ const Projects = () => {
       category: "Unreal",
       tags: ["UE5", "Tech Art", "Lighting", "Materials", "Niagara VFX"],
       image: "/gamedev-portfolio/images/ue5-urban-alley/alley-shot_2.webp",
-      description: "A 4-week deep dive into UE5's rendering pipeline, culminating in a detailed urban diorama.",
-      longDescription: "A self-directed 'Tech Art Bootcamp' focused on mastering the core pillars of Unreal Engine 5: Niagara VFX, Material Graphs, and Lumen Lighting. What began as a broad theoretical study evolved into a targeted project where I engineered a complex 'Uber-Shader' Master Material and a modular VFX system. The final output is a highly detailed Urban Alley diorama, demonstrating the practical application of vertex painting, decal layering, and cinematic lighting.",
+      description: "A deep dive into UE5's rendering and lighting pipeline. Environment design, lighting, and complementing VFX are mine; 3D assets sourced from free online libraries.",
+      longDescription: "A self-directed study focused on mastering the core pillars of Unreal Engine 5: Lumen lighting, Material Graphs, and complementing Niagara VFX. While the individual 3D model assets were sourced from free internet libraries (the 3D art is not mine), the entire environmental design, scene layout, composition, lighting pass, and complementing weather VFX were created by me. The project also served as a deep dive into building an 'Uber-Shader' Master Material with vertex painting support for puddles, moss, and surface variation.",
       details: {
         role: "Technical Artist (Study)",
-        time: "4 Weeks (In Progress)",
-        tools: "UE5, Niagara, Blender"
+        time: "4 Weeks",
+        tools: "UE5, Niagara, Material Graph"
       },
       responsibilities: [
+        "Created the complete environmental design, composition, and set dressing using free 3D asset libraries from the internet.",
+        "Authored the cinematic lighting pass and atmospheric mood using Lumen Global Illumination and volumetric fog.",
         "Engineered a comprehensive Master Material ('Uber-Shader') supporting vertex painting for puddles, moss, and surface variation.",
-        "Developed a modular Niagara VFX system, creating assets for weather effects (rain with puddles) and others.",
-        "Performed a deep-dive lighting study, rebuilding demo scenes from scratch to master Lumen's Global Illumination settings.",
+        "Developed complementing Niagara VFX systems, including atmospheric weather and localized rain effects with dynamic puddles."
       ],
       gallery: [
         { type: 'video', url: "/gamedev-portfolio/videos/ue5-urban-alley/all_angles.mp4" },
@@ -292,14 +300,56 @@ const Projects = () => {
         { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/angle4_final.png", align: "center" },
         { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/angle5_final.png", align: "center" },
         { type: 'image', url: "/gamedev-portfolio/images/ue5-urban-alley/angle6_final.png", align: "center" }
-
       ],
       links: {
         source: "https://dev.azure.com/nik4ebPortfolio/UE-Project-One-Alley",
-        artstation: "#",
-        wiki: "#"
+        processDoc: "#",
+        cardDocLabel: "Tech Breakdown",
+        processDocTitle: "Read Project Breakdown",
+        processDocSubtitle: "Comprehensive documentation detailing iterative modeling, shader architecture, and lighting passes.",
+        processDocBtnTitle: "Tech Breakdown"
       },
       status: "Released"
+    },
+
+    {
+      id: 14,
+      title: "Niagara VFX & Systems Study",
+      category: "VFX",
+      tags: ["UE5", "VFX", "Tech Art", "Shaders"],
+      image: "/gamedev-portfolio/images/ue5-vfx/vfx-main.jpeg",
+      description: "A personal study exploring Niagara in UE5: building communication with materials, Blueprint triggers, and custom simulation modules.",
+      longDescription: "A hands-on study exploring Unreal Engine 5's Niagara VFX system, heavily inspired by Vince Petrelli's course on Udemy. The core focus was understanding how to bridge particle systems with the Material Graph, drive effect states and lifecycles via Blueprints, and write custom Niagara scratchpad modules to inject my own logic. I created many different effects during this study; only a curated selection of what I consider the strongest pieces is showcased here.",
+      details: {
+        role: "Technical Artist (Study)",
+        time: "Study & R&D",
+        tools: "Unreal Engine 5 (Niagara, Material Graph), Blueprints"
+      },
+      responsibilities: [
+        "Built two-way communication between Materials and Niagara to drive dynamic glow, erosion, and dissolves.",
+        "Integrated Blueprints to handle effect lifecycles, projectile travel, and synchronized impact decals.",
+        "Wrote custom Niagara modules to inject bespoke math and custom particle behaviors.",
+        "Used Global Distance Fields to trigger surface erosion and particle spawning on mesh collision.",
+        "Layered multi-emitter systems with rotating meshes, ribbons, and GPU particles for cohesive secondary motion.",
+        "Sampled 2D textures to drive data-driven particle grids and dissolution effects."
+      ],
+      gallery: [
+        { type: 'video', url: "/gamedev-portfolio/videos/ue5-vfx/Portal.mp4", loop: true },
+        { type: 'video', url: "/gamedev-portfolio/videos/ue5-vfx/3D_SkeletalMesh_Disintegration.mp4", loop: true },
+        { type: 'video', url: "/gamedev-portfolio/videos/ue5-vfx/Sword_Slash.mp4", loop: true },
+        { type: 'video', url: "/gamedev-portfolio/videos/ue5-vfx/Wave_Slash.mp4", loop: true },
+        { type: 'video', url: "/gamedev-portfolio/videos/ue5-vfx/Laser_Strike.mp4", loop: true },
+        { type: 'video', url: "/gamedev-portfolio/videos/ue5-vfx/Energy_Strike.mp4", loop: true },
+        { type: 'video', url: "/gamedev-portfolio/videos/ue5-vfx/2D_Texture_Disintegration.mp4", loop: true }
+      ],
+      links: {
+        processDoc: "/gamedev-portfolio/documents/ue5-vfx/vfx-breakdown-study.pdf",
+        cardDocLabel: "VFX Breakdown",
+        processDocTitle: "Read VFX Breakdown Document (PDF)",
+        processDocSubtitle: "Full study document detailing additional effects, emitter setups, and breakdown notes.",
+        processDocBtnTitle: "VFX Breakdown (PDF)"
+      },
+      status: "Study"
     },
 
     {
@@ -729,7 +779,7 @@ const Projects = () => {
 
                 <div className="mt-auto pt-4 border-t border-white/5 flex justify-between items-center gap-4">
                   {/* Logic for "Read Docs" button */}
-                  {project.links.wiki && project.links.wiki !== "#" ? (
+                  {project.links?.wiki && project.links.wiki !== "#" ? (
                     <a
                       href={project.links.wiki}
                       target="_blank"
@@ -741,22 +791,44 @@ const Projects = () => {
                     >
                       <FileText size={12} /> Read Tech Wiki
                     </a>
+                  ) : project.links?.processDoc && project.links.processDoc !== "#" ? (
+                    <a
+                      href={project.links.processDoc}
+                      target="_blank"
+                      onClick={(e) => {
+                        if (dragMoved) e.preventDefault();
+                        e.stopPropagation();
+                      }}
+                      className="text-xs font-bold uppercase tracking-widest text-orange-400 hover:text-orange-300 flex items-center gap-1 transition-colors"
+                    >
+                      <FileText size={12} /> {project.links.cardDocLabel || "Tech Breakdown"}
+                    </a>
                   ) : (
                     <span className="text-xs text-[#00f3ff] font-bold uppercase tracking-widest group-hover:underline">View Details +</span>
                   )}
 
-                  <div className="flex gap-2" onClick={(e) => {
+                  <div className="flex gap-2 items-center" onClick={(e) => {
                     if (dragMoved) e.preventDefault();
                     e.stopPropagation();
                   }}>
-                    {project.links.source && (
+                    {project.isClientProject && (
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-cyan-400 bg-cyan-950/40 border border-cyan-500/30 px-2 py-1 rounded flex items-center gap-1" title="External Client Project - Proprietary Code">
+                        <Lock size={10} /> Client Project
+                      </span>
+                    )}
+                    {project.links?.source && project.links.source !== "#" && (
                       <a href={project.links.source} target="_blank" className="p-2 bg-[#222] hover:bg-white hover:text-black rounded-lg transition-colors" title="View Code">
                         <Github size={14} />
                       </a>
                     )}
-                    {project.links.artstation && (
+                    {project.links?.artstation && project.links.artstation !== "#" && (
                       <a href={project.links.artstation} target="_blank" className="p-2 bg-[#222] hover:bg-[#13aff0] hover:text-white rounded-lg transition-colors" title="View ArtStation">
                         <ExternalLink size={14} />
+                      </a>
+                    )}
+                    {project.links?.itch && project.links.itch !== "#" && (
+                      <a href={project.links.itch} target="_blank" className="p-2 bg-[#222] hover:bg-[#fa5c5c] hover:text-white rounded-lg transition-colors" title="Play on Itch.io">
+                        <Gamepad2 size={14} />
                       </a>
                     )}
                   </div>
