@@ -52,24 +52,24 @@ const Projects = () => {
     const lower = tag.toLowerCase();
     // Core Engine (Cyan)
     if (lower.includes('unity') || lower.includes('unity 6') || lower.includes('c#'))
-      return 'text-cyan-400 border-cyan-400 bg-cyan-950/30';
+      return 'text-cyan-400 border-cyan-400/50 bg-cyan-950/80';
     // Unreal (Pink)
     if (lower.includes('unreal') || lower.includes('unreal engine') || lower.includes('ue5'))
-      return 'text-pink-500 border-pink-500 bg-pink-950/30';
+      return 'text-pink-400 border-pink-500/50 bg-pink-950/80';
     // Shaders & Tech Art (Purple)
     if (lower.includes('hlsl') || lower.includes('shader') || lower.includes('shader graph') || lower.includes('tech art'))
-      return 'text-purple-400 border-purple-400 bg-purple-900/30';
+      return 'text-purple-300 border-purple-400/50 bg-purple-950/80';
     // VFX (Orange/Fire)
     if (lower.includes('vfx') || lower.includes('vfx graph') || lower.includes('niagara') || lower.includes('particle'))
-      return 'text-orange-400 border-orange-400 bg-orange-950/30';
+      return 'text-orange-400 border-orange-400/50 bg-orange-950/80';
     // Animation & IK (Lime/Green)
     if (lower.includes('ik') || lower.includes('animation') || lower.includes('rigging'))
-      return 'text-lime-400 border-lime-400 bg-lime-950/30';
+      return 'text-lime-400 border-lime-400/50 bg-lime-950/80';
     // Experience (Indigo)
     if (lower.includes('internship') || lower.includes('professional') || lower.includes('client'))
-      return 'text-indigo-400 border-indigo-400 bg-indigo-900/30';
+      return 'text-indigo-300 border-indigo-400/50 bg-indigo-950/80';
     // Default / Tools (Amber)
-    return 'text-amber-400 border-amber-400 bg-amber-900/30';
+    return 'text-amber-400 border-amber-400/50 bg-amber-950/80';
   };
 
   const getStatusColor = (status) => {
@@ -766,7 +766,7 @@ const Projects = () => {
 
                 <div className="absolute top-4 right-4 flex flex-wrap justify-end gap-2 max-w-[60%] z-10">
                   {project.tags.map(tag => (
-                    <span key={tag} className={`px-3 py-1.5 text-[10px] font-bold font-mono rounded-lg border backdrop-blur-md ${getTagColor(tag)}`}>
+                    <span key={tag} className={`px-3 py-1.5 text-[10px] font-bold font-mono rounded-lg border shadow-sm ${getTagColor(tag)}`}>
                       {tag}
                     </span>
                   ))}

@@ -178,7 +178,7 @@ const App = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
             {/* 1. UNREAL ENGINE CARD (Pink Glow) */}
-            <article className="bg-[#111]/80 backdrop-blur-sm p-10 rounded-2xl border border-white/5 transition-all duration-300 hover:-translate-y-2 hover:border-[#ff0055] hover:shadow-[0_0_30px_rgba(255,0,85,0.15)] group flex flex-col h-full">
+            <article className="bg-[#111] p-10 rounded-2xl border border-white/5 transition-all duration-300 hover:-translate-y-2 hover:border-[#ff0055] hover:shadow-[0_0_30px_rgba(255,0,85,0.15)] group flex flex-col h-full">
               <div className="w-14 h-14 bg-[#1a1a1a] text-white rounded-xl flex items-center justify-center mb-8 transition-colors duration-300 border border-white/10 group-hover:bg-[#ff0055] group-hover:text-white group-hover:border-transparent">
                 <Gamepad2 size={28} />
               </div>
@@ -196,7 +196,7 @@ const App = () => {
             </article>
 
             {/* 2. UNITY ARCHITECT CARD (Emerald Glow) */}
-            <article className="bg-[#111]/80 backdrop-blur-sm p-10 rounded-2xl border border-white/5 transition-all duration-300 hover:-translate-y-2 hover:border-emerald-500 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] group flex flex-col h-full">
+            <article className="bg-[#111] p-10 rounded-2xl border border-white/5 transition-all duration-300 hover:-translate-y-2 hover:border-emerald-500 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] group flex flex-col h-full">
               <div className="w-14 h-14 bg-[#1a1a1a] text-white rounded-xl flex items-center justify-center mb-8 transition-colors duration-300 border border-white/10 group-hover:bg-emerald-500 group-hover:text-black group-hover:border-transparent">
                 <Layers size={28} />
               </div>
@@ -214,7 +214,7 @@ const App = () => {
             </article>
 
             {/* 3. TECH ART CARD (Cyan Glow) */}
-            <article className="bg-[#111]/80 backdrop-blur-sm p-10 rounded-2xl border border-white/5 transition-all duration-300 hover:-translate-y-2 hover:border-[#00f3ff] hover:shadow-[0_0_30px_rgba(0,243,255,0.15)] group flex flex-col h-full">
+            <article className="bg-[#111] p-10 rounded-2xl border border-white/5 transition-all duration-300 hover:-translate-y-2 hover:border-[#00f3ff] hover:shadow-[0_0_30px_rgba(0,243,255,0.15)] group flex flex-col h-full">
               <div className="w-14 h-14 bg-[#1a1a1a] text-white rounded-xl flex items-center justify-center mb-8 transition-colors duration-300 border border-white/10 group-hover:bg-[#00f3ff] group-hover:text-black group-hover:border-transparent">
                 <Cpu size={28} />
               </div>
