@@ -82,119 +82,6 @@ const Projects = () => {
   // Data
   const projects = [
     {
-      id: 1,
-      title: "Procedural Parisian Cityscape",
-      category: "Tools",
-      tags: ["Unity", "Tech Art", "Editor Tooling", "PCG", "C#"],
-      image: "/gamedev-portfolio/images/procedural-paris/city-angle.webp",
-      description: "One-click generation of organic, 18th-century city layouts using Voronoi Tessellation.",
-      longDescription: "A sophisticated two-layer procedural generation system designed to move away from grid-based layouts. The tool utilizes Voronoi diagrams for organic street distribution and Sutherland-Hodgman clipping for lot subdivision. Features a non-destructive custom Editor workflow, allowing real-time vertex manipulation of building footprints with instant mesh regeneration for facades and watertight Mansard roofs.",
-      details: {
-        role: "Tooling Engineer & Tech Art",
-        time: "4 weeks",
-        tools: "Unity 6, C#, Shader Graph"
-      },
-      responsibilities: [
-        "Engineered the 'City Planner' algorithm using Voronoi diagrams and Sutherland-Hodgman clipping.",
-        "Developed a custom Editor interface with scene-view handles for non-destructive, real-time building manipulation.",
-        "Implemented procedural mesh generation logic to create watertight Mansard roofs on arbitrary N-gon shapes.",
-        "Optimized rendering via Static Batching and GPU Instancing for high-density scenes."
-      ],
-      gallery: [
-        { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/city-angle.webp", align: "top" },
-        { type: 'video', url: "/gamedev-portfolio/videos/procedural-paris/City-Showcase_compr.mp4" },
-        { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/voronoi-cells.webp", align: "top" },
-        { type: 'video', url: "/gamedev-portfolio/videos/procedural-paris/City-Generator-Showcase_compr.mp4" },
-        { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/procedural-house.webp" },
-        { type: 'video', url: "/gamedev-portfolio/videos/procedural-paris/Building-Manipulation-Showcase_compr.mp4" },
-        { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/modular-assets.webp" },
-        { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/procedural-roof.webp", align: "bottom" }
-      ],
-      links: {
-        source: "https://github.com/HangyBoi/Procedural-Paris",
-        wiki: "https://github.com/HangyBoi/Procedural-Paris/wiki"
-      },
-      status: "Released"
-    },
-
-    {
-      "id": 2,
-      "title": "Slice of Post-Soviet Yard",
-      "category": "Technical Environment Art",
-      "tags": ["Unity", "Shaders", "Lighting", "HDRP", "Level Design", "Optimization"],
-      "image": "/gamedev-portfolio/images/post-soviet/bloodmoon.webp",
-      "description": "A technical environment showcase combining atmospheric level design, lighting composition, and a custom URP rendering pipeline.",
-      "longDescription": "A deep dive into the Universal Render Pipeline (URP) to bridge the gap between engine logic and visual art. This project implements a custom 'Digital Lens' stack, utilizing Fullscreen Renderer Features to achieve a pixel-perfect PSX aesthetic (Dithering, Quantization). It features a reactive environment where foliage blends with terrain via Render Textures and water interacts with depth buffers.",
-      "details": {
-        "role": "Technical Level Designer",
-        "time": "3 Weeks",
-        "tools": "Unity 6 (URP), HLSL, Shader Graph"
-      },
-      "responsibilities": [
-        "Designed the environment layout using 'Iterative Detailing, which is supposed to evoke a specific Post-Soviet nostalgia.",
-        "Engineered a modular Post-Processing stack (Pixelation, Dithering) using custom URP Renderer Features.",
-        "Implemented reactive foliage shaders using Render Textures for seamless terrain blending and wind simulation.",
-        "Solved critical pipeline sorting issues between volumetric fog and transparency injection points.",
-        "Wrote custom HLSL lighting functions wrapped in Shader Graph nodes for stylized specular highlights."
-      ],
-      "gallery": [
-        { "type": "video", "url": "/gamedev-portfolio/videos/post-soviet/car-in-river_compr.mp4" },
-        { "type": "image", "url": "/gamedev-portfolio/images/post-soviet/river-car.webp", "align": "bottom" },
-        { "type": "video", "url": "/gamedev-portfolio/videos/post-soviet/day-night-yard_compr.mp4" },
-        { "type": "image", "url": "/gamedev-portfolio/images/post-soviet/broken-fence.webp", "align": "bottom" },
-        { "type": "video", "url": "/gamedev-portfolio/videos/post-soviet/retro-stack-showcase_compr.mp4" },
-        { "type": "image", "url": "/gamedev-portfolio/images/post-soviet/car.webp", "align": "bottom" },
-        { "type": "video", "url": "/gamedev-portfolio/videos/post-soviet/color-palette-showcase_compr.mp4" },
-        { "type": "image", "url": "/gamedev-portfolio/images/post-soviet/bloodyard.webp", "align": "center" },
-        { "type": "video", "url": "/gamedev-portfolio/videos/post-soviet/orto-blackview_compr.mp4" },
-      ],
-      "links": {
-        "source": "https://github.com/HangyBoi/Slice-of-Post-Soviet-Yard",
-        "artstation": "https://www.artstation.com/artwork/eRZ9kP",
-        "wiki": "https://github.com/HangyBoi/Slice-of-Post-Soviet-Yard/wiki"
-      },
-      "status": "Released"
-    },
-
-    {
-      id: 3,
-      title: "Procedural Creature Animation",
-      category: "Animation",
-      tags: ["Unity", "Tech Art", "Procedural Animation", "IK", "URP", "C#"],
-      image: "/gamedev-portfolio/images/procedural-animation/gecko_skeleton_simple.webp",
-      description: "Real-time, terrain-adaptive locomotion systems for spider and lizard using Inverse Kinematics.",
-      longDescription: "A pure-code animation project exploring dynamic locomotion without keyframes. I engineered two distinct procedural architectures: an 8-legged spider utilizing a predictive tripod gait to navigate extreme topology (including ceilings), and a modular 'Gecko' controller driven by root motion, featuring independent head tracking and physics-based tail reactions.",
-      details: {
-        role: "Gameplay Engineer",
-        time: "4 Weeks",
-        tools: "Unity 6, Animation Rigging, C#"
-      },
-      responsibilities: [
-        "Architected a modular locomotion engine separating Gait Logic, Ground Detection, and IK Solving.",
-        "Implemented a robust Tripod Gait algorithm with predictive foot placement for uneven terrain.",
-        "Developed a reactive Tail Physics system using bone-chain reaction for natural secondary motion.",
-        "Created custom Editor Gizmos and Inspectors to visualize IK targets and limb constraints in real-time."
-      ],
-      gallery: [
-        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/bonehead-gecko-showcase_compr.mp4" },
-        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/spider-showcase_compr.mp4" },
-        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/gecko-constraint_compr.mp4" },
-        { type: 'image', url: "/gamedev-portfolio/images/procedural-animation/gecko_skeleton_simple.webp", align: "center" },
-        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/gecko-control_compr.mp4" },
-        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/gecko-follow_compr.mp4" },
-        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/spider-upside_compr.mp4" },
-        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/spider-leg_compr.mp4" },
-        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/spider-leg-controller_compr.mp4" },
-        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/spider-constraints_compr.mp4" }
-      ],
-      links: {
-        source: "https://github.com/HangyBoi/Chunk-of-Procedural-Animation",
-        wiki: "https://github.com/HangyBoi/Chunk-of-Procedural-Animation/wiki"
-      },
-      status: "Prototype"
-    },
-
-    {
       id: 13,
       title: "ICover",
       category: "Technical Art",
@@ -236,39 +123,38 @@ const Projects = () => {
     },
 
     {
-      id: 12,
-      title: "VR Fluid Simulation",
-      category: "Technical Gameplay & Rendering",
-      tags: ["UE5", "Internship", "VR", "Tech Art", "VFX", "Blueprints"],
-      image: "/gamedev-portfolio/images/quantum-delta/squeezebottle-multiple.png",
-      description: "A performance-optimized VR fluid and chemistry simulation built for cleanroom training. It authentically replicates liquid physics and chemical reactions for interactive lab equipment.",
-      longDescription: "Developed as an internship project, this VR simulation serves as a training platform for operating sensitive cleanroom equipment. To maintain high framerates in VR, it bypasses expensive traditional fluid solvers in favor of a custom math-driven approach to handle fluid physics, spatial displacement, and complex chemical reactions. Players can intuitively pour, mix, and weigh chemicals with realistic mass conservation, creating an immersive and physically accurate lab environment without performance bottlenecks.",
-      isClientProject: true,
-      client: "University of Twente Labs / Quantum Delta",
+      id: 1,
+      title: "Procedural Parisian Cityscape",
+      category: "Tools",
+      tags: ["Unity", "Tech Art", "Editor Tooling", "PCG", "C#"],
+      image: "/gamedev-portfolio/images/procedural-paris/city-angle.webp",
+      description: "One-click generation of organic, 18th-century city layouts using Voronoi Tessellation.",
+      longDescription: "A sophisticated two-layer procedural generation system designed to move away from grid-based layouts. The tool utilizes Voronoi diagrams for organic street distribution and Sutherland-Hodgman clipping for lot subdivision. Features a non-destructive custom Editor workflow, allowing real-time vertex manipulation of building footprints with instant mesh regeneration for facades and watertight Mansard roofs.",
       details: {
-        role: "Technical Artist / VR Programmer",
-        time: "Internship",
-        tools: "Unreal Engine 5 (Blueprints, Niagara, Material Graph), VR Expansion Plugin",
-        client: "University of Twente Labs"
+        role: "Tooling Engineer & Tech Art",
+        time: "4 weeks",
+        tools: "Unity 6, C#, Shader Graph"
       },
       responsibilities: [
-        "Architected a scalable, modular chemistry framework tracking mass, volume, and solution concentration for interactive chemical reactions.",
-        "Engineered a fluid physics system simulating realistic wobbling, pouring, and splashing across various glassware without traditional expensive solvers.",
-        "Developed a framerate-independent particle payload system ensuring 1:1 conservation of mass when transferring liquids.",
-        "Programmed physical skill-based interaction models, allowing players to manually mix and weigh chemicals using accurate in-game scales."
+        "Engineered the 'City Planner' algorithm using Voronoi diagrams and Sutherland-Hodgman clipping.",
+        "Developed a custom Editor interface with scene-view handles for non-destructive, real-time building manipulation.",
+        "Implemented procedural mesh generation logic to create watertight Mansard roofs on arbitrary N-gon shapes.",
+        "Optimized rendering via Static Batching and GPU Instancing for high-density scenes."
       ],
       gallery: [
-        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/liquid-wobbling.mov" },
-        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/liquid-squeezing.mov" },
-        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/beakers-interact.mov" },
-        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/mass-conservation.mov" },
-        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/koh-preparation.mov" },
-        { type: "image", url: "/gamedev-portfolio/images/quantum-delta/squeezebottle-multiple.png", align: "center" },
-        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/squeezebottle-physics.mov" },
-        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/squeezebottle-beaker-interaction.mov" },
-        { type: "image", url: "/gamedev-portfolio/images/quantum-delta/squeezebottle-with-splashes.png", align: "center" }
+        { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/city-angle.webp", align: "top" },
+        { type: 'video', url: "/gamedev-portfolio/videos/procedural-paris/City-Showcase_compr.mp4" },
+        { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/voronoi-cells.webp", align: "top" },
+        { type: 'video', url: "/gamedev-portfolio/videos/procedural-paris/City-Generator-Showcase_compr.mp4" },
+        { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/procedural-house.webp" },
+        { type: 'video', url: "/gamedev-portfolio/videos/procedural-paris/Building-Manipulation-Showcase_compr.mp4" },
+        { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/modular-assets.webp" },
+        { type: 'image', url: "/gamedev-portfolio/images/procedural-paris/procedural-roof.webp", align: "bottom" }
       ],
-      links: {},
+      links: {
+        source: "https://github.com/HangyBoi/Procedural-Paris",
+        wiki: "https://github.com/HangyBoi/Procedural-Paris/wiki"
+      },
       status: "Released"
     },
 
@@ -308,6 +194,120 @@ const Projects = () => {
         processDocTitle: "Read Project Breakdown",
         processDocSubtitle: "Comprehensive documentation detailing iterative modeling, shader architecture, and lighting passes.",
         processDocBtnTitle: "Tech Breakdown"
+      },
+      status: "Released"
+    },
+
+    {
+      id: 3,
+      title: "Procedural Creature Animation",
+      category: "Animation",
+      tags: ["Unity", "Tech Art", "Procedural Animation", "IK", "URP", "C#"],
+      image: "/gamedev-portfolio/images/procedural-animation/gecko_skeleton_simple.webp",
+      description: "Real-time, terrain-adaptive locomotion systems for spider and lizard using Inverse Kinematics.",
+      longDescription: "A pure-code animation project exploring dynamic locomotion without keyframes. I engineered two distinct procedural architectures: an 8-legged spider utilizing a predictive tripod gait to navigate extreme topology (including ceilings), and a modular 'Gecko' controller driven by root motion, featuring independent head tracking and physics-based tail reactions.",
+      details: {
+        role: "Gameplay Engineer",
+        time: "4 Weeks",
+        tools: "Unity 6, Animation Rigging, C#"
+      },
+      responsibilities: [
+        "Architected a modular locomotion engine separating Gait Logic, Ground Detection, and IK Solving.",
+        "Implemented a robust Tripod Gait algorithm with predictive foot placement for uneven terrain.",
+        "Developed a reactive Tail Physics system using bone-chain reaction for natural secondary motion.",
+        "Created custom Editor Gizmos and Inspectors to visualize IK targets and limb constraints in real-time."
+      ],
+      gallery: [
+        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/bonehead-gecko-showcase_compr.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/spider-showcase_compr.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/gecko-constraint_compr.mp4" },
+        { type: 'image', url: "/gamedev-portfolio/images/procedural-animation/gecko_skeleton_simple.webp", align: "center" },
+        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/gecko-control_compr.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/gecko-follow_compr.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/spider-upside_compr.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/spider-leg_compr.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/spider-leg-controller_compr.mp4" },
+        { type: 'video', url: "/gamedev-portfolio/videos/procedural-animation/spider-constraints_compr.mp4" }
+      ],
+      links: {
+        source: "https://github.com/HangyBoi/Chunk-of-Procedural-Animation",
+        wiki: "https://github.com/HangyBoi/Chunk-of-Procedural-Animation/wiki"
+      },
+      status: "Prototype"
+    },
+
+    {
+      id: 12,
+      title: "VR Fluid Simulation",
+      category: "Technical Gameplay & Rendering",
+      tags: ["UE5", "Internship", "VR", "Tech Art", "VFX", "Blueprints"],
+      image: "/gamedev-portfolio/images/quantum-delta/squeezebottle-multiple.png",
+      description: "A performance-optimized VR fluid and chemistry simulation built for cleanroom training. It authentically replicates liquid physics and chemical reactions for interactive lab equipment.",
+      longDescription: "Developed as an internship project, this VR simulation serves as a training platform for operating sensitive cleanroom equipment. To maintain high framerates in VR, it bypasses expensive traditional fluid solvers in favor of a custom math-driven approach to handle fluid physics, spatial displacement, and complex chemical reactions. Players can intuitively pour, mix, and weigh chemicals with realistic mass conservation, creating an immersive and physically accurate lab environment without performance bottlenecks.",
+      isClientProject: true,
+      client: "University of Twente Labs / Quantum Delta",
+      details: {
+        role: "Technical Artist / VR Programmer",
+        time: "Internship",
+        tools: "Unreal Engine 5 (Blueprints, Niagara, Material Graph), VR Expansion Plugin",
+        client: "University of Twente Labs"
+      },
+      responsibilities: [
+        "Architected a scalable, modular chemistry framework tracking mass, volume, and solution concentration for interactive chemical reactions.",
+        "Engineered a fluid physics system simulating realistic wobbling, pouring, and splashing across various glassware without traditional expensive solvers.",
+        "Developed a framerate-independent particle payload system ensuring 1:1 conservation of mass when transferring liquids.",
+        "Programmed physical skill-based interaction models, allowing players to manually mix and weigh chemicals using accurate in-game scales."
+      ],
+      gallery: [
+        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/liquid-wobbling.mov" },
+        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/liquid-squeezing.mov" },
+        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/beakers-interact.mov" },
+        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/mass-conservation.mov" },
+        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/koh-preparation.mov" },
+        { type: "image", url: "/gamedev-portfolio/images/quantum-delta/squeezebottle-multiple.png", align: "center" },
+        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/squeezebottle-physics.mov" },
+        { type: "video", url: "/gamedev-portfolio/videos/quantum-delta/squeezebottle-beaker-interaction.mov" },
+        { type: "image", url: "/gamedev-portfolio/images/quantum-delta/squeezebottle-with-splashes.png", align: "center" }
+      ],
+      links: {},
+      status: "Released"
+    },
+
+    {
+      id: 2,
+      title: "Slice of Post-Soviet Yard",
+      category: "Technical Environment Art",
+      tags: ["Unity", "Shaders", "Lighting", "HDRP", "Level Design", "Optimization"],
+      image: "/gamedev-portfolio/images/post-soviet/bloodmoon.webp",
+      description: "A technical environment showcase combining atmospheric level design, lighting composition, and a custom URP rendering pipeline.",
+      longDescription: "A deep dive into the Universal Render Pipeline (URP) to bridge the gap between engine logic and visual art. This project implements a custom 'Digital Lens' stack, utilizing Fullscreen Renderer Features to achieve a pixel-perfect PSX aesthetic (Dithering, Quantization). It features a reactive environment where foliage blends with terrain via Render Textures and water interacts with depth buffers.",
+      details: {
+        role: "Technical Level Designer",
+        time: "3 Weeks",
+        tools: "Unity 6 (URP), HLSL, Shader Graph"
+      },
+      responsibilities: [
+        "Designed the environment layout using 'Iterative Detailing, which is supposed to evoke a specific Post-Soviet nostalgia.",
+        "Engineered a modular Post-Processing stack (Pixelation, Dithering) using custom URP Renderer Features.",
+        "Implemented reactive foliage shaders using Render Textures for seamless terrain blending and wind simulation.",
+        "Solved critical pipeline sorting issues between volumetric fog and transparency injection points.",
+        "Wrote custom HLSL lighting functions wrapped in Shader Graph nodes for stylized specular highlights."
+      ],
+      gallery: [
+        { type: "video", url: "/gamedev-portfolio/videos/post-soviet/car-in-river_compr.mp4" },
+        { type: "image", url: "/gamedev-portfolio/images/post-soviet/river-car.webp", align: "bottom" },
+        { type: "video", url: "/gamedev-portfolio/videos/post-soviet/day-night-yard_compr.mp4" },
+        { type: "image", url: "/gamedev-portfolio/images/post-soviet/broken-fence.webp", align: "bottom" },
+        { type: "video", url: "/gamedev-portfolio/videos/post-soviet/retro-stack-showcase_compr.mp4" },
+        { type: "image", url: "/gamedev-portfolio/images/post-soviet/car.webp", align: "bottom" },
+        { type: "video", url: "/gamedev-portfolio/videos/post-soviet/color-palette-showcase_compr.mp4" },
+        { type: "image", url: "/gamedev-portfolio/images/post-soviet/bloodyard.webp", align: "center" },
+        { type: "video", url: "/gamedev-portfolio/videos/post-soviet/orto-blackview_compr.mp4" },
+      ],
+      links: {
+        source: "https://github.com/HangyBoi/Slice-of-Post-Soviet-Yard",
+        artstation: "https://www.artstation.com/artwork/eRZ9kP",
+        wiki: "https://github.com/HangyBoi/Slice-of-Post-Soviet-Yard/wiki"
       },
       status: "Released"
     },
